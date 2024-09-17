@@ -2,6 +2,7 @@ package fatec.bytelabss.dataViz.services;
 
 import java.util.List;
 
+import fatec.bytelabss.dataViz.models.DimParticipanteRH;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Encoders;
 import org.apache.spark.sql.Row;
@@ -10,15 +11,14 @@ import org.apache.spark.sql.functions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import fatec.bytelabss.dataViz.models.BytelabssParticipantesRH;
-import fatec.bytelabss.dataViz.repositorys.BytelabssParticipantesRHRepository;
+import fatec.bytelabss.dataViz.repositorys.DimParticipanteRHRepository;
 import scala.Tuple2;
 
 @Service
 public class BytelabssParticipantesRHService {
 	
 	@Autowired
-	private BytelabssParticipantesRHRepository clienteRepository;
+	private DimParticipanteRHRepository clienteRepository;
 
 	public void save()  {
 
@@ -55,8 +55,8 @@ public class BytelabssParticipantesRHService {
 
 		//Integração do Java com o Spark
 		//Tá transformando as linhas do dataframe em objetos da classe BytelabssVagas
-		List<BytelabssParticipantesRH> bytelabssParticipantesRH = transformedData
-				.as(Encoders.bean(BytelabssParticipantesRH.class))
+		List<DimParticipanteRH> bytelabssParticipantesRH = transformedData
+				.as(Encoders.bean(DimParticipanteRH.class))
 				.collectAsList();
 
 		//Salva os objetos no banco de dados

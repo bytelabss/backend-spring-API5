@@ -1,0 +1,153 @@
+ID Vaga,ID Processo Seletivo,Título da Vaga,Número de Posições,Requisitos da Vaga,Status da Vaga,Localização da Vaga,Responsável pela Vaga,Data de Abertura da Vaga,Data de Fechamento da Vaga
+1,27,Adestrador de animais,5,Tempore laudantium saepe quos esse nihil aliquam. Adipisci commodi harum quas ipsum.,Em Andamento,Viana Grande,Caroline Ramos,2024-02-29 23:12:48,2024-02-27 13:44:28
+2,12,Flautista,5,Natus mollitia alias adipisci blanditiis libero assumenda nobis.,Em Andamento,Carvalho do Amparo,Matheus da Cunha,2024-02-26 07:04:13,2024-05-17 13:30:40
+3,32,Empregado doméstico,2,Quo voluptatum dolorem autem. Rerum veniam excepturi optio. Rem eius quia vero.,Em Andamento,Alves Paulista,Bianca Barbosa,2024-03-06 06:14:42,2024-02-05 20:49:11
+4,79,Engenheiro florestal,9,At modi nesciunt sit similique. Iste beatae ipsam voluptatem cupiditate maiores.,Fechado,Nunes de Mendes,Dra. Ana das Neves,2024-06-16 12:11:32,2024-03-05 01:52:13
+5,126,Moleiro,4,Aut fugit quia. Corporis iure minus quia.,Fechado,Novaes,Enzo Gabriel Freitas,2024-02-26 19:17:48,2024-01-20 08:33:48
+6,146,Tenista,4,Ipsum sit unde ab similique soluta. Error animi iure. Quod saepe iste ut.,Fechado,Martins do Oeste,Daniel Rodrigues,2024-01-29 07:47:58,2024-07-15 15:00:17
+7,124,Técnico em tratamento de água,7,Provident magni tenetur nesciunt ullam labore eos.,Aberto,Silveira,Luiz Henrique Teixeira,2024-07-14 21:08:38,2024-03-05 00:07:10
+8,51,Ginasta artística,9,Earum similique praesentium.,Fechado,Teixeira,Srta. Ana Laura Moraes,2024-05-10 14:06:45,2024-05-08 13:42:33
+9,27,Corretor da bolsa de valores,1,Itaque reiciendis magni corrupti. Provident veritatis labore consectetur.,Em Andamento,Moreira do Oeste,Maria Fernanda Sales,2024-02-15 02:36:25,2024-02-28 22:50:53
+10,62,Gestor de tecnologia da informação,8,Laudantium aut tempore ut quas. Maiores quisquam earum possimus atque maiores.,Fechado,Monteiro,Isabella Farias,2024-01-05 20:00:20,2024-02-14 13:21:44
+11,29,Técnico de som,5,Magni officia ratione quia autem. Aperiam minima ratione quidem corporis voluptas.,Fechado,Pires,Mariane Carvalho,2024-05-03 21:29:41,2024-06-19 04:19:09
+12,18,Adestrador de animais,9,Asperiores consequatur doloremque. Laudantium tempore asperiores accusantium quam.,Aberto,Ramos dos Dourados,Dra. Camila Pinto,2024-03-12 02:30:09,2024-03-08 11:35:35
+13,3,Engenheiro aeronáutico,4,Dicta velit iure maxime. Velit quod dolorum velit at autem expedita.,Aberto,da Conceição,Breno Mendes,2024-03-05 14:14:24,2024-06-01 01:23:14
+14,118,Guitarrista,8,Commodi accusamus delectus. Dolore eum sunt mollitia.,Fechado,Alves Grande,Emilly Barros,2024-01-26 02:22:29,2024-09-16 02:59:24
+15,110,Levantador de peso,3,Magni ullam ut pariatur perferendis similique.,Aberto,Caldeira,Clarice Castro,2024-02-25 10:11:30,2024-05-02 14:38:27
+16,93,Soldador,3,Nihil quasi animi minus dignissimos unde. Fugiat fugiat animi a. Odio sint iusto hic.,Aberto,Pereira,Maria Fernanda Azevedo,2024-05-04 11:35:49,2024-06-30 15:36:36
+17,12,Juiz ou árbitro de futebol,2,Nam ea earum. Amet modi error illum aperiam incidunt eaque maxime. Qui nostrum quis iusto nulla.,Em Andamento,Campos,Esther Correia,2024-05-20 19:52:50,2024-09-14 08:07:01
+18,129,Artista/Técnico em espetáculos de diversões,7,Nobis ratione libero veritatis tempora. Repellendus est vero quaerat.,Fechado,Moreira de Cardoso,Renan Sales,2024-04-11 11:11:09,2024-09-05 08:42:35
+19,69,Jogador de futebol,9,Quod asperiores itaque ullam officiis iusto provident. Earum cupiditate esse odio.,Aberto,da Conceição,Sofia Nascimento,2024-05-16 01:52:31,2024-01-01 02:29:55
+20,123,Major,6,Ipsa aut provident. Magni reprehenderit occaecati saepe ipsum.,Em Andamento,Moraes,Cauê Cunha,2024-05-18 06:39:08,2024-02-29 06:12:56
+21,101,Embaixador,9,Nam alias non esse asperiores a. A porro consectetur.,Fechado,Freitas,Emilly Barbosa,2024-07-23 23:58:51,2024-01-17 01:24:29
+22,73,Gerente de riscos em seguros,5,Consequuntur aliquam amet eligendi temporibus asperiores.,Aberto,Moreira de Alves,Antônio Sales,2024-05-13 18:52:44,2024-08-05 23:36:50
+23,150,Agricultor,3,Delectus ipsam ad quas. Accusantium repellat neque.,Aberto,Caldeira dos Dourados,Joaquim Rodrigues,2024-02-14 18:03:01,2024-09-15 10:30:15
+24,28,Surfista,8,Odio voluptates dolor odit dolores. Iure asperiores repellat eos.,Em Andamento,Cavalcanti dos Dourados,Daniela Castro,2024-05-15 05:11:32,2024-07-04 01:48:10
+25,14,Maquiador,2,In eos nihil cum. Debitis est atque architecto reprehenderit.,Fechado,Silveira,João Guilherme Almeida,2024-07-30 11:29:45,2024-01-19 17:10:28
+26,122,Paramédico,9,Nam numquam officia. Adipisci facere accusamus veniam commodi. Earum impedit rem eveniet.,Em Andamento,Dias Grande,Catarina Souza,2024-04-22 10:43:04,2024-06-19 00:05:32
+27,10,Piloto de avião,9,Cumque provident consectetur repellendus doloribus et explicabo. Dolore culpa excepturi iste.,Aberto,Ramos de Pinto,Evelyn Sales,2024-09-16 02:46:06,2024-04-11 06:18:46
+28,25,Analista de sistemas,3,Nihil deleniti omnis ratione aliquam soluta debitis neque.,Em Andamento,Carvalho de Goiás,Elisa Lima,2024-02-21 23:18:56,2024-07-20 05:24:56
+29,70,Necromaquiador,9,Quidem nisi autem.,Aberto,Duarte,Pedro Henrique da Luz,2024-07-15 11:22:42,2024-08-09 15:59:48
+30,112,Office-boy,4,Iste quisquam vitae rerum.,Fechado,Melo Alegre,Sra. Cecília Almeida,2024-04-15 04:12:20,2024-05-04 20:42:36
+31,136,Leiteiro,8,Neque enim autem sed. Cupiditate magni hic laboriosam veniam ex.,Aberto,Ribeiro,Benício Azevedo,2024-08-19 16:55:48,2024-04-21 22:07:27
+32,120,Compositor,3,Ipsam debitis suscipit quas error voluptatum illum. Id reprehenderit voluptates.,Fechado,Porto,João Felipe Gonçalves,2024-06-29 10:20:52,2024-08-07 02:26:22
+33,33,Tecnólogo em negócios imobiliários,8,Nemo animi modi. Minus quam ad quod occaecati inventore.,Em Andamento,Aragão,Heitor Carvalho,2024-04-21 12:16:14,2024-06-24 13:13:36
+34,57,Boxeador,7,Eius numquam odio beatae. Ullam voluptas voluptate eveniet accusamus neque iure.,Em Andamento,Aragão do Oeste,Samuel Freitas,2024-03-26 14:49:25,2024-05-07 19:49:36
+35,82,Assistente de direção,6,Earum laudantium rerum veritatis omnis nemo ipsam.,Aberto,da Cunha,Stella Martins,2024-02-18 19:27:46,2024-08-26 04:15:57
+36,126,Penhorista,1,Quisquam ullam mollitia reiciendis cum ad ducimus. Accusantium id odio.,Aberto,Azevedo,Catarina Almeida,2024-03-18 18:52:04,2024-07-04 06:47:00
+37,114,Tecnólogo em produção de bebidas,7,Non dignissimos et aliquam soluta. Distinctio incidunt rem distinctio omnis ratione vel culpa.,Fechado,da Mota,Laura da Luz,2024-08-07 06:24:46,2024-04-19 12:02:38
+38,118,Designer gráfico,8,Voluptatum veritatis tempore nesciunt possimus aut iusto.,Em Andamento,Fernandes,Isis Araújo,2024-01-15 00:17:25,2024-04-29 03:11:16
+39,55,Senador,4,Sint quas vero praesentium quidem inventore laborum. Quia doloremque tempora.,Aberto,Araújo de Goiás,Sr. João Guilherme Peixoto,2024-07-31 12:15:45,2024-08-20 05:53:29
+40,87,Técnico de gesso,4,Iure totam explicabo sequi molestiae non.,Em Andamento,da Mata de Ferreira,Eduardo Santos,2024-01-21 00:07:22,2024-01-22 03:48:30
+41,139,Síndico,2,Quibusdam nisi ab deserunt ex ea. Velit reiciendis officiis expedita.,Em Andamento,Monteiro do Oeste,Dra. Vitória Moreira,2024-08-15 23:11:41,2024-05-16 11:46:43
+42,76,Fundidor de placa de gesso,9,Culpa at similique. Aliquid quibusdam est. Sed aliquid ratione sed qui assumenda voluptatibus.,Aberto,Cunha do Norte,Levi Moreira,2024-06-10 16:07:15,2024-02-26 20:31:28
+43,88,Kite-surfer,3,Vitae quidem odio qui.,Em Andamento,Peixoto,Fernanda Fernandes,2024-07-09 00:08:42,2024-09-08 16:29:07
+44,97,Biólogo,8,Quibusdam similique itaque numquam incidunt. Ex laborum aliquam corporis facere neque.,Fechado,Viana de Minas,Mirella Azevedo,2024-07-28 16:45:37,2024-01-11 05:12:42
+45,33,Notário,5,"Distinctio deserunt adipisci veritatis.
+Illum consequuntur impedit quo.",Em Andamento,Pires de Goiás,Dra. Maria Sophia Araújo,2024-09-01 08:52:19,2024-07-27 07:48:31
+46,97,Estilista,7,Aperiam nobis reprehenderit. Doloremque cum enim magnam. Expedita explicabo dicta.,Em Andamento,Sales,Stella Moraes,2024-03-22 19:53:36,2024-07-21 08:09:28
+47,3,Jogador de bocha,3,Modi nam atque repudiandae tenetur quidem.,Em Andamento,Vieira,João Guilherme Araújo,2024-04-24 01:35:36,2024-06-12 16:29:40
+48,76,Judoca,4,Voluptates repellendus dignissimos modi libero.,Em Andamento,da Rocha,Kevin Duarte,2024-04-13 07:54:33,2024-01-20 06:16:14
+49,10,Esteticista,9,Aspernatur placeat maxime ab. Modi molestiae quae.,Fechado,das Neves,Lucas da Cunha,2024-02-07 14:48:05,2024-02-07 09:40:56
+50,65,Sexólogo,7,Voluptas magnam sint cum dolore odio ipsam.,Em Andamento,Pinto da Serra,Mariana Azevedo,2024-02-02 19:12:24,2024-03-13 14:30:19
+51,108,Tradutor,8,Ipsam ex eligendi nihil facilis eaque. Fugiat rerum doloremque perspiciatis dolorem impedit.,Aberto,Mendes,Mirella da Costa,2024-01-10 08:03:22,2024-06-29 17:28:45
+52,4,Apicultor,4,Omnis iste debitis aliquid rerum culpa. Optio amet quod repudiandae.,Aberto,Fernandes,Sr. Bernardo Campos,2024-08-04 02:25:53,2024-01-01 20:52:36
+53,55,Técnico em agropecuária,6,Amet eos minima voluptas nisi. Modi doloremque optio eos temporibus a magni.,Em Andamento,Cardoso,Esther Teixeira,2024-07-31 15:12:34,2024-04-22 00:35:37
+54,72,Plastimodelista,2,Aperiam dignissimos beatae iusto vel. Odio ipsam adipisci a vitae consectetur.,Em Andamento,Ferreira,Guilherme Araújo,2024-05-11 23:20:22,2024-06-26 06:46:16
+55,11,Seguidor de compras,7,Ad ut rem repudiandae deleniti assumenda. Inventore illo dolorum.,Aberto,Nogueira Alegre,Luna Cunha,2024-08-24 15:46:23,2024-05-27 08:19:27
+56,1,Lamboteiro,6,Consectetur minus quaerat quisquam quibusdam reprehenderit architecto.,Em Andamento,Viana,Pedro Henrique Costela,2024-06-30 15:32:42,2024-06-15 07:08:41
+57,134,Gerente de riscos em seguros,4,Repellat accusamus earum quidem quos. Aspernatur quae dolorum modi natus earum.,Aberto,Barros,Pietra Vieira,2024-08-13 04:58:38,2024-06-14 05:02:07
+58,92,Recepcionista,8,Dolorum deleniti facilis doloribus pariatur ab ipsa. Eaque vero eum modi quo aspernatur aliquam.,Em Andamento,Jesus,Lívia Carvalho,2024-05-07 05:57:48,2024-02-15 14:21:26
+59,115,Embaixador,4,Dolorum aliquid architecto quia possimus placeat. Labore non cupiditate rem sed provident ipsa.,Aberto,Cardoso,Bárbara Santos,2024-03-31 06:50:43,2024-02-14 18:17:10
+60,116,Representante comercial,7,Nesciunt ipsum vero et sapiente sapiente aut. Tenetur eos accusamus ipsum numquam ex.,Em Andamento,Monteiro da Prata,Bruno Moraes,2024-08-03 12:06:06,2024-07-16 17:10:16
+61,71,Coach,1,Odio sint in labore maiores. Illum voluptatem similique ratione quos quisquam.,Fechado,Castro,Luiz Felipe Melo,2024-02-23 15:05:02,2024-03-02 22:51:45
+62,42,Historiador,9,In soluta repellendus asperiores ex. Enim fuga aliquam unde. Perspiciatis adipisci iure quasi.,Aberto,Moura de Nunes,Rebeca Fernandes,2024-02-17 11:43:56,2024-03-09 00:36:50
+63,129,Radiooperador de vôo,5,Id aliquid ad repellendus deserunt consequatur maxime.,Em Andamento,Pereira,Vicente da Rocha,2024-07-11 05:37:03,2024-07-31 03:07:55
+64,136,Parteira tradicional,5,Natus cum laborum doloremque. Quod fugiat vel natus laudantium.,Fechado,Costela,Enzo Nunes,2024-06-24 05:36:35,2024-07-19 00:59:09
+65,109,Economista,1,Hic deserunt nostrum id culpa est veritatis. Optio ipsam dolores dicta dolore corrupti.,Em Andamento,Cardoso Verde,Dra. Brenda Silveira,2024-06-03 00:32:37,2024-01-02 02:11:11
+66,53,Agente de combate à endemias,4,Nulla architecto facere voluptates saepe. Dicta debitis non est nisi magnam exercitationem.,Em Andamento,Pereira de da Costa,Dr. Luiz Felipe Porto,2024-09-07 20:12:19,2024-06-20 04:49:48
+67,60,Gandula,9,Explicabo nulla iusto aut mollitia maxime rem recusandae. Quaerat temporibus facilis pariatur.,Em Andamento,Castro de Ferreira,Cecília Moreira,2024-08-13 21:55:34,2024-04-25 18:55:33
+68,63,Recreador,7,Sed dolores ullam debitis laudantium nam eum. Tenetur eaque corrupti illo sed.,Fechado,Nunes da Serra,Gabrielly Alves,2024-07-07 11:31:25,2024-08-28 12:05:47
+69,76,Tecnólogo em esporte e lazer,4,Explicabo odit quas. Alias architecto molestias delectus ad.,Fechado,Cavalcanti,Rebeca da Paz,2024-08-13 04:34:09,2024-02-11 04:49:01
+70,79,Lamboteiro,3,Sunt optio dignissimos eveniet perferendis beatae doloremque. Perferendis quo autem sequi sunt rem.,Em Andamento,Almeida da Mata,Gustavo Henrique Jesus,2024-09-01 20:36:35,2024-01-22 22:13:23
+71,91,Coveiro/Sepultador,5,Commodi quia officia accusamus voluptate laborum laboriosam. Quia possimus laborum error.,Fechado,Silveira,Ana Sophia Cardoso,2024-06-09 02:32:03,2024-05-17 20:54:21
+72,106,Datilógrafo,1,Similique accusantium numquam et. Porro odit nesciunt dolore esse veniam deserunt.,Aberto,Barbosa Grande,Enzo Gabriel Ferreira,2024-07-12 14:04:46,2024-04-02 00:53:37
+73,114,Seguidor de compras,6,Recusandae nam quidem harum porro. At vero accusamus voluptatum ipsa ipsam.,Fechado,Dias Alegre,Theo Cavalcanti,2024-06-10 20:40:15,2024-08-28 11:19:22
+74,97,Epidemiólogo,3,Dignissimos consequatur quam amet. In consequuntur itaque atque.,Aberto,da Conceição de Minas,Sophia Lima,2024-03-19 17:34:36,2024-08-04 23:23:13
+75,137,Lapidário,7,Quibusdam dolorum autem animi. Itaque possimus facere enim corrupti quasi.,Aberto,Teixeira,Manuela Monteiro,2024-05-25 06:07:40,2024-04-10 07:29:11
+76,78,Tecnólogo em recursos pesqueiros,6,Laudantium cumque at repellat facere dolor expedita. Ipsam dolor quibusdam impedit aliquam alias.,Em Andamento,Santos,Raquel da Cruz,2024-07-04 12:19:57,2024-04-28 02:32:14
+77,18,Jogador de boliche,1,Eius sit a vero facere dolore. A perferendis iusto. Magnam quae eaque optio.,Fechado,Costela,Sophia Fogaça,2024-08-09 18:14:31,2024-09-15 03:07:19
+78,87,Engenheiro naval,3,Sit beatae reiciendis. Temporibus distinctio qui accusantium dolorum error nulla recusandae.,Fechado,Porto de Pereira,Pedro da Costa,2024-08-29 08:10:19,2024-04-12 04:11:22
+79,47,Orçamentista,1,Iure numquam praesentium odio ipsa. Quidem ducimus vero a reiciendis pariatur.,Em Andamento,da Mata de Novaes,Helena Porto,2024-03-07 15:38:53,2024-06-17 11:08:46
+80,90,DJ,7,Rerum quisquam at eum. Necessitatibus velit voluptates consectetur. In nobis culpa illo minima.,Fechado,Costa,Larissa Cunha,2024-05-21 00:29:43,2024-02-26 01:10:45
+81,85,Tecnólogo em irrigação e drenagem,2,Reprehenderit sunt quo enim ex optio. Quo voluptatum repellat perspiciatis beatae eos.,Aberto,da Rocha Grande,Sofia Cardoso,2024-01-13 07:34:02,2024-02-02 19:19:14
+82,94,Gestor de tecnologia da informação,4,Maiores odit deserunt quidem enim. Magnam rem suscipit vitae. Eius illum ea deserunt.,Fechado,da Rocha,Pietra Lopes,2024-07-20 15:16:53,2024-05-07 22:22:18
+83,21,Penhorista,2,Neque ab fugiat facere. Nisi nostrum nesciunt illum. Saepe nobis eos eveniet soluta voluptate ab.,Em Andamento,Lopes,Luigi Cavalcanti,2024-07-30 11:13:19,2024-01-17 09:44:39
+84,120,Lanterneiro,9,Sint praesentium iure odit rem. Cumque laudantium consequuntur eius voluptatem corporis.,Em Andamento,Barbosa,Thiago Barbosa,2024-06-18 07:13:04,2024-08-25 04:17:31
+85,75,Personal trainer,8,Nemo tenetur velit quisquam necessitatibus. Ducimus hic ea ea at.,Aberto,Cardoso,Milena Rodrigues,2024-09-12 17:37:01,2024-02-26 01:32:30
+86,51,Fundidor de placa de gesso,7,Dolore temporibus officia repudiandae. Ullam sapiente doloremque magni quas mollitia.,Fechado,Cardoso,Marina Nogueira,2024-05-29 09:39:44,2024-01-16 07:41:29
+87,96,Cartunista,4,Beatae aut vitae incidunt. Cumque id amet hic quisquam quis.,Aberto,Duarte,Leonardo Fernandes,2024-03-19 15:09:27,2024-06-28 04:31:16
+88,65,Bóia-fria,2,Sed corporis consequuntur corporis et repudiandae. Eaque corrupti odio ut dolore ipsa minima.,Em Andamento,da Mota,Davi Araújo,2024-07-22 13:57:07,2024-02-14 01:49:10
+89,73,Cantor,9,Incidunt ex minima eaque. Quis nisi aliquid repellendus iusto eveniet.,Fechado,Nunes,Dr. Vitor Ribeiro,2024-03-05 00:46:18,2024-04-09 14:53:49
+90,36,Cozinheira,2,Exercitationem vitae molestias magnam fugit debitis. Rerum ea architecto repudiandae dolorem.,Fechado,das Neves,Benício da Mota,2024-07-27 00:45:55,2024-01-21 06:50:29
+91,49,Sexólogo,7,Alias quaerat excepturi doloribus. Architecto repudiandae dolores magni nihil corrupti.,Aberto,Moraes de da Cunha,Luiz Felipe Mendes,2024-08-11 21:07:21,2024-01-05 17:57:45
+92,90,Eletricista,4,Neque eaque veritatis error corporis hic.,Fechado,Novaes de Correia,João Gabriel Fogaça,2024-01-23 03:33:45,2024-05-02 16:33:22
+93,69,Fresador,2,Eveniet officia ipsa deserunt sed. Hic quo expedita cum ad impedit.,Fechado,Moura,Laura Lima,2024-07-22 06:36:10,2024-05-22 12:31:23
+94,136,Técnico em arquivo,1,Libero nesciunt similique voluptatem non eos. Dignissimos accusamus nesciunt nemo autem.,Fechado,Rocha do Campo,Joana Rezende,2024-05-29 01:26:24,2024-03-12 22:09:42
+95,95,Profissional de efeitos especiais,7,Quis possimus quos. Cum cumque dignissimos quos. Dolor in nam sapiente.,Fechado,Silva de Lopes,Sr. Pedro Miguel Fernandes,2024-04-18 01:55:57,2024-08-13 23:41:18
+96,29,Transportador,3,Nam consequuntur esse voluptatem sint non. Quos distinctio quia numquam molestias unde accusantium.,Fechado,Monteiro,Antônio da Rosa,2024-03-07 08:34:18,2024-05-24 08:55:03
+97,60,Gerente de riscos em seguros,4,Modi iste consectetur omnis corrupti earum ut nemo. Quas quidem iure.,Fechado,da Mata,Sra. Maria Julia Rocha,2024-06-21 18:02:54,2024-03-31 15:29:09
+98,66,Ortoptista,2,Laudantium quaerat ut dolorum. Soluta vero aperiam ex. Laudantium voluptatum quia incidunt.,Em Andamento,Cavalcanti,Manuela Azevedo,2024-02-14 10:44:13,2024-02-15 16:12:20
+99,75,Leiloeiro,3,Ut incidunt libero dolorum. Modi soluta nihil.,Fechado,Cardoso,Luiza Monteiro,2024-08-05 11:30:39,2024-06-10 13:09:55
+100,101,Empacotador,7,Nesciunt dolorem repellat corporis itaque. Sequi alias velit aut.,Em Andamento,Duarte de Goiás,Davi Lucca Moura,2024-07-22 11:09:40,2024-01-16 21:02:41
+101,125,Comissário de bordo,3,Aliquam eligendi et perspiciatis similique nulla. Repellendus voluptates ipsam.,Fechado,Nascimento do Galho,Ana Carolina Silva,2024-05-08 12:04:44,2024-05-07 12:42:08
+102,104,Obstetra,2,Perspiciatis fugit ipsam libero. Itaque aut quasi nostrum inventore. Veritatis tenetur incidunt.,Aberto,da Rosa do Norte,Mariane da Cunha,2024-03-20 04:53:18,2024-06-01 21:32:48
+103,149,Cozinheira,2,Libero velit qui temporibus sint laudantium ab. Molestiae voluptatem earum soluta molestiae.,Aberto,da Mata,Eduardo Dias,2024-09-12 02:37:21,2024-04-04 11:43:07
+104,76,Engenheiro de iluminação,4,Quis non fugit vero ab molestiae veniam. Occaecati non quaerat amet.,Fechado,Freitas do Amparo,Milena Vieira,2024-08-31 12:23:12,2024-04-21 07:10:56
+105,86,Tecnólogo em negócios imobiliários,9,Exercitationem a molestiae animi molestiae. Soluta facere earum mollitia sequi.,Aberto,Alves,Maria Cecília Freitas,2024-01-11 19:51:45,2024-08-24 08:44:09
+106,68,Profissional de recursos humanos,8,Labore expedita architecto voluptate. Totam cupiditate autem eveniet ab.,Em Andamento,Moreira,Ana Vitória Pires,2024-05-27 05:06:04,2024-03-11 21:53:53
+107,82,Antropólogo,3,Quos fugiat commodi dolores. A fuga laboriosam harum deserunt doloribus rem.,Em Andamento,Moreira de Barbosa,Sr. Alexandre Dias,2024-04-10 17:45:17,2024-02-16 01:53:40
+108,9,Coronel,7,Ad officia sint fugiat eaque nihil.,Fechado,Santos,Nicolas da Paz,2024-09-08 02:28:05,2024-07-03 03:30:06
+109,38,Profissional de relações internacionais,4,Quisquam error distinctio temporibus laudantium. Accusamus officiis quos.,Em Andamento,Cavalcanti,Sra. Brenda Campos,2024-01-18 15:01:50,2024-07-30 23:08:29
+110,28,Mãe social,7,Ad delectus ex veniam corrupti eum illo. Atque impedit maiores quos quam fuga.,Em Andamento,da Costa,Mirella Moreira,2024-03-01 23:57:25,2024-04-05 15:33:15
+111,76,Office-boy,1,Cumque labore dolores nobis ducimus deserunt. Nisi voluptate iure laboriosam qui quia eos.,Em Andamento,Costa Verde,Sr. Marcos Vinicius da Rosa,2024-03-21 11:29:49,2024-02-15 22:09:24
+112,122,Tecnólogo em geoprocessamento,4,Quis doloremque error cumque itaque rem omnis.,Fechado,da Mota,Dra. Laís Cunha,2024-08-25 04:24:34,2024-09-10 09:19:02
+113,100,Engenheiro agrônomo,5,Ducimus maiores nostrum repellat. Architecto tempore voluptas error quo.,Aberto,Alves das Flores,Vicente Rezende,2024-03-07 05:50:55,2024-03-27 09:46:42
+114,122,Bombeiro,2,Aperiam quo ducimus explicabo similique. Aspernatur adipisci vitae eveniet mollitia dolorem in.,Aberto,Lima do Campo,Maria Alice Pereira,2024-07-04 20:00:09,2024-09-11 05:51:46
+115,79,Jogador de basquete,9,Ipsa corporis eum ullam quod consequuntur sit magni. Pariatur ducimus fugit corrupti ipsa magni.,Aberto,Monteiro de Mendes,Ana Sophia Gonçalves,2024-08-19 21:12:47,2024-04-04 15:29:55
+116,142,Copeiro,1,Odio nihil voluptatem quo a dolorem.,Fechado,Barbosa da Mata,Brenda Martins,2024-05-01 03:19:33,2024-08-06 19:52:46
+117,29,Engenheiro de processos,4,Beatae doloribus iure rerum neque. Delectus eligendi nostrum. Dolor deserunt voluptatibus quis.,Fechado,Lopes das Pedras,Dr. Diego Duarte,2024-01-31 03:05:29,2024-04-02 13:36:20
+118,138,Cardiologista,3,Voluptatibus autem quis quibusdam culpa maiores dolorem.,Aberto,Silva do Sul,Eduardo Martins,2024-05-05 07:25:17,2024-08-30 19:55:31
+119,70,Tabelião,5,Reprehenderit minima expedita quos.,Em Andamento,Costa,Srta. Ana Sophia da Cruz,2024-02-28 22:39:01,2024-02-25 23:28:59
+120,93,Modelista,2,Velit ut accusamus eos. Dolores incidunt vitae molestias placeat nesciunt cum amet.,Aberto,Rodrigues,Gabrielly Nogueira,2024-02-21 10:40:04,2024-03-01 09:55:57
+121,8,Administrador de redes,1,Beatae nisi animi cum autem facilis aliquid odit.,Em Andamento,Pereira das Pedras,Clara Martins,2024-08-09 18:06:30,2024-05-20 17:07:14
+122,147,Personal stylist,8,Molestias unde blanditiis libero voluptates molestiae. Harum magni assumenda. Sit similique eum.,Em Andamento,Lima,Sophie da Rocha,2024-08-10 09:22:42,2024-07-31 21:03:34
+123,95,Camelô,3,Cumque sit inventore a quo. Neque ad quae a qui.,Fechado,da Rosa,Ryan da Mata,2024-01-25 09:20:32,2024-02-13 12:01:08
+124,63,Médico legista,3,Magni harum quam dolorum corrupti libero neque. Hic perspiciatis qui quaerat doloremque rerum.,Fechado,Caldeira do Amparo,Kaique Rodrigues,2024-02-26 05:24:34,2024-05-09 17:20:25
+125,38,Profissional de relações internacionais,4,Praesentium enim ipsa aperiam id explicabo.,Fechado,Gomes de Pereira,Sr. Erick Lima,2024-04-23 20:33:14,2024-03-02 14:45:29
+126,2,Comerciante,4,"Repellat earum saepe.
+Libero dolor expedita. Totam ipsam excepturi suscipit.",Fechado,da Costa de Minas,Davi Luiz Gonçalves,2024-07-22 10:47:54,2024-09-04 07:06:01
+127,133,Profissional de informática,1,Labore aspernatur sequi. Dolor quas reprehenderit voluptatibus rerum error neque perspiciatis.,Em Andamento,Vieira,Letícia Moura,2024-08-08 02:35:30,2024-02-16 08:19:13
+128,108,Tecnólogo em rochas ornamentais,2,Vel architecto dicta dolor placeat. A odio et quas. Reprehenderit sequi ducimus ea.,Fechado,Cardoso da Praia,Dr. Theo Ferreira,2024-05-31 05:47:28,2024-09-03 08:09:39
+129,56,Professor,3,Aut magni quibusdam. Expedita sunt illo earum dolorum. Suscipit ipsa voluptatum quo.,Fechado,Cardoso de Cardoso,Dr. Anthony Pinto,2024-07-16 00:57:16,2024-05-20 17:42:49
+130,134,Profissional de manutenção industrial,7,Error sequi provident ea impedit. Praesentium ratione quas animi voluptas. Officia earum quod.,Em Andamento,Rezende,Gustavo Pires,2024-04-14 02:44:44,2024-05-06 01:04:31
+131,23,Agrônomo,1,At nemo quas consequatur exercitationem dolores. Nostrum provident explicabo voluptatum.,Fechado,Silva,Sr. Anthony das Neves,2024-05-18 22:36:12,2024-06-26 19:31:36
+132,43,Conferente de recebimento,9,Nam voluptates fugiat vel nemo nostrum recusandae. Illum eveniet amet laborum fugiat.,Aberto,Nunes,Camila Silva,2024-05-19 13:28:59,2024-08-10 17:23:38
+133,29,Teólogo,1,Ducimus eligendi a. Rerum quidem tenetur neque laborum.,Em Andamento,Costa,Eloah Cunha,2024-03-27 16:44:01,2024-09-05 21:34:48
+134,131,Numerólogo,4,Dolorum blanditiis in fugit numquam. Reprehenderit officia dolorem accusantium ipsa mollitia.,Em Andamento,Ramos do Norte,Murilo Carvalho,2024-06-11 10:28:51,2024-05-20 23:22:17
+135,10,Kite-surfer,1,Maxime at quam soluta quidem perferendis iste. Quaerat ratione sint quisquam autem.,Aberto,Santos,Ana da Rosa,2024-01-22 21:35:47,2024-01-29 03:25:51
+136,66,Profissional de efeitos especiais,6,In nam deserunt cum unde quae accusamus. Non ab facilis consequatur modi quasi perferendis.,Aberto,Barros,Davi Rodrigues,2024-07-14 18:54:54,2024-03-12 02:21:49
+137,28,Gestor de tecnologia da informação,9,Ratione maxime similique quasi quibusdam nesciunt eius. Dicta ut consectetur vel.,Aberto,da Rosa das Flores,Marcos Vinicius Gomes,2024-02-24 21:33:11,2024-08-07 09:15:35
+138,20,Engenheiro de produção agroindustrial,1,Atque amet mollitia labore incidunt. Tempore velit non quas eos pariatur. Pariatur quos autem.,Fechado,Campos das Flores,Sr. Marcelo Ramos,2024-06-30 18:09:08,2024-05-11 21:27:34
+139,27,Delegado,3,Hic assumenda vero et. Possimus possimus nam dolores labore mollitia suscipit.,Aberto,Aragão,Felipe Costela,2024-03-15 10:38:53,2024-04-30 09:58:20
+140,92,Ferroviário,5,Facere distinctio non atque explicabo sint non quaerat. Dolorum similique aut at quisquam.,Aberto,da Mota do Amparo,Nicolas Viana,2024-09-15 08:30:57,2024-06-24 19:02:40
+141,11,Tecnólogo em Ciências das plantas medicinais,9,Similique tenetur atque aut. Nesciunt sint architecto possimus sunt est ullam.,Aberto,Araújo,Enzo Nogueira,2024-09-01 15:32:19,2024-03-31 00:59:27
+142,149,Percursionista,9,Voluptates itaque magnam officiis impedit ad.,Fechado,Vieira de Gomes,Isabelly das Neves,2024-01-04 02:59:01,2024-07-18 23:22:05
+143,119,Astrólogo,2,Cumque facilis consequatur amet aspernatur aspernatur perferendis.,Aberto,Barros,Rebeca da Cunha,2024-07-21 19:29:40,2024-03-22 15:27:18
+144,46,Atendente,6,Voluptas laboriosam ut veniam. Amet alias accusamus atque.,Aberto,Ramos de Duarte,Matheus Costela,2024-01-18 18:35:55,2024-05-18 06:05:54
+145,63,Dublê,1,Aspernatur repellendus accusantium atque ad at quaerat. Magni saepe natus.,Fechado,Fogaça do Oeste,Sophia da Cunha,2024-03-21 03:26:20,2024-03-26 22:04:57
+146,79,Procurador de justiça,7,Odio numquam in quas tempore explicabo accusamus. Cumque expedita eligendi asperiores harum.,Em Andamento,Almeida do Campo,Davi Azevedo,2024-05-18 07:59:06,2024-09-14 19:02:44
+147,103,Marinheiro,5,Provident minus deleniti reiciendis deserunt facere voluptates.,Em Andamento,Lopes dos Dourados,Dr. Erick Nunes,2024-04-02 17:58:11,2024-06-07 17:35:10
+148,141,Profissional de efeitos especiais,1,Nostrum magnam quisquam sit. Blanditiis recusandae quod ipsa commodi.,Aberto,da Mota,Sra. Mirella Novaes,2024-08-13 05:28:53,2024-06-26 01:59:43
+149,20,Profissional de linguística,7,Eius nobis atque iure omnis. Rem voluptates alias asperiores nam deleniti officia.,Fechado,Cunha,Isabelly Jesus,2024-06-29 07:39:58,2024-02-25 00:57:54
+150,4,Gandula,5,Quaerat nemo vero animi enim saepe atque. Exercitationem corporis minus nam.,Fechado,Souza Alegre,Noah da Paz,2024-08-04 06:57:08,2024-09-08 04:16:12

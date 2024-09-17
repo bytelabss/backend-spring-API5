@@ -6,26 +6,29 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "BYTELABSS_VAGAS")
+@Table(name = "DIM_VAGA")
 @AllArgsConstructor
 @Data
 @NoArgsConstructor
-public class BytelabssVagas {
-    @Id
+public class DimVaga {
+	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-    private Long id;
+	private Long id;
+
+	@Column(name = "id_vaga")
+	private Long idVaga;
 
 	@Column(name = "titulo_vaga")
-    private String titulovaga;
+	private String tituloVaga;
 
 	@Column(name = "numero_posicoes")
-    private int numeroposicoes;
+	private Integer numeroPosicoes;
 
 	@Column(name = "requisitos_vagas")
-	private String requisitosvagas;
+	private String requisitosVagas;
 
 	@Column(name = "estado")
-    private String estado;
+	private String estado;
 
 }
