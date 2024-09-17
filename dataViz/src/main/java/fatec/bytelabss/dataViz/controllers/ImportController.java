@@ -1,5 +1,6 @@
 package fatec.bytelabss.dataViz.controllers;
 
+
 import fatec.bytelabss.dataViz.services.DimParticipanteRHService;
 import fatec.bytelabss.dataViz.services.DimVagaService;
 import org.apache.spark.sql.Dataset;
@@ -14,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/import")
 @CrossOrigin(origins="*")
-
 public class ImportController {
 	@Autowired(required = true)
 	private DimVagaService vagaService;
@@ -28,4 +28,12 @@ public class ImportController {
 		Dataset<Row> datasetParticipanteRH = participanteRHService.process("ParticipantesRH.csv");
 	}
 
+	@Autowired(required = true)
+	private ImportService service;
+
+	@PostMapping
+	public void save() {
+		service.Salvar();
+	}
+	
 }
