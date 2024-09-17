@@ -23,6 +23,6 @@ public class DimParticipanteRH {
     private String cargo;
 
     @Column(name = "feedback_dados")
-    private int feedbackDados;
+    private Integer feedbackDados;
 
 }

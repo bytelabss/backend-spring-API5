@@ -1,5 +1,6 @@
 package fatec.bytelabss.dataViz.controllers;
 
+import fatec.bytelabss.dataViz.services.DimParticipanteRHService;
 import fatec.bytelabss.dataViz.services.DimVagaService;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
@@ -18,9 +19,13 @@ public class ImportController {
 	@Autowired(required = true)
 	private DimVagaService vagaService;
 
+	@Autowired
+	private DimParticipanteRHService participanteRHService;
+
 	@PostMapping
 	public void save() {
-		Dataset<Row> dataset = vagaService.process("Vagas.csv");
+		Dataset<Row> datasetVagas = vagaService.process("Vagas.csv");
+		Dataset<Row> datasetParticipanteRH = participanteRHService.process("ParticipantesRH.csv");
 	}
 
 }

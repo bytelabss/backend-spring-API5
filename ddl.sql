@@ -54,3 +54,11 @@ CREATE TABLE dim_vaga (
     estado VARCHAR(255),
     PRIMARY KEY (id)
 );
+
+CREATE TABLE dim_participante_rh (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    id_participante_rh BIGINT,
+    cargo VARCHAR(255),
+    feedback_dados INT,
+    PRIMARY KEY (id)
+);
