@@ -11,7 +11,7 @@ public class DataVizApplication {
 		System.out.println("Server is running!");
 
 		System.out.println("  / \\__");
-		System.out.println(" (    @\\___");
+		System.out.println(" (    @\\___"); 
 		System.out.println(" /         O");
 		System.out.println("/   (_____/");
 		System.out.println("/_____/");
