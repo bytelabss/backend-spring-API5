@@ -32,12 +32,30 @@ public class FatoContratacoesService {
 	
 	private Dataset<Row> RetornarLinhasTratadas(Dataset<Row> listaDados){
 						
-		var dados = listaDados
+		var dadosQuantidade = listaDados
 		.groupBy("idProcessoSeletivo","idTempo", "mes", "ano").count()
 		.withColumnRenamed("count", "quantidade");
 		
 		
-		return dados;
+		var dadosTotalDiferencaDatas = listaDados
+				.groupBy("idProcessoSeletivo","idTempo", "mes", "ano")
+				.agg(functions.sum("date_diff").alias("total_amount"));
+		
+				
+				Dataset<Row> dfCombinado = dadosQuantidade
+					    .join(dadosTotalDiferencaDatas, 
+					    		dadosQuantidade.col("idProcessoSeletivo").equalTo(dadosTotalDiferencaDatas.col("idProcessoSeletivo"))
+					          .and(dadosQuantidade.col("idTempo").equalTo(dadosTotalDiferencaDatas.col("idTempo")))
+					          // Se quiser incluir trimestre e semestre na comparação:
+					          //.and(df1.col("trimestre").equalTo(df2ComData.col("trimestre")))
+					          //.and(df1.col("semestre").equalTo(df2ComData.col("semestre")))
+					    )
+					    .select(dadosTotalDiferencaDatas.col("*"), dadosQuantidade.col("*"),  functions.try_divide(dadosTotalDiferencaDatas.col("total_amount"), dadosQuantidade.col("quantidade")))
+						.withColumnRenamed("try_divide(total_amount, quantidade)", "tempoMedio");
+				
+				dfCombinado.show();
+		
+		return dfCombinado;
 	}
 	
 	private List<FatoContratacoesDataContract> ConverterParaEntidade(Dataset<Row> lista){
@@ -46,19 +64,16 @@ public class FatoContratacoesService {
 				.collectAsList();
 	}
 	
-	public Dataset<Row> SalvarContratacoes(Dataset<Row> lista) {
+	public void SalvarContratacoes(Dataset<Row> dadosPlanilha) {
 		
-		var dadosTratados = RetornarLinhasTratadas(lista);
-		
-		dadosTratados.show();
+		var dadosTratados = RetornarLinhasTratadas(dadosPlanilha);
 		
 		var dataContracts = ConverterParaEntidade(dadosTratados);
 		
 		var entidades = ConverterParaEntidade(dataContracts);
 		
 		repository.saveAll(entidades);
-		
-		return dadosTratados;
+	
 	}
 	
 	private List<FatoContratacoes> ConverterParaEntidade(List<FatoContratacoesDataContract> dataContracts){
@@ -75,6 +90,10 @@ public class FatoContratacoesService {
 			tempo.setIdTempo(fatoContratacoesDataContract.getIdTempo());
 			
 			entidade.setIdTempo(tempo);
+			
+			entidade.setQuantidade(fatoContratacoesDataContract.getQuantidade());
+			
+			entidade.setTempoMedio(fatoContratacoesDataContract.getTempoMedio().longValue());
 			
 			listaEntidades.add(entidade);
 		}

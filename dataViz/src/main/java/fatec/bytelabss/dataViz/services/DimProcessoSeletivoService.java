@@ -27,14 +27,11 @@ public class DimProcessoSeletivoService {
 				.collectAsList();
 	}
 	
-	public Dataset<Row> SalvarProcessosSeletivos(Dataset<Row> lista) {
-		
-		
+	public void SalvarProcessosSeletivos(Dataset<Row> lista) {
+			
 		var entidades = ConverterParaEntidade(lista);
 		
 		repository.saveAll(entidades);
-		
-		return lista;
 	}
 	
 }

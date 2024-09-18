@@ -34,7 +34,10 @@ public class FatoContratacoes implements Serializable{
 
 
 	@Column(name = "quantidade")
-    private Integer quantidade;
+    private Long quantidade;
+	
+	@Column(name = "tempo_medio")
+    private Long tempoMedio;
 	
 	
 	@Id

@@ -1,11 +1,11 @@
-idProcessoSeletivo;nome;status;descricao;criadoPor;datacontratacao
-1;teste1;concluido;dasda;antonio;01/01/2024
-1;teste1;concluido;dasda;antonio;01/02/2024
-1;teste1;concluido;dasda;antonio;01/02/2024
-2;teste2;em andamento;dasda;fernadno;01/07/2024
-2;teste2;em andamento;dasda;fernadno;01/03/2024
-2;teste2;em andamento;dasda;fernadno;01/05/2024
-3;teste3;concluido;dasda;antonio;01/09/2024
-3;teste3;concluido;dasda;antonio;01/03/2024
-3;teste3;concluido;dasda;antonio;01/01/2024
-3;teste3;concluido;dasda;antonio;01/03/2024
+idProcessoSeletivo;nome;status;descricao;criadoPor;datacontratacao;datainiciovaga;vaga
+1;teste1;concluido;dasda;antonio;01/01/2024;01/12/2023;PO
+1;teste1;concluido;dasda;antonio;01/02/2024;01/12/2023;PO
+1;teste1;concluido;dasda;antonio;01/02/2024;01/01/2023;DEV
+2;teste2;em andamento;dasda;fernadno;01/07/2024;01/02/2024;PO
+2;teste2;em andamento;dasda;fernadno;01/03/2024;01/02/2024;PO
+2;teste2;em andamento;dasda;fernadno;01/05/2024;01/04/2024;DEV
+3;teste3;concluido;dasda;antonio;01/09/2024;01/02/2024;DEV
+3;teste3;concluido;dasda;antonio;01/03/2024;01/02/2024;DEV
+3;teste3;concluido;dasda;antonio;01/01/2024;01/12/2023;PO
+3;teste3;concluido;dasda;antonio;01/03/2024;01/12/2023;PO
