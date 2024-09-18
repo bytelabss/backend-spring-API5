@@ -26,28 +26,6 @@ public class DimTempoService {
 	
 	private SparkSession spark = SparkSessionSingleton.getInstance();
 
-	private Dataset<Row> RetornarLinhasTratadas(Dataset<Row> listaDados){
-			
-		
-		var dados = listaDados
-		.withColumn("idTempo", functions.row_number().over(Window.orderBy("idProcessoSeletivo")))
-        .withColumn("mes", functions.month( functions.to_date(functions.col("datacontratacao"), "dd/MM/yyyy")))
-		.withColumn("ano", functions.year( functions.to_date(functions.col("datacontratacao"), "dd/MM/yyyy")))
-        .withColumn("semestre", functions.when(
-        		functions.month(functions.to_date(functions.col("datacontratacao"), "dd/MM/yyyy")).between(1, 6), 1) 
-        		.when(functions.month(functions.to_date(functions.col("datacontratacao"), "dd/MM/yyyy")).between(7, 12), 2))
-        .withColumn("trimestre", functions.when(
-        		functions.month(functions.to_date(functions.col("datacontratacao"), "dd/MM/yyyy")).between(1, 4), 1)
-        		.when(functions.month(functions.to_date(functions.col("datacontratacao"), "dd/MM/yyyy")).between(5, 8), 2)
-        		.when(functions.month(functions.to_date(functions.col("datacontratacao"), "dd/MM/yyyy")).between(9, 12), 3))
-		.withColumn("idProcessoSeletivo", functions.col("idProcessoSeletivo").cast("long"))
-        .withColumn("nome", functions.col("nome"))
-		.withColumn("status", functions.col("status"))
-        .withColumn("descricao", functions.col("descricao"))
-		.withColumn("criadoPor",functions.col("criadoPor"));
-		
-		return dados;
-	}
 	
 	private List<DimTempo> ConverterParaEntidade(Dataset<Row> lista){
 		return lista
@@ -55,14 +33,11 @@ public class DimTempoService {
 				.collectAsList();
 	}
 	
-	public Dataset<Row> SalvarDatas(Dataset<Row> lista) {
-		
+	public Dataset<Row> SalvarDatas(Dataset<Row> dadosPlanilha) {	
 
 		List<DimTempo> entidadesSalvas = new ArrayList<DimTempo>();
 		
-		var dadosTratados = RetornarLinhasTratadas(lista);
-		
-		var entidades = ConverterParaEntidade(dadosTratados);
+		var entidades = ConverterParaEntidade(dadosPlanilha);
 		
 		
 		for (DimTempo entidade : entidades) {
@@ -74,31 +49,19 @@ public class DimTempoService {
 			}
 			if(entidadeSalva != null) {
 				entidadesSalvas.add(entidadeSalva);
-			}
-			
-			
-		}
+			}		
+		}	
+		Dataset<Row> datasetComIdCriadoNaDimTempo = spark.createDataset(entidadesSalvas, Encoders.bean(DimTempo.class)).toDF();
 		
-		Dataset<Row> datasetComIdNovo = spark.createDataset(entidadesSalvas, Encoders.bean(DimTempo.class)).toDF();
-		
-		dadosTratados = dadosTratados.drop(functions.col("idTempo"));
+		dadosPlanilha = dadosPlanilha.drop(functions.col("idTempo"));
 
-		// Passo 2: Realizar o join entre df1 e df2 com base nas colunas de ano e mês
-		Dataset<Row> dfCombinado = datasetComIdNovo
-		    .join(dadosTratados, 
-		    		datasetComIdNovo.col("ano").equalTo(dadosTratados.col("ano"))
-		          .and(datasetComIdNovo.col("mes").equalTo(dadosTratados.col("mes")))
-		          // Se quiser incluir trimestre e semestre na comparação:
-		          //.and(df1.col("trimestre").equalTo(df2ComData.col("trimestre")))
-		          //.and(df1.col("semestre").equalTo(df2ComData.col("semestre")))
+		// Realizar o join entre df1 e df2 com base nas colunas de ano e mês
+		Dataset<Row> dfCombinado = datasetComIdCriadoNaDimTempo
+		    .join(dadosPlanilha, 
+		    		datasetComIdCriadoNaDimTempo.col("ano").equalTo(dadosPlanilha.col("ano"))
+		          .and(datasetComIdCriadoNaDimTempo.col("mes").equalTo(dadosPlanilha.col("mes")))
 		    )
-		    .select(dadosTratados.col("*"), datasetComIdNovo.col("IdTempo"));
-		
-		
-		System.out.print("-------------------------- Aqui");
-		
-		datasetComIdNovo.show();
-		dfCombinado.show();
+		    .select(dadosPlanilha.col("*"), datasetComIdCriadoNaDimTempo.col("IdTempo"));
 		
 		return dfCombinado;
 	}

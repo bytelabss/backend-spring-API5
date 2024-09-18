@@ -26,4 +26,6 @@ public class FatoContratacoesDataContract {
     private Long idProcessoSeletivo;
 
     private Long idTempo;
+    
+    private Double tempoMedio;
 }
