@@ -11,8 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fatec.bytelabss.dataViz.DataContracts.FatoContratacoesDataContract;
+import fatec.bytelabss.dataViz.models.DimParticipanteRH;
 import fatec.bytelabss.dataViz.models.DimProcessoSeletivo;
 import fatec.bytelabss.dataViz.models.DimTempo;
+import fatec.bytelabss.dataViz.models.DimVaga;
 import fatec.bytelabss.dataViz.models.FatoContratacoes;
 import fatec.bytelabss.dataViz.repositorys.DimProcessoSeletivoRepository;
 import fatec.bytelabss.dataViz.repositorys.DimTempoRepository;
@@ -33,12 +35,12 @@ public class FatoContratacoesService {
 	private Dataset<Row> RetornarLinhasTratadas(Dataset<Row> listaDados){
 						
 		var dadosQuantidade = listaDados
-		.groupBy("idProcessoSeletivo","idTempo", "mes", "ano").count()
+		.groupBy("idProcessoSeletivo","idTempo","idVaga","idParticipanteRH").count()
 		.withColumnRenamed("count", "quantidade");
 		
 		
 		var dadosTotalDiferencaDatas = listaDados
-				.groupBy("idProcessoSeletivo","idTempo", "mes", "ano")
+				.groupBy("idProcessoSeletivo","idTempo","idVaga","idParticipanteRH")
 				.agg(functions.sum("date_diff").alias("total_amount"));
 		
 				
@@ -46,6 +48,8 @@ public class FatoContratacoesService {
 					    .join(dadosTotalDiferencaDatas, 
 					    		dadosQuantidade.col("idProcessoSeletivo").equalTo(dadosTotalDiferencaDatas.col("idProcessoSeletivo"))
 					          .and(dadosQuantidade.col("idTempo").equalTo(dadosTotalDiferencaDatas.col("idTempo")))
+					          .and(dadosQuantidade.col("idVaga").equalTo(dadosTotalDiferencaDatas.col("idVaga")))
+					          .and(dadosQuantidade.col("idParticipanteRH").equalTo(dadosTotalDiferencaDatas.col("idParticipanteRH")))
 					          // Se quiser incluir trimestre e semestre na comparação:
 					          //.and(df1.col("trimestre").equalTo(df2ComData.col("trimestre")))
 					          //.and(df1.col("semestre").equalTo(df2ComData.col("semestre")))
@@ -94,6 +98,18 @@ public class FatoContratacoesService {
 			entidade.setQuantidade(fatoContratacoesDataContract.getQuantidade());
 			
 			entidade.setTempoMedio(fatoContratacoesDataContract.getTempoMedio().longValue());
+			
+			DimVaga vaga = new DimVaga();
+			vaga.setIdVaga(fatoContratacoesDataContract.getIdVaga());
+			
+			entidade.setIdVaga(vaga);
+			
+			
+			DimParticipanteRH participanteRh = new DimParticipanteRH();
+			participanteRh.setIdParticipanteRH(fatoContratacoesDataContract.getIdParticipanteRh());
+			
+			entidade.setIdParticipanteRH(participanteRh);
+			
 			
 			listaEntidades.add(entidade);
 		}

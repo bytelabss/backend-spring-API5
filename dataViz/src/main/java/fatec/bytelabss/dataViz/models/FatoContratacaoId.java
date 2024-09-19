@@ -30,4 +30,8 @@ public class FatoContratacaoId implements Serializable{
 
 
     private Long idTempo;
+    
+    private Long idVaga;
+    
+    private Long idParticipanteRH;
 }

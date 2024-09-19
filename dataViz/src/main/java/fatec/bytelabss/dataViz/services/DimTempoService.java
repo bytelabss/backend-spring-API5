@@ -37,6 +37,8 @@ public class DimTempoService {
 
 		List<DimTempo> entidadesSalvas = new ArrayList<DimTempo>();
 		
+		dadosPlanilha.show();
+		
 		var entidades = ConverterParaEntidade(dadosPlanilha);
 		
 		

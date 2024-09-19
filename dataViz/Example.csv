@@ -1,11 +1,13 @@
-idProcessoSeletivo;nome;status;descricao;criadoPor;datacontratacao;datainiciovaga;vaga
-1;teste1;concluido;dasda;antonio;01/01/2024;01/12/2023;PO
-1;teste1;concluido;dasda;antonio;01/02/2024;01/12/2023;PO
-1;teste1;concluido;dasda;antonio;01/02/2024;01/01/2023;DEV
-2;teste2;em andamento;dasda;fernadno;01/07/2024;01/02/2024;PO
-2;teste2;em andamento;dasda;fernadno;01/03/2024;01/02/2024;PO
-2;teste2;em andamento;dasda;fernadno;01/05/2024;01/04/2024;DEV
-3;teste3;concluido;dasda;antonio;01/09/2024;01/02/2024;DEV
-3;teste3;concluido;dasda;antonio;01/03/2024;01/02/2024;DEV
-3;teste3;concluido;dasda;antonio;01/01/2024;01/12/2023;PO
-3;teste3;concluido;dasda;antonio;01/03/2024;01/12/2023;PO
+idProcessoSeletivo;nome;status;descricao;criadoPor;datacontratacao;datainiciovaga;idParticipanteRh;cargo;idVaga;titulovaga;numeroposicoes;requisitosvagas;estado
+1;teste1;concluido;dasda;antonio;20/01/2024;01/12/2023;1;gerente;1;PO;10;adasda;adasda
+1;teste1;concluido;dasda;antonio;01/01/2024;01/12/2023;1;gerente;1;PO;10;adasda;adasda
+1;teste1;concluido;dasda;antonio;01/01/2024;01/12/2023;1;gerente;1;PO;10;adasda;adasda
+1;teste1;concluido;dasda;antonio;01/02/2024;01/12/2023;1;gerente;1;PO;10;adasda;adasda
+1;teste1;concluido;dasda;antonio;01/02/2024;01/01/2023;1;gerente;2;DEV;20;adasda;adasda
+2;teste2;em andamento;dasda;fernadno;01/07/2024;01/02/2024;2;supervisor;3;PO;15;adasda;adasda
+2;teste2;em andamento;dasda;fernadno;01/03/2024;01/02/2024;2;supervisor;3;PO;15;adasda;adasda
+2;teste2;em andamento;dasda;fernadno;01/05/2024;01/04/2024;2;supervisor;4;DEV;12;adasda;adasda
+3;teste3;concluido;dasda;antonio;01/09/2024;01/02/2024;2;supervisor;5;DEV;12;adasda;adasda
+3;teste3;concluido;dasda;antonio;01/03/2024;01/02/2024;3;gerente;5;DEV;12;adasda;adasda
+3;teste3;concluido;dasda;antonio;01/01/2024;01/12/2023;3;gerente;6;PO;11;adasda;adasda
+3;teste3;concluido;dasda;antonio;01/03/2024;01/12/2023;3;gerente;6;PO;11;adasda;adasda

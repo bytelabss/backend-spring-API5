@@ -49,4 +49,14 @@ public class FatoContratacoes implements Serializable{
 	@ManyToOne
 	@JoinColumn(name = "tempo")
     private DimTempo idTempo;
+	
+	@Id
+	@ManyToOne
+	@JoinColumn(name = "vaga")
+    private DimVaga idVaga;
+	
+	@Id
+	@ManyToOne
+	@JoinColumn(name = "participante_rh")
+    private DimParticipanteRH idParticipanteRH;
 }

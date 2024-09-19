@@ -27,6 +27,13 @@ public class ImportService {
 	private DimTempoService serviceTempo;
 	
 	@Autowired(required = true)
+	private DimParticipanteRHService serviceParticipantesRH;
+
+	
+	@Autowired(required = true)
+	private DimVagaService serviceVagas;
+	
+	@Autowired(required = true)
 	private FatoContratacoesService serviceContratacoes;
 	
 	private SparkSession spark = SparkSessionSingleton.getInstance();
@@ -59,12 +66,24 @@ public class ImportService {
         .withColumn("descricao", functions.col("descricao"))
 		.withColumn("criadoPor",functions.col("criadoPor"))
 		.withColumn("tempoMedio", functions.col("idProcessoSeletivo").cast("long"))
-		.withColumn("date_diff", functions.datediff(functions.to_date(functions.col("datacontratacao"), "dd/MM/yyyy"), functions.to_date(functions.col("datainiciovaga"), "dd/MM/yyyy")));
+		.withColumn("date_diff", functions.datediff(functions.to_date(functions.col("datacontratacao"), "dd/MM/yyyy"), functions.to_date(functions.col("datainiciovaga"), "dd/MM/yyyy")))
+		.withColumn("idParticipanteRH", functions.col("idParticipanteRH").cast("long"))
+		.withColumn("cargo", functions.col("cargo"))
+		.withColumn("idVaga", functions.col("idVaga").cast("long"))
+		.withColumn("titulovaga", functions.col("titulovaga"))
+		.withColumn("numeroposicoes", functions.col("numeroposicoes").cast("integer"))
+		.withColumn("requisitosvagas", functions.col("requisitosvagas"))
+		.withColumn("estado", functions.col("estado"));
+		
 		
 		
 		var temposDs = serviceTempo.SalvarDatas(dadosPlanilhaTratados);
 		
 		service.SalvarProcessosSeletivos(temposDs);		
+		
+		serviceParticipantesRH.SalvarParticipantesRh(temposDs);		
+		
+		serviceVagas.SalvarVagas(temposDs);		
 		
 		serviceContratacoes.SalvarContratacoes(temposDs);
 		
