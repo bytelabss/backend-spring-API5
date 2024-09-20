@@ -11,11 +11,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class DimVaga {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
-	private Long id;
 
+	@Id
 	@Column(name = "id_vaga")
 	private Long idVaga;
 
