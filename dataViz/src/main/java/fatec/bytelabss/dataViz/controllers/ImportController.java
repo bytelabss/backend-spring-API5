@@ -18,11 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/import")
 @CrossOrigin(origins="*")
 public class ImportController {
-	@Autowired(required = true)
-	private DimVagaService vagaService;
-
-	@Autowired
-	private DimParticipanteRHService participanteRHService;
 
 	@Autowired(required = true)
 	private ImportService service;

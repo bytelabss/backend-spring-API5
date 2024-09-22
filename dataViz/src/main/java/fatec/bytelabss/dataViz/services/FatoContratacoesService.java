@@ -11,13 +11,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fatec.bytelabss.dataViz.DataContracts.FatoContratacoesDataContract;
+import fatec.bytelabss.dataViz.dtos.ProcessoSeletivoTempoMedioDto;
 import fatec.bytelabss.dataViz.models.DimParticipanteRH;
 import fatec.bytelabss.dataViz.models.DimProcessoSeletivo;
 import fatec.bytelabss.dataViz.models.DimTempo;
 import fatec.bytelabss.dataViz.models.DimVaga;
 import fatec.bytelabss.dataViz.models.FatoContratacoes;
-import fatec.bytelabss.dataViz.repositorys.DimProcessoSeletivoRepository;
-import fatec.bytelabss.dataViz.repositorys.DimTempoRepository;
 import fatec.bytelabss.dataViz.repositorys.FatoContratacoesRepository;
 
 @Service
@@ -25,12 +24,11 @@ public class FatoContratacoesService {
 
 	@Autowired(required = true)
 	private FatoContratacoesRepository repository;
-
-	@Autowired(required = true)
-	private DimProcessoSeletivoRepository processoSeletivoRepository;
 	
-	@Autowired(required = true)
-	private DimTempoRepository tempoRepository;
+	public List<ProcessoSeletivoTempoMedioDto> RetornarTempoMedioProcessoSeletivo() {
+		
+		return repository.RetornarTempoMedioProcessoSeletivo();
+	}
 	
 	private Dataset<Row> RetornarLinhasTratadas(Dataset<Row> listaDados){
 						
