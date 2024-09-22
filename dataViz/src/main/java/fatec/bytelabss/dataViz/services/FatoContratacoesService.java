@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fatec.bytelabss.dataViz.DataContracts.FatoContratacoesDataContract;
+import fatec.bytelabss.dataViz.dtos.ProcessoSeletivoQuantidadeDto;
 import fatec.bytelabss.dataViz.dtos.ProcessoSeletivoTempoMedioDto;
 import fatec.bytelabss.dataViz.models.DimParticipanteRH;
 import fatec.bytelabss.dataViz.models.DimProcessoSeletivo;
@@ -28,6 +29,10 @@ public class FatoContratacoesService {
 	public List<ProcessoSeletivoTempoMedioDto> RetornarTempoMedioProcessoSeletivo() {
 		
 		return repository.RetornarTempoMedioProcessoSeletivo();
+	}
+
+	public List<ProcessoSeletivoQuantidadeDto> RetornarQuantidadeProcessoSeletivo() {
+		return repository.RetornarQuantidadeProcessoSeletivo();
 	}
 	
 	private Dataset<Row> RetornarLinhasTratadas(Dataset<Row> listaDados){
