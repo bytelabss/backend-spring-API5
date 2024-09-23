@@ -19,7 +19,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "FATO_CONTRATACOES")
+@Table(name = "fato_contratacoes")
 @AllArgsConstructor
 @Data
 @NoArgsConstructor
@@ -38,7 +38,9 @@ public class FatoContratacoes implements Serializable{
 	
 	@Column(name = "tempo_medio")
     private Long tempoMedio;
-	
+
+	@Column(name = "quantidade_contratacoes")
+    private Long quantidadeContratacoes;
 	
 	@Id
 	@ManyToOne

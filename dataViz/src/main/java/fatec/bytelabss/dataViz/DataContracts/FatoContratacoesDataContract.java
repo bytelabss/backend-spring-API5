@@ -31,6 +31,5 @@ public class FatoContratacoesDataContract {
     
     private Long idParticipanteRh;
     
-    
     private Double tempoMedio;
 }
