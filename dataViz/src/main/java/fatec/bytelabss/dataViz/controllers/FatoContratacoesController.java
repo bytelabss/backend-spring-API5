@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import fatec.bytelabss.dataViz.dtos.ProcessoSeletivoTempoMedioDto;
+import fatec.bytelabss.dataViz.dtos.QuantidadeContratacoesRhDto;
 import fatec.bytelabss.dataViz.dtos.ProcessoSeletivoQuantidadeDto;
 import fatec.bytelabss.dataViz.services.FatoContratacoesService;
 import fatec.bytelabss.dataViz.services.ImportService;
@@ -36,5 +37,10 @@ public class FatoContratacoesController {
 	@GetMapping("/quantidade")
 	public ResponseEntity<List<ProcessoSeletivoQuantidadeDto>> RetornarQuantidadeProcessoSeletivo() {
 		return ResponseEntity.ok().body(service.RetornarQuantidadeProcessoSeletivo());
+	}
+
+	@GetMapping("/quantidadeContratacoesRH")
+	public ResponseEntity<List<QuantidadeContratacoesRhDto>> RetornarQuantidadeContratacoesRH() {
+		return ResponseEntity.ok().body(service.RetornarQuantidadeContratacoesRH());
 	}
 }
