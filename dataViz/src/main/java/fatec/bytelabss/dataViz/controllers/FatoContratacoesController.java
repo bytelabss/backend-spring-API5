@@ -42,8 +42,12 @@ public class FatoContratacoesController {
 	}
 
 	@GetMapping("/quantidadeContratacoesRH")
-	public ResponseEntity<List<QuantidadeContratacoesRhDto>> RetornarQuantidadeContratacoesRH() {
-		return ResponseEntity.ok().body(service.RetornarQuantidadeContratacoesRH());
+	public ResponseEntity<List<QuantidadeContratacoesRhDto>> RetornarQuantidadeContratacoesRH(
+	@RequestParam(value = "mesInicial", required = false) Integer mesInicial,
+	@RequestParam(value = "anoInicial", required = false) Integer anoInicial,
+	@RequestParam(value = "mesFinal", required = false) Integer mesFinal,
+	@RequestParam(value = "anoFinal", required = false) Integer anoFinal) {
+		return ResponseEntity.ok().body(service.RetornarQuantidadeContratacoesRH(mesInicial, anoInicial, mesFinal, anoFinal));
 	}
 
 	@GetMapping("/tempo-medio-por-vaga")

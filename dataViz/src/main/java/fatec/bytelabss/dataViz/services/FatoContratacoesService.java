@@ -42,8 +42,8 @@ public class FatoContratacoesService {
 		return repository.RetornarQuantidadeProcessoSeletivo(inicio,fim);
 	}
 
-	public List<QuantidadeContratacoesRhDto> RetornarQuantidadeContratacoesRH() {
-		return repository.RetornarQuantidadeContratacoesRH();
+	public List<QuantidadeContratacoesRhDto> RetornarQuantidadeContratacoesRH(Integer mesInicial, Integer anoInicial, Integer mesFinal, Integer anoFinal) {
+		return repository.RetornarQuantidadeContratacoesRH(mesInicial, anoInicial, mesFinal, anoFinal);
 	}
 
 	private Dataset<Row> RetornarLinhasTratadas(Dataset<Row> listaDados){
