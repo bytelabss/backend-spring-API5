@@ -3,9 +3,11 @@ package fatec.bytelabss.dataViz.controllers;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,5 +44,20 @@ public class FatoContratacoesController {
 	@GetMapping("/quantidadeContratacoesRH")
 	public ResponseEntity<List<QuantidadeContratacoesRhDto>> RetornarQuantidadeContratacoesRH() {
 		return ResponseEntity.ok().body(service.RetornarQuantidadeContratacoesRH());
+	}
+
+	@GetMapping("/tempo-medio-por-vaga")
+	public ResponseEntity<?> getTempoMedioPorVaga(
+			@RequestParam(value = "mesInicial", required = false) Integer mesInicial,
+			@RequestParam(value = "anoInicial", required = false) Integer anoInicial,
+			@RequestParam(value = "mesFinal", required = false) Integer mesFinal,
+			@RequestParam(value = "anoFinal", required = false) Integer anoFinal) {
+
+		try {
+			Map<String, Double> resultado = service.obterTempoMedioPorVaga(mesInicial, anoInicial, mesFinal, anoFinal);
+			return new ResponseEntity<>(resultado, HttpStatus.OK);
+		} catch (IllegalArgumentException e) {
+			return new ResponseEntity<>(Map.of("error", e.getMessage()), HttpStatus.BAD_REQUEST);
+		}
 	}
 }

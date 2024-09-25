@@ -1,7 +1,6 @@
 package fatec.bytelabss.dataViz.repositorys;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,7 +12,6 @@ import org.springframework.stereotype.Repository;
 import fatec.bytelabss.dataViz.dtos.ProcessoSeletivoQuantidadeDto;
 import fatec.bytelabss.dataViz.dtos.ProcessoSeletivoTempoMedioDto;
 import fatec.bytelabss.dataViz.dtos.QuantidadeContratacoesRhDto;
-import fatec.bytelabss.dataViz.models.DimTempo;
 import fatec.bytelabss.dataViz.models.FatoContratacoes;
 
 @Repository
@@ -32,5 +30,18 @@ public interface FatoContratacoesRepository extends JpaRepository<FatoContrataco
     "JOIN dim_participante_rh r ON fc.participante_rh = r.id_participante_rh " +
     "GROUP BY r.id_participante_rh, r.cargo")
     List<QuantidadeContratacoesRhDto> RetornarQuantidadeContratacoesRH();
-	
+
+    @Query(nativeQuery = true, value = "SELECT v.titulo_vaga, AVG(f.tempo_medio) " +
+       "FROM fato_contratacoes f " +
+       "JOIN dim_vaga v ON f.vaga = v.id_vaga " +
+       "JOIN dim_tempo t ON f.tempo = t.id_tempo " +
+       "WHERE (t.ano > :anoInicial OR (t.ano = :anoInicial AND t.mes >= :mesInicial)) " +
+       "AND (t.ano < :anoFinal OR (t.ano = :anoFinal AND t.mes <= :mesFinal)) " +
+       "GROUP BY v.titulo_vaga")
+    List<Object[]> TempoMedioContratacoesPorVaga(
+        @Param("mesInicial") int mesInicial,
+        @Param("anoInicial") int anoInicial,
+        @Param("mesFinal") int mesFinal,
+        @Param("anoFinal") int anoFinal);
+
 }
