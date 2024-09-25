@@ -28,8 +28,15 @@ public interface FatoContratacoesRepository extends JpaRepository<FatoContrataco
     @Query(nativeQuery = true, value = "SELECT r.id_participante_rh, r.cargo, SUM(fc.quantidade) AS totalContratacoes " +
     "FROM fato_contratacoes fc " +
     "JOIN dim_participante_rh r ON fc.participante_rh = r.id_participante_rh " +
+    "JOIN dim_tempo t ON fc.tempo = t.id_tempo " +
+    "WHERE (t.ano > :anoInicial OR (t.ano = :anoInicial AND t.mes >= :mesInicial)) " +
+    "AND (t.ano < :anoFinal OR (t.ano = :anoFinal AND t.mes <= :mesFinal)) " +
     "GROUP BY r.id_participante_rh, r.cargo")
-    List<QuantidadeContratacoesRhDto> RetornarQuantidadeContratacoesRH();
+    List<QuantidadeContratacoesRhDto> RetornarQuantidadeContratacoesRH(
+    @Param("mesInicial") int mesInicial,
+    @Param("anoInicial") int anoInicial,
+    @Param("mesFinal") int mesFinal,
+    @Param("anoFinal") int anoFinal);
 
     @Query(nativeQuery = true, value = "SELECT v.titulo_vaga, AVG(f.tempo_medio) " +
        "FROM fato_contratacoes f " +
