@@ -1,6 +1,7 @@
 package fatec.bytelabss.dataViz.models;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import fatec.bytelabss.dataViz.sparkExample.models.BytelabssEmployee;
@@ -38,6 +39,12 @@ public class DimProcessoSeletivo {
 
 	@Column(name = "criado_por")
     private String criadoPor;
+	
+	@Column(name = "inicio_processo_seletivo")
+    private LocalDateTime inicioProcessoSeletivo;
+	
+	@Column(name = "fim_processo_seletivo")
+    private LocalDateTime fimProcessoSeletivo;
 	
 	
 }

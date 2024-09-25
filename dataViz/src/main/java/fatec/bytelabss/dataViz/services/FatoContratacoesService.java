@@ -1,7 +1,10 @@
 package fatec.bytelabss.dataViz.services;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Encoders;
@@ -27,9 +30,9 @@ public class FatoContratacoesService {
 	@Autowired(required = true)
 	private FatoContratacoesRepository repository;
 	
-	public List<ProcessoSeletivoTempoMedioDto> RetornarTempoMedioProcessoSeletivo() {
+	public List<ProcessoSeletivoTempoMedioDto> RetornarTempoMedioProcessoSeletivo(LocalDateTime inicio, Optional<LocalDateTime> fim) {
 		
-		return repository.RetornarTempoMedioProcessoSeletivo();
+		return repository.RetornarTempoMedioProcessoSeletivo(inicio,fim);
 	}
 
 	public List<ProcessoSeletivoQuantidadeDto> RetornarQuantidadeProcessoSeletivo() {
