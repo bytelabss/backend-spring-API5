@@ -38,8 +38,8 @@ public class FatoContratacoesService {
 		return repository.RetornarTempoMedioProcessoSeletivo(inicio,fim);
 	}
 
-	public List<ProcessoSeletivoQuantidadeDto> RetornarQuantidadeProcessoSeletivo() {
-		return repository.RetornarQuantidadeProcessoSeletivo();
+	public List<ProcessoSeletivoQuantidadeDto> RetornarQuantidadeProcessoSeletivo(LocalDateTime inicio, Optional<LocalDateTime> fim) {
+		return repository.RetornarQuantidadeProcessoSeletivo(inicio,fim);
 	}
 
 	public List<QuantidadeContratacoesRhDto> RetornarQuantidadeContratacoesRH() {

@@ -37,8 +37,8 @@ public class FatoContratacoesController {
 	}
 
 	@GetMapping("/quantidade")
-	public ResponseEntity<List<ProcessoSeletivoQuantidadeDto>> RetornarQuantidadeProcessoSeletivo() {
-		return ResponseEntity.ok().body(service.RetornarQuantidadeProcessoSeletivo());
+	public ResponseEntity<List<ProcessoSeletivoQuantidadeDto>> RetornarQuantidadeProcessoSeletivo(@RequestParam LocalDateTime inicio, @RequestParam Optional<LocalDateTime> fim) {
+		return ResponseEntity.ok().body(service.RetornarQuantidadeProcessoSeletivo(inicio, fim));
 	}
 
 	@GetMapping("/quantidadeContratacoesRH")
