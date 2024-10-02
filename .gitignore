@@ -1,8 +1,5 @@
-dataViz/HELP.md
-dataViz/target/
-dataViz/!.mvn/wrapper/maven-wrapper.jar
-dataViz/!**/src/main/**/target/
-dataViz/!**/src/test/**/target/
+/target/
+!.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
 .apt_generated

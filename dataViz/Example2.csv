@@ -1,8 +1,0 @@
-﻿employeeID;firstName;lastName;salary;department;hiringDate;salaryWithBonus;departmentUpperCase;experience;id;nome;status;descricao;criadoPor;datacontratacao
-1;antonio;zago;1500;backend;07/08/2024;1231;BACKEND;21,1;1;teste1;concluido;dasda;antonio;01/12/2019
-2;alec;rondel;1500;frontend;07/08/2024;1800;FRONTEND;21,1;1;teste1;concluido;dasda;antonio;01/12/2019
-3;cauana;dias;1500;backend;07/08/2024;1800;BACKEND;21,1;2;teste2;em andamento;dasda;fernadno;01/12/2019
-4;jhonny;dutra;1900;techlead;07/08/2024;2500;TECHLEAD;21,1;2;teste2;em andamento;dasda;fernadno;01/12/2019
-5;larissa;reis;2100;sm;07/08/2024;2700;SM;3213,1;3;teste3;concluido;dasda;antonio;01/12/2019
-3;nicolas;cursino;1500;backend;07/08/2024;1800;BACKEND;21,1;3;teste3;concluido;dasda;antonio;01/12/2019
-5;willian;caboski;2100;po;07/08/2024;2700;PO;3213,1;3;teste3;concluido;dasda;antonio;01/12/2019
