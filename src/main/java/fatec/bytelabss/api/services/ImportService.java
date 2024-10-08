@@ -33,6 +33,16 @@ public class ImportService {
 
 	@Autowired(required = true)
 	private FatoContratacoesService serviceContratacoes;
+	
+	@Autowired(required = true)
+	private DimCriterioService serviceCriterios;
+	
+	@Autowired(required = true)
+	private DimCandidatoService serviceCandidatos;
+	
+	@Autowired(required = true)
+	private FatoAvaliacoesService serviceAvaliacoes;
+	
 
 	private SparkSession spark = SparkSessionSingleton.getInstance();
 
@@ -73,7 +83,12 @@ public class ImportService {
 		.withColumn("requisitosvagas", functions.col("requisitosvagas"))
 		.withColumn("estado", functions.col("estado"))
 		.withColumn("inicioProcessoSeletivo", functions.to_date(functions.col("inicioProcessoSeletivo"), "dd/MM/yyyy"))
-		.withColumn("fimProcessoSeletivo", functions.to_date(functions.col("fimProcessoSeletivo"), "dd/MM/yyyy"));
+		.withColumn("fimProcessoSeletivo", functions.to_date(functions.col("fimProcessoSeletivo"), "dd/MM/yyyy"))
+		.withColumn("idCandidato", functions.col("idCandidato").cast("long"))
+		.withColumn("nomeCandidato", functions.col("nomeCandidato"))
+		.withColumn("idCriterio", functions.col("idCriterio").cast("long"))
+		.withColumn("nomeCriterio", functions.col("nomeCriterio"))
+		.withColumn("pontuacao", functions.col("pontuacao").cast("long"));
 
 
 
@@ -84,8 +99,16 @@ public class ImportService {
 		serviceParticipantesRH.SalvarParticipantesRh(temposDs);
 
 		serviceVagas.SalvarVagas(temposDs);
+		
+		serviceCriterios.SalvarCriterios(temposDs);
+		
+		serviceCandidatos.SalvarCandidatos(temposDs);
 
 		serviceContratacoes.SalvarContratacoes(temposDs);
+		
+		serviceAvaliacoes.SalvarAvaliacoes(temposDs);
+		
+		
 
 	}
 }

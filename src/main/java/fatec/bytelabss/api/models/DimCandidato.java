@@ -20,5 +20,5 @@ public class DimCandidato {
     private Long idCandidato;
 
     @Column(name = "nome")
-    private String nome;
+    private String nomeCandidato;
 }

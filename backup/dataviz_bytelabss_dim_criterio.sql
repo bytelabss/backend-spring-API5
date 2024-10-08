@@ -35,6 +35,7 @@ CREATE TABLE `dim_criterio` (
 
 LOCK TABLES `dim_criterio` WRITE;
 /*!40000 ALTER TABLE `dim_criterio` DISABLE KEYS */;
+INSERT INTO `dim_criterio` VALUES (1,'comunica��o'),(2,'trabalho em equipe');
 /*!40000 ALTER TABLE `dim_criterio` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -47,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-07 21:26:38
+-- Dump completed on 2024-10-08 19:13:34

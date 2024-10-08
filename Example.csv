@@ -1,0 +1,183 @@
+idProcessoSeletivo;nome;inicioProcessoSeletivo;fimProcessoSeletivo;status;descricao;criadoPor;datacontratacao;datainiciovaga;idParticipanteRh;cargo;idVaga;titulovaga;numeroposicoes;requisitosvagas;estado;idCandidato;nomeCandidato;idCriterio;nomeCriterio;pontuacao
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;10/01/2024;01/12/2023;1;Analista;1;Desenvolvedor Jr;7;Java;Concluido;1;Ana;1;comunicação;3
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;11/01/2024;01/12/2023;1;Analista;1;Desenvolvedor Jr;7;Java;Concluido;2;Bruno;1;comunicação;7
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;12/01/2024;01/12/2023;1;Analista;1;Desenvolvedor Jr;7;Java;Concluido;3;Carla;1;comunicação;1
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;13/01/2024;01/12/2023;1;Analista;1;Desenvolvedor Jr;7;Java;Concluido;4;Daniel;1;comunicação;6
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;14/01/2024;01/12/2023;1;Analista;1;Desenvolvedor Jr;7;Java;Concluido;5;Eduardo;1;comunicação;9
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;15/01/2024;01/12/2023;1;Analista;1;Desenvolvedor Jr;7;Java;Concluido;6;Fernanda;1;comunicação;4
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;16/01/2024;01/12/2023;1;Analista;1;Desenvolvedor Jr;7;Java;Concluido;7;Gabriel;1;comunicação;10
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;17/01/2024;01/12/2023;1;Analista;2;Desenvolvedor Pleno;13;Java;Concluido;8;Helena;1;comunicação;2
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;18/01/2024;01/12/2023;1;Analista;2;Desenvolvedor Pleno;13;Java;Concluido;9;Igor;1;comunicação;5
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;19/01/2024;01/12/2023;1;Analista;2;Desenvolvedor Pleno;13;Java;Concluido;10;Juliana;1;comunicação;8
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;20/01/2024;01/12/2023;1;Analista;2;Desenvolvedor Pleno;13;Java;Concluido;11;Kevin;1;comunicação;3
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;21/01/2024;01/12/2023;1;Analista;2;Desenvolvedor Pleno;13;Java;Concluido;12;Luana;1;comunicação;2
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;22/01/2024;01/12/2023;2;supervisor;2;Desenvolvedor Pleno;13;Java;Concluido;13;Marcelo;1;comunicação;7
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;23/01/2024;01/12/2023;2;supervisor;2;Desenvolvedor Pleno;13;Java;Concluido;14;Natália;1;comunicação;6
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;24/01/2024;01/12/2023;2;supervisor;2;Desenvolvedor Pleno;13;Java;Concluido;15;Otávio;1;comunicação;4
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;25/01/2024;01/12/2023;2;supervisor;2;Desenvolvedor Pleno;13;Java;Concluido;16;Patrícia;1;comunicação;10
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;26/01/2024;01/12/2023;2;supervisor;2;Desenvolvedor Pleno;13;Java;Concluido;17;Rafael;1;comunicação;1
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;27/01/2024;01/12/2023;2;supervisor;2;Desenvolvedor Pleno;13;Java;Concluido;18;Sofia;1;comunicação;9
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;28/01/2024;01/12/2023;2;supervisor;2;Desenvolvedor Pleno;13;Java;Concluido;19;Thiago;1;comunicação;5
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;29/01/2024;01/12/2023;2;supervisor;2;Desenvolvedor Pleno;13;Java;Concluido;20;Vanessa;1;comunicação;8
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;30/01/2024;01/12/2023;2;supervisor;2;Desenvolvedor Pleno;13;Java;Concluido;21;André;1;comunicação;6
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;10/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;22;Beatriz;1;comunicação;2
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;10/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;23;Caio;1;comunicação;4
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;11/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;24;Débora;1;comunicação;7
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;12/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;25;Elias;1;comunicação;1
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;13/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;26;Flávia;1;comunicação;10
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;14/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;27;Gustavo;1;comunicação;3
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;15/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;28;Isabela;1;comunicação;5
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;16/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;29;Jorge;1;comunicação;9
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;17/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;30;Kátia;1;comunicação;8
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;18/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;31;Leandro;1;comunicação;2
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;19/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;32;Mariana;1;comunicação;6
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;20/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;33;Nestor;1;comunicação;4
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;21/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;34;Olívia;1;comunicação;7
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;22/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;35;Paulo;1;comunicação;1
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;23/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;36;Quésia;1;comunicação;10
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;24/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;37;Ricardo;1;comunicação;5
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;25/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;38;Samara;1;comunicação;3
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;26/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;39;Tânia;1;comunicação;9
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;27/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;40;Uriel;1;comunicação;8
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;28/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;41;Vitor;1;comunicação;4
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;29/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;42;Wagner;1;comunicação;2
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;30/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;43;Xuxa;1;comunicação;6
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;02/01/2024;01/01/2024;3;Analista Sr;4;Dev Pleno;10;Python;Concluido;44;Yasmin;1;comunicação;7
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;02/01/2024;01/01/2024;3;Analista Sr;4;Dev Pleno;10;Python;Concluido;45;Zé;1;comunicação;1
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;02/01/2024;01/01/2024;3;Analista Sr;4;Dev Pleno;10;Python;Concluido;46;Alice;1;comunicação;10
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;02/01/2024;01/01/2024;3;Analista Sr;4;Dev Pleno;10;Python;Concluido;47;Bruno;1;comunicação;3
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;02/01/2024;01/01/2024;3;Analista Sr;4;Dev Pleno;10;Python;Concluido;48;Cristiane;1;comunicação;5
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;03/01/2024;01/01/2024;3;Analista Sr;4;Dev Pleno;10;Python;Concluido;49;Diego;1;comunicação;9
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;03/01/2024;01/01/2024;3;Analista Sr;4;Dev Pleno;10;Python;Concluido;50;Emanuelle;1;comunicação;8
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;03/01/2024;01/01/2024;3;Analista Sr;4;Dev Pleno;10;Python;Concluido;51;Fábio;1;comunicação;2
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;03/01/2024;01/01/2024;3;Analista Sr;4;Dev Pleno;10;Python;Concluido;52;Geovana;1;comunicação;6
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;03/01/2024;01/01/2024;3;Analista Sr;4;Dev Pleno;10;Python;Concluido;53;Hugo;1;comunicação;4
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;54;Ivana;1;comunicação;7
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;55;Jéssica;1;comunicação;10
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;56;Kleber;1;comunicação;1
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;57;Lúcia;1;comunicação;3
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;58;Mário;1;comunicação;5
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;59;Nádia;1;comunicação;8
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;60;Orlando;1;comunicação;9
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;61;Priscila;1;comunicação;2
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;62;Quirino;1;comunicação;6
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;63;Renata;1;comunicação;4
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;64;Sabrina;1;comunicação;7
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;65;Tomás;1;comunicação;10
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;66;Ursula;1;comunicação;1
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;67;Vânia;1;comunicação;3
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;68;Wilma;1;comunicação;5
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;69;Xerxes;1;comunicação;9
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/02/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;70;Yara;1;comunicação;8
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/02/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;71;Zilda;1;comunicação;2
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/02/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;72;Adalberto;1;comunicação;6
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/02/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;73;Bruna;1;comunicação;4
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/03/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;74;Cássio;1;comunicação;7
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/03/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;75;Denise;1;comunicação;10
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/03/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;76;Everton;1;comunicação;1
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/03/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;77;Fabiana;1;comunicação;3
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/03/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;78;Gilberto;1;comunicação;5
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/03/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;79;Heloísa;1;comunicação;9
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/04/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;80;Ivo;1;comunicação;2
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/04/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;81;Júnior;1;comunicação;6
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/04/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;82;Kátia;1;comunicação;4
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/04/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;83;Leonardo;1;comunicação;8
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/04/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;84;Manuela;1;comunicação;10
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/04/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;85;Nicolas;1;comunicação;1
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/04/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;86;Olivia;1;comunicação;3
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/04/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;87;Paulo;1;comunicação;5
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/04/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;88;Quinto;1;comunicação;7
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/04/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;89;Raquel;1;comunicação;9
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/04/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;90;Sandro;1;comunicação;2
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/04/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;91;Teodoro;1;comunicação;6
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;10/01/2024;01/12/2023;1;Analista;1;Desenvolvedor Jr;7;Java;Concluido;1;Ana;2;trabalho em equipe;4
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;11/01/2024;01/12/2023;1;Analista;1;Desenvolvedor Jr;7;Java;Concluido;2;Bruno;2;trabalho em equipe;8
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;12/01/2024;01/12/2023;1;Analista;1;Desenvolvedor Jr;7;Java;Concluido;3;Carla;2;trabalho em equipe;10
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;13/01/2024;01/12/2023;1;Analista;1;Desenvolvedor Jr;7;Java;Concluido;4;Daniel;2;trabalho em equipe;1
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;14/01/2024;01/12/2023;1;Analista;1;Desenvolvedor Jr;7;Java;Concluido;5;Eduardo;2;trabalho em equipe;3
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;15/01/2024;01/12/2023;1;Analista;1;Desenvolvedor Jr;7;Java;Concluido;6;Fernanda;2;trabalho em equipe;5
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;16/01/2024;01/12/2023;1;Analista;1;Desenvolvedor Jr;7;Java;Concluido;7;Gabriel;2;trabalho em equipe;7
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;17/01/2024;01/12/2023;1;Analista;2;Desenvolvedor Pleno;13;Java;Concluido;8;Helena;2;trabalho em equipe;2
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;18/01/2024;01/12/2023;1;Analista;2;Desenvolvedor Pleno;13;Java;Concluido;9;Igor;2;trabalho em equipe;6
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;19/01/2024;01/12/2023;1;Analista;2;Desenvolvedor Pleno;13;Java;Concluido;10;Juliana;2;trabalho em equipe;4
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;20/01/2024;01/12/2023;1;Analista;2;Desenvolvedor Pleno;13;Java;Concluido;11;Kevin;2;trabalho em equipe;9
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;21/01/2024;01/12/2023;1;Analista;2;Desenvolvedor Pleno;13;Java;Concluido;12;Luana;2;trabalho em equipe;8
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;22/01/2024;01/12/2023;2;supervisor;2;Desenvolvedor Pleno;13;Java;Concluido;13;Marcelo;2;trabalho em equipe;10
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;23/01/2024;01/12/2023;2;supervisor;2;Desenvolvedor Pleno;13;Java;Concluido;14;Natália;2;trabalho em equipe;1
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;24/01/2024;01/12/2023;2;supervisor;2;Desenvolvedor Pleno;13;Java;Concluido;15;Otávio;2;trabalho em equipe;3
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;25/01/2024;01/12/2023;2;supervisor;2;Desenvolvedor Pleno;13;Java;Concluido;16;Patrícia;2;trabalho em equipe;5
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;26/01/2024;01/12/2023;2;supervisor;2;Desenvolvedor Pleno;13;Java;Concluido;17;Rafael;2;trabalho em equipe;7
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;27/01/2024;01/12/2023;2;supervisor;2;Desenvolvedor Pleno;13;Java;Concluido;18;Sofia;2;trabalho em equipe;2
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;28/01/2024;01/12/2023;2;supervisor;2;Desenvolvedor Pleno;13;Java;Concluido;19;Thiago;2;trabalho em equipe;6
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;29/01/2024;01/12/2023;2;supervisor;2;Desenvolvedor Pleno;13;Java;Concluido;20;Vanessa;2;trabalho em equipe;4
+1;Processo seletivo 1;01/12/2023;30/01/2024;concluido;descrição do processo seletivo 1;antonio;30/01/2024;01/12/2023;2;supervisor;2;Desenvolvedor Pleno;13;Java;Concluido;21;André;2;trabalho em equipe;9
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;10/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;22;Beatriz;2;trabalho em equipe;10
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;10/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;23;Caio;2;trabalho em equipe;1
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;11/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;24;Débora;2;trabalho em equipe;3
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;12/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;25;Elias;2;trabalho em equipe;5
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;13/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;26;Flávia;2;trabalho em equipe;8
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;14/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;27;Gustavo;2;trabalho em equipe;7
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;15/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;28;Isabela;2;trabalho em equipe;2
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;16/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;29;Jorge;2;trabalho em equipe;6
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;17/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;30;Kátia;2;trabalho em equipe;4
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;18/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;31;Leandro;2;trabalho em equipe;9
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;19/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;32;Mariana;2;trabalho em equipe;10
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;20/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;33;Nestor;2;trabalho em equipe;1
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;21/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;34;Olívia;2;trabalho em equipe;3
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;22/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;35;Paulo;2;trabalho em equipe;5
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;23/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;36;Quésia;2;trabalho em equipe;8
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;24/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;37;Ricardo;2;trabalho em equipe;7
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;25/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;38;Samara;2;trabalho em equipe;2
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;26/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;39;Tânia;2;trabalho em equipe;6
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;27/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;40;Uriel;2;trabalho em equipe;4
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;28/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;41;Vitor;2;trabalho em equipe;10
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;29/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;42;Wagner;2;trabalho em equipe;1
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;30/01/2024;01/01/2024;2;supervisor;3;Dev Jr;22;Python;Concluido;43;Xuxa;2;trabalho em equipe;3
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;02/01/2024;01/01/2024;3;Analista Sr;4;Dev Pleno;10;Python;Concluido;44;Yasmin;2;trabalho em equipe;5
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;02/01/2024;01/01/2024;3;Analista Sr;4;Dev Pleno;10;Python;Concluido;45;Zé;2;trabalho em equipe;8
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;02/01/2024;01/01/2024;3;Analista Sr;4;Dev Pleno;10;Python;Concluido;46;Alice;2;trabalho em equipe;9
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;02/01/2024;01/01/2024;3;Analista Sr;4;Dev Pleno;10;Python;Concluido;47;Bruno;2;trabalho em equipe;2
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;02/01/2024;01/01/2024;3;Analista Sr;4;Dev Pleno;10;Python;Concluido;48;Cristiane;2;trabalho em equipe;6
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;03/01/2024;01/01/2024;3;Analista Sr;4;Dev Pleno;10;Python;Concluido;49;Diego;2;trabalho em equipe;4
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;03/01/2024;01/01/2024;3;Analista Sr;4;Dev Pleno;10;Python;Concluido;50;Emanuelle;2;trabalho em equipe;7
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;03/01/2024;01/01/2024;3;Analista Sr;4;Dev Pleno;10;Python;Concluido;51;Fábio;2;trabalho em equipe;10
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;03/01/2024;01/01/2024;3;Analista Sr;4;Dev Pleno;10;Python;Concluido;52;Geovana;2;trabalho em equipe;1
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;03/01/2024;01/01/2024;3;Analista Sr;4;Dev Pleno;10;Python;Concluido;53;Hugo;2;trabalho em equipe;3
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;54;Ivana;2;trabalho em equipe;5
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;55;Jéssica;2;trabalho em equipe;9
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;56;Kleber;2;trabalho em equipe;2
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;57;Lúcia;2;trabalho em equipe;6
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;58;Mário;2;trabalho em equipe;4
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;59;Nádia;2;trabalho em equipe;8
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;60;Orlando;2;trabalho em equipe;10
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;61;Priscila;2;trabalho em equipe;1
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;62;Quirino;2;trabalho em equipe;3
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;63;Renata;2;trabalho em equipe;5
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;64;Sabrina;2;trabalho em equipe;9
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;65;Tomás;2;trabalho em equipe;7
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;66;Ursula;2;trabalho em equipe;2
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;67;Vânia;2;trabalho em equipe;6
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;68;Wilma;2;trabalho em equipe;4
+2;Processo seletivo 2;01/01/2024;05/01/2024;Em andamento;descrição do processo seletivo 2;Rodrigo;05/01/2024;01/01/2024;3;Analista Sr;5;Dev Senior;16;Python;Concluido;69;Xerxes;2;trabalho em equipe;8
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/02/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;70;Yara;2;trabalho em equipe;10
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/02/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;71;Zilda;2;trabalho em equipe;1
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/02/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;72;Adalberto;2;trabalho em equipe;3
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/02/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;73;Bruna;2;trabalho em equipe;5
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/03/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;74;Cássio;2;trabalho em equipe;8
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/03/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;75;Denise;2;trabalho em equipe;7
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/03/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;76;Everton;2;trabalho em equipe;2
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/03/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;77;Fabiana;2;trabalho em equipe;6
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/03/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;78;Gilberto;2;trabalho em equipe;4
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/03/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;79;Heloísa;2;trabalho em equipe;9
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/04/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;80;Ivo;2;trabalho em equipe;10
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/04/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;81;Júnior;2;trabalho em equipe;1
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/04/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;82;Kátia;2;trabalho em equipe;3
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/04/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;83;Leonardo;2;trabalho em equipe;5
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/04/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;84;Manuela;2;trabalho em equipe;7
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/04/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;85;Nicolas;2;trabalho em equipe;2
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/04/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;86;Olivia;2;trabalho em equipe;6
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/04/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;87;Paulo;2;trabalho em equipe;4
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/04/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;88;Quinto;2;trabalho em equipe;9
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/04/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;89;Raquel;2;trabalho em equipe;8
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/04/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;90;Sandro;2;trabalho em equipe;9
+3;Processo seletivo 3;01/01/2024;05/04/2024;Concluido;descrição do processo seletivo 3;Amanda;05/04/2024;01/01/2024;3;Analista Sr;6;Estagiario;22;Python;Concluido;91;Teodoro;2;trabalho em equipe;9

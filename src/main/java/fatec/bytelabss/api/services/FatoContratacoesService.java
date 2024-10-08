@@ -49,12 +49,12 @@ public class FatoContratacoesService {
 	private Dataset<Row> RetornarLinhasTratadas(Dataset<Row> listaDados){
 
 		var dadosQuantidade = listaDados
-		.groupBy("idProcessoSeletivo","idTempo","idVaga","idParticipanteRH").count()
+		.groupBy("idProcessoSeletivo","idTempo","idVaga","idParticipanteRH", "idCriterio").count()
 		.withColumnRenamed("count", "quantidade");
 
 
 		var dadosTotalDiferencaDatas = listaDados
-				.groupBy("idProcessoSeletivo","idTempo","idVaga","idParticipanteRH")
+				.groupBy("idProcessoSeletivo","idTempo","idVaga","idParticipanteRH", "idCriterio")
 				.agg(functions.sum("date_diff").alias("total_amount"));
 
 
@@ -64,6 +64,7 @@ public class FatoContratacoesService {
 					          .and(dadosQuantidade.col("idTempo").equalTo(dadosTotalDiferencaDatas.col("idTempo")))
 					          .and(dadosQuantidade.col("idVaga").equalTo(dadosTotalDiferencaDatas.col("idVaga")))
 					          .and(dadosQuantidade.col("idParticipanteRH").equalTo(dadosTotalDiferencaDatas.col("idParticipanteRH")))
+					          .and(dadosQuantidade.col("idCriterio").equalTo(dadosTotalDiferencaDatas.col("idCriterio")))
 					          // Se quiser incluir trimestre e semestre na comparação:
 					          //.and(df1.col("trimestre").equalTo(df2ComData.col("trimestre")))
 					          //.and(df1.col("semestre").equalTo(df2ComData.col("semestre")))
