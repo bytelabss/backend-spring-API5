@@ -1,4 +1,4 @@
-package fatec.bytelabss.api;
+package fatec.bytelabss.dataViz;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

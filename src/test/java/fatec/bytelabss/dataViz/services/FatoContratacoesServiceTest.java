@@ -1,4 +1,4 @@
-package fatec.bytelabss.api.services;
+package fatec.bytelabss.dataViz.services;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -7,6 +7,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import fatec.bytelabss.api.repositories.FatoContratacoesRepository;
+import fatec.bytelabss.api.services.FatoContratacoesService;
 
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
