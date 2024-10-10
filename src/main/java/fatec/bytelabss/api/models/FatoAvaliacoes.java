@@ -30,7 +30,7 @@ public class FatoAvaliacoes implements Serializable {/**
 	@Id
 	@ManyToOne
 	@JoinColumn(name = "criterio")
-    private DimProcessoSeletivo idCriterio;
+    private DimCriterio idCriterio;
 
 	@Id
 	@ManyToOne
@@ -45,5 +45,5 @@ public class FatoAvaliacoes implements Serializable {/**
 	@Id
 	@ManyToOne
 	@JoinColumn(name = "candidato")
-    private DimParticipanteRH idCandidato;
+    private DimCandidato idCandidato;
 }
