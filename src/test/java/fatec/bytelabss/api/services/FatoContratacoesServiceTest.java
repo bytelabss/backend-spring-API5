@@ -1,4 +1,4 @@
-package fatec.bytelabss.dataViz.services;
+package fatec.bytelabss.api.services;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
