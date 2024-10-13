@@ -76,6 +76,7 @@ public class ImportService {
 		.withColumn("numeroposicoes", functions.col("numeroposicoes").cast("integer"))
 		.withColumn("requisitosvagas", functions.col("requisitosvagas"))
 		.withColumn("estado", functions.col("estado"))
+		.withColumn("dataCriacao", functions.to_date(functions.col("dataCriacao"), "dd/MM/yyyy"))
 		.withColumn("inicioProcessoSeletivo", functions.to_date(functions.col("inicioProcessoSeletivo"), "dd/MM/yyyy"))
 		.withColumn("fimProcessoSeletivo", functions.to_date(functions.col("fimProcessoSeletivo"), "dd/MM/yyyy"))
 		.withColumn("idCandidato", functions.col("idCandidato").cast("long"))

@@ -11,6 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fatec.bytelabss.api.contracts.FatoAvaliacoesDataContract;
+import fatec.bytelabss.api.contracts.FatoContratacoesDataContract;
+import fatec.bytelabss.api.dtos.CandidatoPorProcessoSeletivoDto;
+import fatec.bytelabss.api.dtos.ProcessoSeletivoQuantidadeDto;
+import fatec.bytelabss.api.dtos.ProcessoSeletivoTempoMedioDto;
+import fatec.bytelabss.api.dtos.QuantidadeContratacoesRhDto;
 import fatec.bytelabss.api.models.DimCandidato;
 import fatec.bytelabss.api.models.DimCriterio;
 import fatec.bytelabss.api.models.DimTempo;
@@ -24,6 +29,11 @@ public class FatoAvaliacoesService {
 
 	@Autowired(required = true)
 	private FatoAvaliacoesRepository repository;
+
+	public List<CandidatoPorProcessoSeletivoDto> RetornarCandidatoPorProcessoSeletivo(int numeroProcessoSeletivo) {
+
+		return repository.RetornarCandidatoPorProcessoSeletivo(numeroProcessoSeletivo);
+	}
 
 	private Dataset<Row> RetornarLinhasTratadas(Dataset<Row> listaDados){
 
