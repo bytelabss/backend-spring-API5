@@ -1,35 +1,23 @@
 package fatec.bytelabss.api.services;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.HashMap;
+
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Encoders;
 import org.apache.spark.sql.Row;
-import org.apache.spark.sql.functions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fatec.bytelabss.api.contracts.FatoAvaliacoesDataContract;
-import fatec.bytelabss.api.contracts.FatoContratacoesDataContract;
-import fatec.bytelabss.api.dtos.ProcessoSeletivoQuantidadeDto;
-import fatec.bytelabss.api.dtos.ProcessoSeletivoTempoMedioDto;
-import fatec.bytelabss.api.dtos.QuantidadeContratacoesRhDto;
 import fatec.bytelabss.api.models.DimCandidato;
 import fatec.bytelabss.api.models.DimCriterio;
-import fatec.bytelabss.api.models.DimParticipanteRH;
-import fatec.bytelabss.api.models.DimProcessoSeletivo;
 import fatec.bytelabss.api.models.DimTempo;
 import fatec.bytelabss.api.models.DimVaga;
 import fatec.bytelabss.api.models.FatoAvaliacoes;
-import fatec.bytelabss.api.models.FatoContratacoes;
 import fatec.bytelabss.api.repositories.FatoAvaliacoesRepository;
-import fatec.bytelabss.api.repositories.FatoContratacoesRepository;
+
 
 @Service
 public class FatoAvaliacoesService {

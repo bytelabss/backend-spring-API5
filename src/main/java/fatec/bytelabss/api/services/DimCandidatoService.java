@@ -1,17 +1,13 @@
 package fatec.bytelabss.api.services;
 
 import java.util.List;
-
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Encoders;
 import org.apache.spark.sql.Row;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import fatec.bytelabss.api.models.DimCandidato;
-import fatec.bytelabss.api.models.DimCriterio;
 import fatec.bytelabss.api.repositories.DimCandidatoRepository;
-import fatec.bytelabss.api.repositories.DimCriterioRepository;
 
 @Service
 public class DimCandidatoService {
