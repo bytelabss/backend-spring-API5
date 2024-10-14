@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import fatec.bytelabss.api.dtos.ProcessoSeletivoTempoMedioDto;
 import fatec.bytelabss.api.dtos.QuantidadeContratacoesRhDto;
+import fatec.bytelabss.api.dtos.CandidatoProcessoDTO;
 import fatec.bytelabss.api.dtos.ProcessoSeletivoQuantidadeDto;
 import fatec.bytelabss.api.services.FatoContratacoesService;
 
@@ -60,4 +61,10 @@ public class FatoContratacoesController {
 			return new ResponseEntity<>(Map.of("error", e.getMessage()), HttpStatus.BAD_REQUEST);
 		}
 	}
+
+	@GetMapping("/processos-por-candidato")
+    public ResponseEntity<List<CandidatoProcessoDTO>> getProcessosPorCandidato(@RequestParam(required = false) String candidato) {
+        List<CandidatoProcessoDTO> result = service.getProcessosPorCandidato(candidato);
+        return ResponseEntity.ok().body(result);
+    }
 }
