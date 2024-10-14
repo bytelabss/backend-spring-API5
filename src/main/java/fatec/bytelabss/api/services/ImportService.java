@@ -1,19 +1,13 @@
 package fatec.bytelabss.api.services;
 
-import java.util.List;
-
 import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Encoders;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
 import org.apache.spark.sql.functions;
 import org.apache.spark.sql.expressions.Window;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import fatec.bytelabss.api.models.DimProcessoSeletivo;
 import fatec.bytelabss.api.sparkSession.SparkSessionSingleton;
-import scala.Tuple2;
 
 @Service
 public class ImportService {
