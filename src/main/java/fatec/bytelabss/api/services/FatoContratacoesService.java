@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fatec.bytelabss.api.contracts.FatoContratacoesDataContract;
+import fatec.bytelabss.api.dtos.CandidatoProcessoDTO;
 import fatec.bytelabss.api.dtos.ProcessoSeletivoQuantidadeDto;
 import fatec.bytelabss.api.dtos.ProcessoSeletivoTempoMedioDto;
 import fatec.bytelabss.api.dtos.QuantidadeContratacoesRhDto;
@@ -159,6 +160,22 @@ public class FatoContratacoesService {
 		return resultadoMap;
 	}
 
+	public List<CandidatoProcessoDTO> getProcessosPorCandidato(String candidato) {
+
+        List<Object[]> queryResult = repository.processosPorCandidato(candidato);
+
+        List<CandidatoProcessoDTO> resultList = new ArrayList<>();
+
+        for (Object[] row : queryResult) {
+            String nomeCandidato = (String) row[0];
+            String nomeProcesso = (String) row[1];
+            
+            resultList.add(new CandidatoProcessoDTO(nomeCandidato, nomeProcesso));
+        }
+
+        return resultList;
+    }
+
 	private void validarParametros(Integer mesInicial, Integer anoInicial, Integer mesFinal, Integer anoFinal) {
 		if (mesInicial < 1 || mesInicial > 12) {
 			throw new IllegalArgumentException("Mês inicial inválido. Deve ser entre 1 e 12.");
@@ -173,4 +190,8 @@ public class FatoContratacoesService {
 			throw new IllegalArgumentException("Período inválido. A data inicial deve ser anterior ou igual à data final.");
 		}
 	}
+
+	
 }
+
+ 

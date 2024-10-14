@@ -50,5 +50,14 @@ public interface FatoContratacoesRepository extends JpaRepository<FatoContrataco
         @Param("anoInicial") int anoInicial,
         @Param("mesFinal") int mesFinal,
         @Param("anoFinal") int anoFinal);
+   
+   @Query("SELECT DISTINCT dc.nome AS nomeCandidato, dp.nome AS nomeProcesso " +
+      "FROM DimCandidato dc " +
+      "JOIN FatoAvaliacoes fa ON dc.idCandidato = fa.candidato " +
+      "JOIN DimVaga dv ON fa.vaga = dv.idVaga " +
+      "JOIN FatoContratacoes fc ON dv.idVaga = fc.vaga " +
+      "JOIN DimProcessoSeletivo dp ON fc.processoSeletivo = dp.idProcessoSeletivo " +
+      "WHERE (:candidato IS NULL OR dc.nome = :candidato)")
+   List<Object[]> processosPorCandidato(@Param("candidato") String candidato);
 
 }
