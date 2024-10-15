@@ -28,6 +28,7 @@ CREATE TABLE `dim_vaga` (
   `numero_posicoes` int DEFAULT NULL,
   `requisitos_vagas` varchar(255) DEFAULT NULL,
   `estado` varchar(255) DEFAULT NULL,
+  `data_criacao` datetime DEFAULT NULL,
   PRIMARY KEY (`id_vaga`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -38,7 +39,7 @@ CREATE TABLE `dim_vaga` (
 
 LOCK TABLES `dim_vaga` WRITE;
 /*!40000 ALTER TABLE `dim_vaga` DISABLE KEYS */;
-INSERT INTO `dim_vaga` VALUES (1,'Desenvolvedor Jr',7,'Java','Concluido'),(2,'Desenvolvedor Pleno',13,'Java','Concluido'),(3,'Dev Jr',22,'Python','Concluido'),(4,'Dev Pleno',10,'Python','Concluido'),(5,'Dev Senior',16,'Python','Concluido'),(6,'Estagiario',22,'Python','Concluido');
+INSERT INTO `dim_vaga` VALUES (1,'Desenvolvedor Jr',7,'Java','Concluido','2023-12-01 00:00:00'),(2,'Desenvolvedor Pleno',13,'Java','Concluido','2023-12-01 00:00:00'),(3,'Dev Jr',22,'Python','Concluido','2024-01-01 00:00:00'),(4,'Dev Pleno',10,'Python','Concluido','2024-01-01 00:00:00'),(5,'Dev Senior',16,'Python','Concluido','2024-01-01 00:00:00'),(6,'Estagiario',22,'Python','Concluido','2024-01-01 00:00:00');
 /*!40000 ALTER TABLE `dim_vaga` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-08 19:13:34
+-- Dump completed on 2024-10-14 21:39:25
