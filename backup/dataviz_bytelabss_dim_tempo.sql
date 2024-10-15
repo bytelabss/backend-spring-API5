@@ -30,7 +30,7 @@ CREATE TABLE `dim_tempo` (
   `trimestre` int DEFAULT NULL,
   PRIMARY KEY (`id_tempo`),
   UNIQUE KEY `UC_DIM_TEMPO` (`mes`,`ano`,`semestre`,`trimestre`)
-) ENGINE=InnoDB AUTO_INCREMENT=6315 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6497 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `dim_tempo` (
 
 LOCK TABLES `dim_tempo` WRITE;
 /*!40000 ALTER TABLE `dim_tempo` DISABLE KEYS */;
-INSERT INTO `dim_tempo` VALUES (6133,1,2024,1,1),(6271,2,2024,1,1),(6275,3,2024,1,1),(6281,4,2024,1,1);
+INSERT INTO `dim_tempo` VALUES (6315,1,2024,1,1),(6453,2,2024,1,1),(6457,3,2024,1,1),(6463,4,2024,1,1);
 /*!40000 ALTER TABLE `dim_tempo` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-08 19:13:35
+-- Dump completed on 2024-10-14 21:39:31
