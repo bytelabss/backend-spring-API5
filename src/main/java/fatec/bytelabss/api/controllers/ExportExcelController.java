@@ -21,7 +21,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 @RestController
-@RequestMapping("/api/download")
+@RequestMapping("/api/excel")
 public class ExportExcelController {
 
     @Autowired
