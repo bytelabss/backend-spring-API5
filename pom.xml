@@ -90,6 +90,18 @@
             <version>5.2.3</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>kernel</artifactId>
+            <version>7.2.5</version> <!-- Verifique no site oficial para a versão mais recente -->
+        </dependency>
+
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>layout</artifactId>
+            <version>7.2.5</version>
+        </dependency>
+
         <!-- Tests -->
     </dependencies>
 

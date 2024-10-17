@@ -1,17 +1,13 @@
 package fatec.bytelabss.api.services;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Encoders;
 import org.apache.spark.sql.Row;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import fatec.bytelabss.api.dtos.DimVagaDto;
-import fatec.bytelabss.api.dtos.ProcessoSeletivoTempoMedioDto;
-import fatec.bytelabss.api.models.DimParticipanteRH;
 import fatec.bytelabss.api.models.DimVaga;
 import fatec.bytelabss.api.repositories.DimVagaRepository;
 
