@@ -91,7 +91,7 @@ public class ImportService {
 
 		service.SalvarProcessosSeletivos(temposDs);
 
-		serviceParticipantesRH.SalvarParticipantesRh(temposDs);
+		serviceParticipantesRH.SalvarParticipantesRH(temposDs);
 
 		serviceVagas.SalvarVagas(temposDs);
 		

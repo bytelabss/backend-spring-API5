@@ -22,7 +22,7 @@ import java.util.zip.ZipOutputStream;
 
 @RestController
 @RequestMapping("/api/download")
-public class ExportController {
+public class ExportExcelController {
 
     @Autowired
     private DimCandidatoExcelService dimCandidatoExcelService;
