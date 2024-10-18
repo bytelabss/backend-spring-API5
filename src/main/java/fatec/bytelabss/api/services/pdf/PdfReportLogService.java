@@ -13,8 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
+import fatec.bytelabss.api.controllers.ExportPdfController;
 import fatec.bytelabss.api.models.PdfReportLogs;
 import fatec.bytelabss.api.repositories.PdfReportLogRepository;
 import jakarta.annotation.PostConstruct;
@@ -26,22 +26,19 @@ public class PdfReportLogService {
     private PdfReportLogRepository pdfReportLogRepository;
 
     @Autowired
-    private RestTemplate restTemplate;
-
-    private static final String PDF_EXPORT_URL = "http://localhost:9090/api/pdf/export/pdf/zip";
+    private ExportPdfController pdfController;
 
     private static final String DEFAULT_ZIP_FILE_PATH = "relatorios/";
 
     @Autowired
-    public PdfReportLogService(PdfReportLogRepository pdfReportLogRepository, RestTemplate restTemplate) {
+    public PdfReportLogService(PdfReportLogRepository pdfReportLogRepository) {
         this.pdfReportLogRepository = pdfReportLogRepository;
-        this.restTemplate = restTemplate;
     }
 
     public void generateWeeklyPdfReport() {
         try {
 
-            ResponseEntity<byte[]> response = restTemplate.getForEntity(PDF_EXPORT_URL, byte[].class);
+            ResponseEntity<byte[]> response = pdfController.exportPdfsAsZip();
 
             if (response.getStatusCode() == HttpStatus.OK) {
                 byte[] zipData = response.getBody();
@@ -51,6 +48,8 @@ public class PdfReportLogService {
                 saveZipFileLocally(zipData, zipFileName);
 
                 PdfReportLogs log = new PdfReportLogs();
+                log.setReportDate(LocalDateTime.now()); 
+                log.setGeneratedAt(LocalDateTime.now());
                 pdfReportLogRepository.save(log);
 
                 System.out.println("Weekly PDF report generated and saved successfully.");
@@ -58,7 +57,7 @@ public class PdfReportLogService {
                 System.err.println("Failed to generate or download the PDF report. Status code: " + response.getStatusCode());
             }
         } catch (Exception e) {
-            System.err.println("Error generating or downloading the PDF report: " + e.getMessage());
+            System.err.println("Error generating or downloading the PDF report: " + e.getMessage() + e);
         }
     }
 
@@ -88,6 +87,8 @@ public class PdfReportLogService {
     public void checkAndGenerateReportOnStartup() {
         if (!isCurrentWeekReportGenerated()) {
             generateWeeklyPdfReport();
+        } else {
+            System.out.println("O relatório dessa semana já foi gerado, cheque a pasta 'relatórios'");
         }
     }
 
