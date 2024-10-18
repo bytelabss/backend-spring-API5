@@ -13,15 +13,18 @@ import fatec.bytelabss.api.models.FatoAvaliacoes;
 @Repository
 public interface FatoAvaliacoesRepository extends JpaRepository<FatoAvaliacoes, Integer>{
 
-  	@Query(nativeQuery = true, value =  "SELECT DISTINCT av.candidato as idCandidato, av.vaga, ct.processo_seletivo as idProcessoSeletivo, ca.nome as nomeCandidato, pr.nome as nomeProcessoSeletivo\n" + //
-                "FROM dataviz_bytelabss.fato_avaliacoes av\n" + //
-                "INNER JOIN dataviz_bytelabss.fato_contratacoes ct\n" + //
-                "    ON av.vaga = ct.vaga\n" + //
-                "INNER JOIN dataviz_bytelabss.dim_candidato ca\n" + //
-                "    ON av.candidato = ca.id_candidato\n" + //
-                "INNER JOIN dataviz_bytelabss.dim_processo_seletivo pr\n" + //
-                "    ON ct.processo_seletivo = pr.id_processo_seletivo\n" + //
-                "WHERE ct.processo_seletivo = :numeroProcessoSeletivo;")
-    List<CandidatoPorProcessoSeletivoDto> RetornarCandidatoPorProcessoSeletivo(@Param("numeroProcessoSeletivo") int numeroProcessoSeletivo);
+    @Query(nativeQuery = true, value =  "SELECT DISTINCT av.candidato as idCandidato, av.vaga, vg.titulo_vaga as tituloVaga, ct.processo_seletivo as idProcessoSeletivo, ca.nome as nomeCandidato, pr.nome as nomeProcessoSeletivo\n" + //
+            "FROM dataviz_bytelabss.fato_avaliacoes av\n" + //
+            "INNER JOIN dataviz_bytelabss.fato_contratacoes ct\n" + //
+            "    ON av.vaga = ct.vaga\n" + //
+            "INNER JOIN dataviz_bytelabss.dim_candidato ca\n" + //
+            "    ON av.candidato = ca.id_candidato\n" + //
+            "INNER JOIN dataviz_bytelabss.dim_processo_seletivo pr\n" + //
+            "    ON ct.processo_seletivo = pr.id_processo_seletivo\n" + //
+            "INNER JOIN dataviz_bytelabss.dim_vaga vg\n" +
+            "    ON av.vaga = vg.id_vaga\n" + //
+            "WHERE ct.processo_seletivo = :numeroProcessoSeletivo;")
+List<CandidatoPorProcessoSeletivoDto> RetornarCandidatoPorProcessoSeletivo(@Param("numeroProcessoSeletivo") int numeroProcessoSeletivo);
+
 
 }
