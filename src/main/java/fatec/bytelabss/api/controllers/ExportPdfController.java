@@ -2,6 +2,7 @@ package fatec.bytelabss.api.controllers;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,6 +19,7 @@ import java.io.ByteArrayOutputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
+@CrossOrigin(origins="*")
 @RestController
 @RequestMapping("/api/pdf")
 public class ExportPdfController {
@@ -36,7 +38,7 @@ public class ExportPdfController {
         this.dimparticipanteRHPdfService = dimparticipanteRHPdfService;
         this.dimprocessoSeletivoPdfService = dimprocessoSeletivoPdfService;
         this.dimtempoPdfService = dimtempoPdfService;
-        this.dimvagaPdfService = dimvagaPdfService; 
+        this.dimvagaPdfService = dimvagaPdfService;
     }
 
     @GetMapping("/export/pdf/zip")
