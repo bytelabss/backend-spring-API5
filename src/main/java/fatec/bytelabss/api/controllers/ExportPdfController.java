@@ -2,16 +2,17 @@ package fatec.bytelabss.api.controllers;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import fatec.bytelabss.api.services.DimCandidatoPdfService;
-import fatec.bytelabss.api.services.DimCriterioPdfService;
-import fatec.bytelabss.api.services.DimParticipanteRHPdfService;
-import fatec.bytelabss.api.services.DimProcessoSeletivoPdfService;
-import fatec.bytelabss.api.services.DimTempoPdfService;
-import fatec.bytelabss.api.services.DimVagaPdfService;
+import fatec.bytelabss.api.services.pdf.DimCandidatoPdfService;
+import fatec.bytelabss.api.services.pdf.DimCriterioPdfService;
+import fatec.bytelabss.api.services.pdf.DimParticipanteRHPdfService;
+import fatec.bytelabss.api.services.pdf.DimProcessoSeletivoPdfService;
+import fatec.bytelabss.api.services.pdf.DimTempoPdfService;
+import fatec.bytelabss.api.services.pdf.DimVagaPdfService;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -20,6 +21,7 @@ import java.util.zip.ZipOutputStream;
 
 @RestController
 @RequestMapping("/api/pdf")
+@CrossOrigin(origins="*")
 public class ExportPdfController {
 
     private final DimCandidatoPdfService dimcandidatoPdfService;

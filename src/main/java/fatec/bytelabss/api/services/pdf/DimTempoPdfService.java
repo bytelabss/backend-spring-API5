@@ -1,4 +1,4 @@
-package fatec.bytelabss.api.services;
+package fatec.bytelabss.api.services.pdf;
 
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -8,8 +8,8 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.properties.UnitValue;
 
-import fatec.bytelabss.api.models.DimCandidato;
-import fatec.bytelabss.api.repositories.DimCandidatoRepository;
+import fatec.bytelabss.api.models.DimTempo;
+import fatec.bytelabss.api.repositories.DimTempoRepository;
 
 import org.springframework.stereotype.Service;
 
@@ -18,12 +18,12 @@ import java.io.ByteArrayOutputStream;
 import java.util.List;
 
 @Service
-public class DimCandidatoPdfService {
+public class DimTempoPdfService {
 
-    private final DimCandidatoRepository dimcandidatoRepository;
+    private final DimTempoRepository tempoRepository;
 
-    public DimCandidatoPdfService(DimCandidatoRepository dimcandidatoRepository) {
-        this.dimcandidatoRepository = dimcandidatoRepository;
+    public DimTempoPdfService(DimTempoRepository tempoRepository) {
+        this.tempoRepository = tempoRepository;
     }
 
     public ByteArrayInputStream generatePdf() {
@@ -37,25 +37,29 @@ public class DimCandidatoPdfService {
             Document document = new Document(pdf);
 
             // Título
-            Paragraph title = new Paragraph("Lista de Candidatos")
+            Paragraph title = new Paragraph("Lista de Dimensões de Tempo")
                     .setFontSize(18)
                     .setBold()
                     .setTextAlignment(com.itextpdf.layout.properties.TextAlignment.CENTER);
             document.add(title);
 
-            // Criar a tabela com 2 colunas
-            Table table = new Table(2);
+            // Criar a tabela com 4 colunas
+            Table table = new Table(4);
             table.setWidth(UnitValue.createPercentValue(100));
 
             // Adicionar cabeçalhos
             table.addHeaderCell(new Cell().add(new Paragraph("ID")));
-            table.addHeaderCell(new Cell().add(new Paragraph("Nome")));
+            table.addHeaderCell(new Cell().add(new Paragraph("Mês")));
+            table.addHeaderCell(new Cell().add(new Paragraph("Ano")));
+            table.addHeaderCell(new Cell().add(new Paragraph("Semestre")));
 
-            // Adicionar os dados dos candidatos
-            List<DimCandidato> candidatos = dimcandidatoRepository.findAll(); // Corrigido para usar dimcandidatoRepository
-            for (DimCandidato candidato : candidatos) {
-                table.addCell(new Cell().add(new Paragraph(candidato.getIdCandidato().toString())));
-                table.addCell(new Cell().add(new Paragraph(candidato.getNomeCandidato())));
+            // Adicionar os dados da tabela DIM_TEMPO
+            List<DimTempo> tempos = tempoRepository.findAll();
+            for (DimTempo tempo : tempos) {
+                table.addCell(new Cell().add(new Paragraph(tempo.getIdTempo().toString())));
+                table.addCell(new Cell().add(new Paragraph(tempo.getMes().toString())));
+                table.addCell(new Cell().add(new Paragraph(tempo.getAno().toString())));
+                table.addCell(new Cell().add(new Paragraph(tempo.getSemestre().toString())));
             }
 
             // Adicionar a tabela ao documento
