@@ -21,7 +21,6 @@ import java.util.zip.ZipOutputStream;
 
 @RestController
 @RequestMapping("/api/pdf")
-@CrossOrigin(origins="*")
 public class ExportPdfController {
 
     private final DimCandidatoPdfService dimcandidatoPdfService;
