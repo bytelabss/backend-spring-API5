@@ -30,7 +30,6 @@ public class PdfReportLogService {
 
     private static final String DEFAULT_ZIP_FILE_PATH = "relatorios/";
 
-    @Autowired
     public PdfReportLogService(PdfReportLogRepository pdfReportLogRepository) {
         this.pdfReportLogRepository = pdfReportLogRepository;
     }
