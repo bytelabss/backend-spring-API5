@@ -62,18 +62,18 @@ public class PdfReportLogService {
 
     private void saveZipFileLocally(byte[] zipData, String fileName) throws IOException {
        
-        // Use a default or custom path to save the ZIP file
-        String filePath = Paths.get(DEFAULT_ZIP_FILE_PATH, fileName).toString();
+        // // Use a default or custom path to save the ZIP file
+        // String filePath = Paths.get(DEFAULT_ZIP_FILE_PATH, fileName).toString();
 
-        // Ensure that the folder exists
-        java.nio.file.Files.createDirectories(Paths.get(DEFAULT_ZIP_FILE_PATH));
+        // // Ensure that the folder exists
+        // java.nio.file.Files.createDirectories(Paths.get(DEFAULT_ZIP_FILE_PATH));
 
-        // Write the ZIP file to the specified path
-        try (FileOutputStream fileOutputStream = new FileOutputStream(filePath)) {
-            fileOutputStream.write(zipData);
-        }
+        // // Write the ZIP file to the specified path
+        // try (FileOutputStream fileOutputStream = new FileOutputStream(filePath)) {
+        //     fileOutputStream.write(zipData);
+        // }
 
-        System.out.println("ZIP file saved locally at: " + filePath);
+        System.out.println("ZIP file saved locally at: + filePath" );
     }
 
     private boolean isCurrentWeekReportGenerated() {
