@@ -24,7 +24,7 @@ jobs:
           MYSQL_DATABASE: dataviz_bytelabss
           MYSQL_USER: userapp
           MYSQL_PASSWORD: admin123
-        options: > 
+        options: |
           --health-cmd="mysqladmin ping --silent"
           --health-interval=10s
           --health-timeout=5s
