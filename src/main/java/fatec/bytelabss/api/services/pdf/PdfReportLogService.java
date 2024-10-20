@@ -82,13 +82,13 @@ public class PdfReportLogService {
         return reportLog.isPresent();
     }
 
-    @PostConstruct
-    public void checkAndGenerateReportOnStartup() {
-        if (!isCurrentWeekReportGenerated()) {
-            generateWeeklyPdfReport();
-        } else {
-            System.out.println("O relatório dessa semana já foi gerado, cheque a pasta 'relatórios'");
-        }
-    }
+    // @PostConstruct
+    // public void checkAndGenerateReportOnStartup() {
+    //     if (!isCurrentWeekReportGenerated()) {
+    //         generateWeeklyPdfReport();
+    //     } else {
+    //         System.out.println("O relatório dessa semana já foi gerado, cheque a pasta 'relatórios'");
+    //     }
+    // }
 
 }
