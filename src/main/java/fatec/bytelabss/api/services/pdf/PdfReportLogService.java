@@ -19,7 +19,6 @@ import org.springframework.context.event.EventListener;
 import fatec.bytelabss.api.controllers.ExportPdfController;
 import fatec.bytelabss.api.models.PdfReportLogs;
 import fatec.bytelabss.api.repositories.PdfReportLogRepository;
-import jakarta.annotation.PostConstruct;
 
 @Service
 public class PdfReportLogService {
@@ -75,7 +74,7 @@ public class PdfReportLogService {
             fileOutputStream.write(zipData);
         }
 
-        System.out.println("ZIP file saved locally at: + filePath" );
+        System.out.println("ZIP file saved locally at: " + filePath );
     }
 
     private boolean isCurrentWeekReportGenerated() {
