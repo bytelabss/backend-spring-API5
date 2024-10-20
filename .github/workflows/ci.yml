@@ -18,17 +18,18 @@ jobs:
 
     services:
       mysql:
-        image: mysql:latest
+        image: mysql:8.0
         env:
           MYSQL_ROOT_PASSWORD: rootpassword
           MYSQL_DATABASE: dataviz_bytelabss
           MYSQL_USER: userapp
           MYSQL_PASSWORD: admin123
+          MYSQL_INITDB_SKIP_TZINFO: 1
         options: |
           --health-cmd="mysqladmin ping --silent"
-          --health-interval=10s
-          --health-timeout=5s
-          --health-retries=3
+          --health-interval=30s
+          --health-timeout=10s
+          --health-retries=5
         ports:
           - 3306:3306
 
