@@ -1,4 +1,4 @@
-package fatec.bytelabss.api.services;
+package fatec.bytelabss.api.services.pdf;
 
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;

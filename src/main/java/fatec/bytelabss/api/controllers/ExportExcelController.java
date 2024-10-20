@@ -9,13 +9,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import fatec.bytelabss.api.services.DimCandidatoExcelService;
-import fatec.bytelabss.api.services.DimCriterioExcelService;
-import fatec.bytelabss.api.services.DimParticipanteRHExcelService;
-import fatec.bytelabss.api.services.DimProcessoSeletivoExcelService;
-import fatec.bytelabss.api.services.DimTempoExcelService;
-import fatec.bytelabss.api.services.DimVagaExcelService;
-
+import fatec.bytelabss.api.services.excel.DimCandidatoExcelService;
+import fatec.bytelabss.api.services.excel.DimCriterioExcelService;
+import fatec.bytelabss.api.services.excel.DimParticipanteRHExcelService;
+import fatec.bytelabss.api.services.excel.DimProcessoSeletivoExcelService;
+import fatec.bytelabss.api.services.excel.DimTempoExcelService;
+import fatec.bytelabss.api.services.excel.DimVagaExcelService;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.util.zip.ZipEntry;
