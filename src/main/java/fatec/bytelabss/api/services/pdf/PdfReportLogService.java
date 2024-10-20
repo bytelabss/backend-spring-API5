@@ -13,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.context.event.EventListener;
 
 import fatec.bytelabss.api.controllers.ExportPdfController;
 import fatec.bytelabss.api.models.PdfReportLogs;
@@ -82,13 +84,17 @@ public class PdfReportLogService {
         return reportLog.isPresent();
     }
 
-    // @PostConstruct
-    // public void checkAndGenerateReportOnStartup() {
-    //     if (!isCurrentWeekReportGenerated()) {
-    //         generateWeeklyPdfReport();
-    //     } else {
-    //         System.out.println("O relatório dessa semana já foi gerado, cheque a pasta 'relatórios'");
-    //     }
-    // }
+    @EventListener(ContextRefreshedEvent.class)
+    public void checkAndGenerateReportOnStartup() {
+        if (!isCurrentWeekReportGenerated()) {
+            try {
+                generateWeeklyPdfReport();
+            } catch (Exception e) {
+                System.err.println("Error generating or downloading the PDF report on startup: " + e.getMessage());
+            }
+        } else {
+            System.out.println("O relatório dessa semana já foi gerado, cheque a pasta 'relatórios'");
+        }
+    }
 
 }
