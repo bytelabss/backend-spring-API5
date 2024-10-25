@@ -1,5 +1,6 @@
 package fatec.bytelabss.api.services;
 
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.spark.sql.Dataset;
@@ -46,13 +47,16 @@ public class DimVagaService {
 	
 	private DimVagaDto ConverterParaDto(DimVaga vaga) {
 		
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		var dto = new DimVagaDto();
+		
+		String dataCriacaoFormatada = vaga.getDataCriacao().format(formatter);
 		
 		dto.setId(vaga.getIdVaga());
 		dto.setNome(vaga.getTituloVaga());
 		dto.setRequisitos(vaga.getRequisitosVagas());
 		dto.setStatus(vaga.getEstado());
-		dto.setDataCriacao(vaga.getDataCriacao());
+		dto.setDataCriacao(dataCriacaoFormatada);
 		
 		return  dto;
 	}
