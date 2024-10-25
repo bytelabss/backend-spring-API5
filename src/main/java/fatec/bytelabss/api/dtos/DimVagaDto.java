@@ -15,7 +15,7 @@ public class DimVagaDto {
 	
 	private String nome;
 	
-	private LocalDateTime dataCriacao;
+	private String dataCriacao;
 	
 	private String requisitos;
 	
