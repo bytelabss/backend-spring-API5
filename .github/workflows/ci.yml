@@ -55,9 +55,9 @@ jobs:
     - name: Show databases for root user
       run: mysql --protocol=tcp -h localhost -P 3306 -u root -proot -e "SHOW DATABASES"
 
-    #- name: Run sample.sql
-     # run: |
-      #  mysql --protocol=tcp -h localhost -P 3306 -u root -password -e "$(cat $(find ./ -name sample.sql))"
+    - name: Run sample.sql
+      run: |
+        mysql --protocol=tcp -h localhost -P 3306 -u root -proot -e "$(cat $(find ./ -name sample.sql))"
 
     - name: Compilar com Maven
       run: mvn clean install --no-transfer-progress
