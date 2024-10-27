@@ -1,11 +1,15 @@
 package fatec.bytelabss.api.services;
 
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
+import fatec.bytelabss.api.dtos.ProcessoSeletivoTempoMedioDto;
 import fatec.bytelabss.api.repositories.FatoContratacoesRepository;
 import fatec.bytelabss.api.services.FatoContratacoesService;
 
@@ -15,6 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.math.BigDecimal;
 import java.util.*;
 
+@SpringBootTest
 public class FatoContratacoesServiceTest {
 
     @Mock

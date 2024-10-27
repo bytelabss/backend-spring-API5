@@ -16,22 +16,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    # services:
-    #  mysql:
-    #    image: mysql:8.0.25
-    #    env:
-    #      MYSQL_ROOT_PASSWORD: root_password
-    #      MYSQL_DATABASE: dataviz_bytelabss
-    #      MYSQL_USER: userapp
-    #      MYSQL_PASSWORD: admin123
-    #      MYSQL_INITDB_SKIP_TZINFO: 1
-    #    options: |
-    #      --health-cmd="mysqladmin ping --silent"
-    #      --health-interval=30s
-    #      --health-timeout=10s
-    #      --health-retries=5
-    #    ports:
-    #      - 3306:3306
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_DATABASE: dataviz_bytelabss
+          MYSQL_ROOT_PASSWORD: root
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 
     steps:
     - name: Checkout do código
@@ -42,27 +35,14 @@ jobs:
       with:
         distribution: temurin
         java-version: '17'
-        cache: maven
+        cache: maven        
 
-    #- name: Aguardar o MySQL estar pronto
-    #  run: |
-    #    echo "Aguardando MySQL..."
-    #    until mysqladmin ping --host=localhost --user=userapp --password=admin123 --silent; do
-    #      sleep 5
-    #    done
+    - name: Run sample.sql
+      run: |
+        mysql --protocol=tcp -h localhost -P 3306 -u root -proot -e "$(cat $(find ./ -name sample.sql))"
 
     - name: Compilar com Maven
       run: mvn clean install --no-transfer-progress
 
     - name: Executar testes
       run: mvn test --no-transfer-progress
-
-    #env:
-    #  SPRING_APPLICATION_NAME: api
-    #  SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/dataviz_bytelabss
-    #  SPRING_DATASOURCE_USERNAME: userapp
-    #  SPRING_DATASOURCE_PASSWORD: admin123
-    #  SPRING_DATASOURCE_DRIVER_CLASS_NAME: com.mysql.cj.jdbc.Driver
-    #  SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: org.hibernate.dialect.MySQLDialect
-    #  SPRING_JPA_PROPERTIES_HIBERNATE_ALLOW_JDBC_METADATA_ACCESS: false
-    #  SERVER_PORT: 9090
