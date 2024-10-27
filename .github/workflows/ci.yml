@@ -49,10 +49,15 @@ jobs:
     #    until mysqladmin ping --host=localhost --user=userapp --password=admin123 --silent; do
     #      sleep 5
     #    done
+    - name: Show Docker containers
+      run: docker ps -a
 
-    - name: Run sample.sql
-      run: |
-        mysql --protocol=tcp -h localhost -P 3306 -u root -password -e "$(cat $(find ./ -name sample.sql))"
+    - name: Show databases for root user
+      run: mysql --protocol=tcp -h localhost -P 3306 -u root -proot_password -e "SHOW DATABASES"
+
+    #- name: Run sample.sql
+     # run: |
+      #  mysql --protocol=tcp -h localhost -P 3306 -u root -password -e "$(cat $(find ./ -name sample.sql))"
 
     - name: Compilar com Maven
       run: mvn clean install --no-transfer-progress
