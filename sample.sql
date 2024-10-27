@@ -4,10 +4,6 @@
 -- ------------------------------------------------------
 -- Server version	8.0.37
 
-CREATE USER IF NOT EXISTS 'userapp'@'localhost' IDENTIFIED BY 'admin123';
-
-GRANT SELECT, INSERT, CREATE, UPDATE, DELETE ON dataviz_bytelabss.* TO 'userapp'@'localhost';
-
 USE dataviz_bytelabss;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
