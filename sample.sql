@@ -4,9 +4,9 @@
 -- ------------------------------------------------------
 -- Server version	8.0.37
 
-CREATE USER IF NOT EXISTS 'userapp'@'localhost' IDENTIFIED BY 'admin123';
+CREATE USER IF NOT EXISTS 'userapp'@'172.18.0.1' IDENTIFIED BY 'admin123';
 
-GRANT SELECT, INSERT, CREATE, UPDATE, DELETE ON dataviz_bytelabss.* TO 'userapp'@'localhost';
+GRANT SELECT, INSERT, CREATE, UPDATE, DELETE ON dataviz_bytelabss.* TO 'userapp'@'172.18.0.1';
 
 USE dataviz_bytelabss;
 
