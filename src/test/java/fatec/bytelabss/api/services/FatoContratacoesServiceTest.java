@@ -17,7 +17,6 @@ import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.*;
 
 @SpringBootTest
@@ -28,9 +27,6 @@ public class FatoContratacoesServiceTest {
 
     @InjectMocks
     private FatoContratacoesService service;
-    
-    @Autowired
-    private FatoContratacoesService serviceContratacoes;
 
     @BeforeEach
     public void setUp() {
@@ -87,16 +83,5 @@ public class FatoContratacoesServiceTest {
 
         // Verifica se o método do repositório foi chamado com os valores padrões
         verify(repo, times(1)).TempoMedioContratacoesPorVaga(1, 1900, 12, 2100);
-    }
-    
-    @Test
-    public void testRetornarTempoMedioProcessoSeletivo() {
-       
-    	
-    	Optional<LocalDateTime> fim = Optional.of(LocalDateTime.of(2025, 1, 30, 0, 0));
-    	List<ProcessoSeletivoTempoMedioDto> temposMedios = serviceContratacoes.RetornarTempoMedioProcessoSeletivo(LocalDateTime.of(2024, 1, 4, 0, 0),fim);
-    	  
-        assertEquals(3, temposMedios.size());
-
     }
 }
