@@ -1,11 +1,15 @@
 package fatec.bytelabss.api.services;
 
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
+import fatec.bytelabss.api.dtos.ProcessoSeletivoTempoMedioDto;
 import fatec.bytelabss.api.repositories.FatoContratacoesRepository;
 import fatec.bytelabss.api.services.FatoContratacoesService;
 
@@ -13,8 +17,10 @@ import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.*;
 
+@SpringBootTest
 public class FatoContratacoesServiceTest {
 
     @Mock
@@ -22,6 +28,9 @@ public class FatoContratacoesServiceTest {
 
     @InjectMocks
     private FatoContratacoesService service;
+    
+    @Autowired
+    private FatoContratacoesService serviceContratacoes;
 
     @BeforeEach
     public void setUp() {
@@ -78,5 +87,16 @@ public class FatoContratacoesServiceTest {
 
         // Verifica se o método do repositório foi chamado com os valores padrões
         verify(repo, times(1)).TempoMedioContratacoesPorVaga(1, 1900, 12, 2100);
+    }
+    
+    @Test
+    public void testRetornarTempoMedioProcessoSeletivo() {
+       
+    	
+    	Optional<LocalDateTime> fim = Optional.of(LocalDateTime.of(2025, 1, 30, 0, 0));
+    	List<ProcessoSeletivoTempoMedioDto> temposMedios = serviceContratacoes.RetornarTempoMedioProcessoSeletivo(LocalDateTime.of(2024, 1, 4, 0, 0),fim);
+    	  
+        assertEquals(3, temposMedios.size());
+
     }
 }
