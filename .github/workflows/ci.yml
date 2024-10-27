@@ -52,7 +52,7 @@ jobs:
 
     - name: Run sample.sql
       run: |
-        mysql --protocol=tcp -h localhost -P 3307 -u root -ppassword -e "$(cat $(find ./ -name sample.sql))"
+        mysql --protocol=tcp -h localhost -P 3307 -u root -ppassword root -e "$(cat $(find ./ -name sample.sql))"
 
     - name: Compilar com Maven
       run: mvn clean install --no-transfer-progress
