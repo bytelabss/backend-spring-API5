@@ -28,7 +28,7 @@ jobs:
         ports:
           # Opens port 3306 on service container and host
           # https://docs.github.com/en/actions/using-containerized-services/about-service-containers
-          - 3307:3306
+          - 3306:3306
           # Before continuing, verify the mysql container is reachable from the ubuntu host
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 
@@ -52,7 +52,7 @@ jobs:
 
     - name: Run sample.sql
       run: |
-        mysql --protocol=tcp -h localhost -P 3307 -u root -password -e "$(cat $(find ./ -name sample.sql))"
+        mysql --protocol=tcp -h localhost -P 3306 -u root -password -e "$(cat $(find ./ -name sample.sql))"
 
     - name: Compilar com Maven
       run: mvn clean install --no-transfer-progress
