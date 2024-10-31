@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import fatec.bytelabss.api.dtos.CandidatoPorProcessoSeletivoDto;
@@ -21,8 +22,12 @@ public class FatoAvaliacoesController {
 	private FatoAvaliacoesService service;
 
 	@GetMapping("/candidatoProcessoSeletivo")
-	public ResponseEntity<List<CandidatoPorProcessoSeletivoDto>> retornarCandidatoPorProcessoSeletivo(int numeroProcessoSeletivo) {
-		return ResponseEntity.ok().body(service.RetornarCandidatoPorProcessoSeletivo(numeroProcessoSeletivo));
+	public ResponseEntity<List<CandidatoPorProcessoSeletivoDto>> findByNumeroProcessoSeletivo(int numeroProcessoSeletivo) {
+		return ResponseEntity.ok().body(service.findByNumeroProcessoSeletivo(numeroProcessoSeletivo));
 	}
+	@GetMapping("/buscarPorNomeProcessoSeletivo")
+	public ResponseEntity<List<CandidatoPorProcessoSeletivoDto>> buscarPorNomeProcessoSeletivo(@RequestParam String nomeProcessoSeletivo) {
+    	return ResponseEntity.ok().body(service.findByNomeProcessoSeletivo(nomeProcessoSeletivo));
+}
 
 }

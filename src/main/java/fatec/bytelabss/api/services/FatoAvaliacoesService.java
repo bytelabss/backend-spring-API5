@@ -25,10 +25,14 @@ public class FatoAvaliacoesService {
 	@Autowired(required = true)
 	private FatoAvaliacoesRepository repository;
 
-	public List<CandidatoPorProcessoSeletivoDto> RetornarCandidatoPorProcessoSeletivo(int numeroProcessoSeletivo) {
-
-		return repository.RetornarCandidatoPorProcessoSeletivo(numeroProcessoSeletivo);
+	public List<CandidatoPorProcessoSeletivoDto> findByNumeroProcessoSeletivo(int numeroProcessoSeletivo) {
+		return repository.findByNumeroProcessoSeletivo(numeroProcessoSeletivo);
 	}
+
+	public List<CandidatoPorProcessoSeletivoDto> findByNomeProcessoSeletivo(String nomeProcessoSeletivo) {
+		return repository.findByNomeProcessoSeletivo(nomeProcessoSeletivo);
+	}
+	
 
 	private Dataset<Row> RetornarLinhasTratadas(Dataset<Row> listaDados){
 
