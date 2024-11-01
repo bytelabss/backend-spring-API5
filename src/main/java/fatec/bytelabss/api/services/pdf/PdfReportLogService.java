@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
 import java.time.temporal.TemporalAdjusters;
 import java.util.Optional;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,7 +28,7 @@ public class PdfReportLogService {
     @Autowired
     private ExportPdfController pdfController;
 
-    private static final String DEFAULT_ZIP_FILE_PATH = "relatorios/";
+    private static final String DEFAULT_PDF_FILE_PATH = "relatorios/";
 
     public PdfReportLogService(PdfReportLogRepository pdfReportLogRepository) {
         this.pdfReportLogRepository = pdfReportLogRepository;
@@ -37,44 +36,45 @@ public class PdfReportLogService {
 
     public void generateWeeklyPdfReport() {
         try {
+            // Geração e salvamento de cada PDF individualmente
+            saveIndividualPdf("candidatos.pdf", pdfController.exportCandidatosPdf());
+            saveIndividualPdf("criterios.pdf", pdfController.exportCriteriosPdf());
+            saveIndividualPdf("participantes_RH.pdf", pdfController.exportParticipantesRHPdf());
+            saveIndividualPdf("processos_seletivos.pdf", pdfController.exportProcessosSeletivosPdf());
+            saveIndividualPdf("dimensoes_tempo.pdf", pdfController.exportTempoPdf());
+            saveIndividualPdf("vagas.pdf", pdfController.exportVagasPdf());
 
-            ResponseEntity<byte[]> response = pdfController.exportPdfsAsZip();
+            // Log de relatório
+            PdfReportLogs log = new PdfReportLogs();
+            log.setReportDate(LocalDateTime.now()); 
+            log.setGeneratedAt(LocalDateTime.now());
+            pdfReportLogRepository.save(log);
 
-            if (response.getStatusCode() == HttpStatus.OK) {
-                byte[] zipData = response.getBody();
-
-                String zipFileName = "weekly_report_" + LocalDate.now() + ".zip";
-
-                saveZipFileLocally(zipData, zipFileName);
-
-                PdfReportLogs log = new PdfReportLogs();
-                log.setReportDate(LocalDateTime.now()); 
-                log.setGeneratedAt(LocalDateTime.now());
-                pdfReportLogRepository.save(log);
-
-                System.out.println("Weekly PDF report generated and saved successfully.");
-            } else {
-                System.err.println("Failed to generate or download the PDF report. Status code: " + response.getStatusCode());
-            }
+            System.out.println("Weekly PDF reports generated and saved individually.");
         } catch (Exception e) {
-            System.err.println("Error generating or downloading the PDF report: " + e.getMessage() + e);
+            System.err.println("Error generating individual PDF reports: " + e.getMessage() + e);
         }
     }
 
-    private void saveZipFileLocally(byte[] zipData, String fileName) throws IOException {
-       
-        // Use a default or custom path to save the ZIP file
-        String filePath = Paths.get(DEFAULT_ZIP_FILE_PATH, fileName).toString();
+    private void saveIndividualPdf(String fileName, ResponseEntity<byte[]> response) throws IOException {
+        if (response.getStatusCode() == HttpStatus.OK && response.getBody() != null) {
+            byte[] pdfData = response.getBody();
+            
+            // Use a default or custom path to save each PDF file
+            String filePath = Paths.get(DEFAULT_PDF_FILE_PATH, fileName).toString();
+            
+            // Ensure that the folder exists
+            java.nio.file.Files.createDirectories(Paths.get(DEFAULT_PDF_FILE_PATH));
 
-        // Ensure that the folder exists
-        java.nio.file.Files.createDirectories(Paths.get(DEFAULT_ZIP_FILE_PATH));
+            // Write the PDF file to the specified path
+            try (FileOutputStream fileOutputStream = new FileOutputStream(filePath)) {
+                fileOutputStream.write(pdfData);
+            }
 
-        // Write the ZIP file to the specified path
-        try (FileOutputStream fileOutputStream = new FileOutputStream(filePath)) {
-            fileOutputStream.write(zipData);
+            System.out.println("PDF file saved locally at: " + filePath);
+        } else {
+            System.err.println("Failed to generate or download the PDF: " + fileName + " Status code: " + response.getStatusCode());
         }
-
-        System.out.println("ZIP file saved locally at: " + filePath );
     }
 
     private boolean isCurrentWeekReportGenerated() {
@@ -89,10 +89,10 @@ public class PdfReportLogService {
             try {
                 generateWeeklyPdfReport();
             } catch (Exception e) {
-                System.err.println("Error generating or downloading the PDF report on startup: " + e.getMessage());
+                System.err.println("Error generating individual PDF reports on startup: " + e.getMessage());
             }
         } else {
-            System.out.println("O relatório dessa semana já foi gerado, cheque a pasta 'relatórios'");
+            System.out.println("O relatório dessa semana já foi gerado, cheque a pasta 'relatorios'");
         }
     }
 

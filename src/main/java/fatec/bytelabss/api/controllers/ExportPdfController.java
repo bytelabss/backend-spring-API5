@@ -1,6 +1,7 @@
 package fatec.bytelabss.api.controllers;
 
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,11 +16,9 @@ import fatec.bytelabss.api.services.pdf.DimTempoPdfService;
 import fatec.bytelabss.api.services.pdf.DimVagaPdfService;
 
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipOutputStream;
+import java.io.IOException;
 
-@CrossOrigin(origins="*")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/pdf")
 public class ExportPdfController {
@@ -31,8 +30,12 @@ public class ExportPdfController {
     private final DimTempoPdfService dimtempoPdfService;
     private final DimVagaPdfService dimvagaPdfService;
 
-
-    public ExportPdfController(DimCandidatoPdfService dimcandidatoPdfService, DimCriterioPdfService dimcriterioPdfService, DimParticipanteRHPdfService dimparticipanteRHPdfService, DimProcessoSeletivoPdfService dimprocessoSeletivoPdfService, DimTempoPdfService dimtempoPdfService, DimVagaPdfService dimvagaPdfService) {
+    public ExportPdfController(DimCandidatoPdfService dimcandidatoPdfService,
+                               DimCriterioPdfService dimcriterioPdfService,
+                               DimParticipanteRHPdfService dimparticipanteRHPdfService,
+                               DimProcessoSeletivoPdfService dimprocessoSeletivoPdfService,
+                               DimTempoPdfService dimtempoPdfService,
+                               DimVagaPdfService dimvagaPdfService) {
         this.dimcandidatoPdfService = dimcandidatoPdfService;
         this.dimcriterioPdfService = dimcriterioPdfService;
         this.dimparticipanteRHPdfService = dimparticipanteRHPdfService;
@@ -41,73 +44,47 @@ public class ExportPdfController {
         this.dimvagaPdfService = dimvagaPdfService;
     }
 
-    @GetMapping("/export/pdf/zip")
-    public ResponseEntity<byte[]> exportPdfsAsZip() {
-        try (ByteArrayOutputStream baos = new ByteArrayOutputStream();
-             ZipOutputStream zipOut = new ZipOutputStream(baos)) {
+    @GetMapping("/candidatos")
+    public ResponseEntity<byte[]> exportCandidatosPdf() throws IOException {
+        return exportSinglePdf("candidatos.pdf", dimcandidatoPdfService.generatePdf());
+    }
 
-            // Gerar PDF de candidatos
-            ByteArrayInputStream candidatoPdf = dimcandidatoPdfService.generatePdf();
-            ZipEntry candidatoEntry = new ZipEntry("candidatos.pdf");
-            zipOut.putNextEntry(candidatoEntry);
-            byte[] candidatoBytes = candidatoPdf.readAllBytes();
-            zipOut.write(candidatoBytes, 0, candidatoBytes.length);
-            zipOut.closeEntry();
+    @GetMapping("/criterios")
+    public ResponseEntity<byte[]> exportCriteriosPdf() throws IOException {
+        return exportSinglePdf("criterios.pdf", dimcriterioPdfService.generatePdf());
+    }
 
-            // Gerar PDF de critérios
-            ByteArrayInputStream criterioPdf = dimcriterioPdfService.generatePdf();
-            ZipEntry criterioEntry = new ZipEntry("criterios.pdf");
-            zipOut.putNextEntry(criterioEntry);
-            byte[] criterioBytes = criterioPdf.readAllBytes();
-            zipOut.write(criterioBytes, 0, criterioBytes.length);
-            zipOut.closeEntry();
+    @GetMapping("/participantesRH")
+    public ResponseEntity<byte[]> exportParticipantesRHPdf() throws IOException {
+        return exportSinglePdf("participantes_RH.pdf", dimparticipanteRHPdfService.generatePdf());
+    }
 
-            // Gerar PDF de participantes RH
-            ByteArrayInputStream participanteRhPdf = dimparticipanteRHPdfService.generatePdf();
-            ZipEntry participanteRhEntry = new ZipEntry("participantes_RH.pdf");
-            zipOut.putNextEntry(participanteRhEntry);
-            byte[] participanteRhBytes = participanteRhPdf.readAllBytes();
-            zipOut.write(participanteRhBytes, 0, participanteRhBytes.length);
-            zipOut.closeEntry();
+    @GetMapping("/processosSeletivos")
+    public ResponseEntity<byte[]> exportProcessosSeletivosPdf() throws IOException {
+        return exportSinglePdf("processos_seletivos.pdf", dimprocessoSeletivoPdfService.generatePdf());
+    }
 
-            // Gerar PDF de processos seletivos
-             ByteArrayInputStream processoSeletivoPdf = dimprocessoSeletivoPdfService.generatePdf();
-             ZipEntry processoSeletivoEntry = new ZipEntry("processos_seletivos.pdf");
-             zipOut.putNextEntry(processoSeletivoEntry);
-             byte[] processoSeletivoBytes = processoSeletivoPdf.readAllBytes();
-             zipOut.write(processoSeletivoBytes, 0, processoSeletivoBytes.length);
-             zipOut.closeEntry();
+    @GetMapping("/tempo")
+    public ResponseEntity<byte[]> exportTempoPdf() throws IOException {
+        return exportSinglePdf("dimensoes_tempo.pdf", dimtempoPdfService.generatePdf());
+    }
 
-            // Gerar PDF de dimensões de tempo
-            ByteArrayInputStream tempoPdf = dimtempoPdfService.generatePdf();
-            ZipEntry tempoEntry = new ZipEntry("dimensoes_tempo.pdf");
-            zipOut.putNextEntry(tempoEntry);
-            byte[] tempoBytes = tempoPdf.readAllBytes();
-            zipOut.write(tempoBytes, 0, tempoBytes.length);
-            zipOut.closeEntry();
+    @GetMapping("/vagas")
+    public ResponseEntity<byte[]> exportVagasPdf() throws IOException {
+        return exportSinglePdf("vagas.pdf", dimvagaPdfService.generatePdf());
+    }
 
-            // Gerar PDF de vagas
-            ByteArrayInputStream vagaPdf = dimvagaPdfService.generatePdf();
-            ZipEntry vagaEntry = new ZipEntry("vagas.pdf");
-            zipOut.putNextEntry(vagaEntry);
-            byte[] vagaBytes = vagaPdf.readAllBytes();
-            zipOut.write(vagaBytes, 0, vagaBytes.length);
-            zipOut.closeEntry();
+    private ResponseEntity<byte[]> exportSinglePdf(String fileName, ByteArrayInputStream pdfStream) throws IOException {
+        byte[] pdfBytes = pdfStream.readAllBytes();
+        pdfStream.close();
 
-            zipOut.finish();
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Disposition", "attachment; filename=" + fileName);
 
-            // Retornar o arquivo ZIP
-            HttpHeaders headers = new HttpHeaders();
-            headers.add("Content-Disposition", "attachment; filename=exported_files.zip");
-
-            return ResponseEntity
-                    .ok()
-                    .headers(headers)
-                    .body(baos.toByteArray());
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            return ResponseEntity.status(500).build();
-        }
+        return ResponseEntity
+                .ok()
+                .headers(headers)
+                .contentType(MediaType.APPLICATION_PDF)
+                .body(pdfBytes);
     }
 }
