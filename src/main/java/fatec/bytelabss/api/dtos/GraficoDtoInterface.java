@@ -13,5 +13,7 @@ public interface GraficoDtoInterface {
 	Double getMaxLimit();
 	
     Double getMinLimit();
+    
+    String getName();
 
 }
