@@ -32,5 +32,8 @@ public class Grafico {
 	
 	@Column(name = "min_limit")
 	private Double minLimit;
+	
+	@Column(name = "name")
+	private String name;
 
 }

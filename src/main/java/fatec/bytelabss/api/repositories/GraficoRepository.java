@@ -12,7 +12,7 @@ import fatec.bytelabss.api.models.Grafico;
 
 public interface GraficoRepository extends JpaRepository<Grafico, Long>{
 
-	 @Query(nativeQuery = true, value =  "SELECT id, has_alarm, ignore_until, max_limit, min_limit  "
+	 @Query(nativeQuery = true, value =  "SELECT id, has_alarm, ignore_until, max_limit, min_limit, name  "
 	 										+ "FROM graficos "
 	 										+ "WHERE has_alarm = 1 ")
 	List<GraficoDtoInterface> RetornarGraficosComAlarmesAtivos(@Param("dataAtual") LocalDateTime dataAtual);

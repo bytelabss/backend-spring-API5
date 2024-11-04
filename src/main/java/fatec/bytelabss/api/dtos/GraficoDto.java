@@ -17,9 +17,11 @@ public class GraficoDto {
 
 	private Boolean hasAlarm;
 
-	private LocalDateTime ignoreUntil;
+	private String ignoreUntil;
 
 	private Double maxLimit;
 	
 	private Double minLimit;
+	
+	private String name;
 }
