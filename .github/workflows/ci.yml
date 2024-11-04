@@ -35,11 +35,13 @@ jobs:
       with:
         distribution: temurin
         java-version: '17'
-        cache: maven        
+        cache: maven
 
-    - name: Run sample.sql
+    - name: Criar usuário e permissões no MySQL
       run: |
-        mysql --protocol=tcp -h localhost -P 3306 -u root -proot -e "$(cat $(find ./ -name sample.sql))"
+        mysql -h 172.18.0.1 -P 3306 -u root -proot -e "CREATE USER IF NOT EXISTS 'userapp'@'172.18.0.1' IDENTIFIED BY 'admin123';"
+        mysql -h 172.18.0.1 -P 3306 -u root -proot -e "GRANT SELECT, INSERT, CREATE, REFERENCES, UPDATE, DELETE, DROP ON dataviz_bytelabss.* TO 'userapp'@'172.18.0.1';"
+        mysql -h 172.18.0.1 -P 3306 -u root -proot -e "FLUSH PRIVILEGES;"
 
     - name: Compilar com Maven
       run: mvn clean install --no-transfer-progress
