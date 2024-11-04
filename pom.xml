@@ -182,7 +182,7 @@
                     <user>userapp</user>
                     <password>admin123</password>
                     <locations>
-                        <location>classpath:/db/migration</location>
+                        <location>classpath:/db/migration/migrations</location>
                     </locations>
                 </configuration>
             </plugin>
