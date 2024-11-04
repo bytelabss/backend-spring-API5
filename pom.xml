@@ -76,6 +76,19 @@
             <scope>runtime</scope>
         </dependency>
 
+        <!-- Database Versioning with Flyway-->
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>10.20.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-mysql</artifactId>
+            <version>10.20.1</version>
+        </dependency>
+
         <!-- Other dependencies-->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -93,7 +106,7 @@
         <dependency>
             <groupId>com.itextpdf</groupId>
             <artifactId>kernel</artifactId>
-            <version>7.2.5</version> <!-- Verifique no site oficial para a versão mais recente -->
+            <version>7.2.5</version>
         </dependency>
 
         <dependency>
@@ -101,12 +114,21 @@
             <artifactId>layout</artifactId>
             <version>7.2.5</version>
         </dependency>
-
-        <!-- Tests -->
     </dependencies>
 
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.sql</include>
+                    <include>**/*.*</include>
+                </includes>
+            </resource>
+        </resources>
+
         <plugins>
+            <!-- Maven Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -124,6 +146,7 @@
                 </configuration>
             </plugin>
 
+            <!-- Spring Boot Maven Plugin -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -132,6 +155,7 @@
                 </configuration>
             </plugin>
 
+            <!-- Maven Surefire Plugin for running tests -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -141,10 +165,26 @@
                 </configuration>
             </plugin>
 
+            <!-- JaCoCo for code coverage -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.13-SNAPSHOT</version>
+            </plugin>
+
+            <!-- Flyway Maven Plugin for Database Migration -->
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>10.20.1</version>
+                <configuration>
+                    <url>jdbc:mysql://localhost:3306/dataviz_bytelabss</url>
+                    <user>userapp</user>
+                    <password>admin123</password>
+                    <locations>
+                        <location>classpath:/db/migration/migrations</location>
+                    </locations>
+                </configuration>
             </plugin>
         </plugins>
     </build>
