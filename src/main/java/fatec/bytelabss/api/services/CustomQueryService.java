@@ -71,11 +71,13 @@ public class CustomQueryService {
         }
 
         // Group by
-        List<Expression<?>> groupBy = new ArrayList<>();
-        for (String groupByField : query.getGroupBy()) {
-            groupBy.add(root.get(groupByField));
+        if (query.getGroupBy() != null && query.getGroupBy().isEmpty()) {
+            List<Expression<?>> groupBy = new ArrayList<>();
+            for (String groupByField : query.getGroupBy()) {
+                groupBy.add(root.get(groupByField));
+            }
+            criteriaQuery.groupBy(groupBy);
         }
-        criteriaQuery.groupBy(groupBy);
 
         // Order by
         if (query.getOrderByField() != null) {
