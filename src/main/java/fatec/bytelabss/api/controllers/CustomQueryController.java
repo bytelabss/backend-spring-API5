@@ -12,6 +12,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/custom-queries")
+@CrossOrigin(origins="*")
 public class CustomQueryController {
 
     private static final Logger logger = LoggerFactory.getLogger(CustomQueryController.class);
