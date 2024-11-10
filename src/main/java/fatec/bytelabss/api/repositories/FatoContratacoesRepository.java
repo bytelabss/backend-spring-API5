@@ -12,12 +12,43 @@ import org.springframework.stereotype.Repository;
 import fatec.bytelabss.api.dtos.ProcessoSeletivoQuantidadeDto;
 import fatec.bytelabss.api.dtos.ProcessoSeletivoTempoMedioDto;
 import fatec.bytelabss.api.dtos.QuantidadeContratacoesRhDto;
+import fatec.bytelabss.api.dtos.VagaTempoMedioDto;
 import fatec.bytelabss.api.models.FatoContratacoes;
 
 @Repository
 public interface FatoContratacoesRepository extends JpaRepository<FatoContratacoes, Integer>{
 
 
+	@Query(nativeQuery = true, value =  "SELECT v.titulo_vaga, AVG(f.tempo_medio) tempo_medio " 
+								+ "       FROM fato_contratacoes f "
+								+ "       JOIN dim_vaga v ON f.vaga = v.id_vaga "
+								+ "       JOIN dim_processo_seletivo p ON p.id_processo_seletivo = f.processo_seletivo "
+								+ "       JOIN dim_tempo t ON f.tempo = t.id_tempo "
+								+ "       WHERE p.inicio_processo_seletivo <=  :dataAtual and p.fim_processo_seletivo >= :dataAtual "
+								+ "       GROUP BY v.titulo_vaga, p.id_processo_seletivo "
+								+ "       HAVING AVG(f.tempo_medio) > :maxLimit or AVG(f.tempo_medio) < :minLimite; ")
+    List<VagaTempoMedioDto> RetornarMediaVagaForaLimites(@Param("minLimite") Double minLimite, @Param("maxLimit") Double maxLimit, @Param("dataAtual") LocalDateTime dataAtual);
+	
+	@Query(nativeQuery = true, value =  " SELECT r.id_participante_rh, r.cargo, SUM(fc.quantidade) AS totalContratacoes "
+									+ "    FROM fato_contratacoes fc "
+									+ "    JOIN dim_participante_rh r ON fc.participante_rh = r.id_participante_rh "
+									+ "    JOIN dim_tempo t ON fc.tempo = t.id_tempo "
+									+ "    WHERE (t.ano > :anoAtual OR (t.ano = :anoAtual AND t.mes >= :mesAtual)) "
+									+ "    GROUP BY r.id_participante_rh, r.cargo    "
+									+ "    HAVING SUM(fc.quantidade) > :maxLimit or SUM(fc.quantidade) < :minLimite; ")
+	List<QuantidadeContratacoesRhDto> RetornarQuantidadeContratacoesForaLimites(@Param("minLimite") Double minLimite, @Param("maxLimit") Double maxLimit, @Param("mesAtual") Integer mesAtual, @Param("anoAtual") Integer anoAtual);
+
+	@Query(nativeQuery = true, value =  " SELECT a.processo_seletivo, sum(a.tempo_medio) / count(a.processo_seletivo) tempo_medio, b.nome "
+									+ "FROM fato_contratacoes a "
+									+ "INNER JOIN dim_processo_seletivo b ON b.id_processo_seletivo = a.processo_seletivo "
+									+ "WHERE (b.inicio_processo_seletivo < :dataAtual) "
+									+ "and (b.fim_processo_seletivo > :dataAtual or b.fim_processo_seletivo is null)  "
+									+ "GROUP BY a.processo_seletivo "
+									+ " HAVING sum(a.tempo_medio) / count(a.processo_seletivo) > :maxLimit or sum(a.tempo_medio) / count(a.processo_seletivo) < :minLimite ; ")
+	List<ProcessoSeletivoTempoMedioDto> RetornarMediaProcessoSeletivoForaLimite(@Param("minLimite") Double minLimite, @Param("maxLimit") Double maxLimit, @Param("dataAtual") LocalDateTime dataAtual);
+
+	
+	
   	@Query(nativeQuery = true, value =  "SELECT a.processo_seletivo, sum(a.tempo_medio) / count(a.processo_seletivo) tempo_medio, b.nome FROM fato_contratacoes a INNER JOIN dim_processo_seletivo b ON b.id_processo_seletivo = a.processo_seletivo WHERE (b.inicio_processo_seletivo < :fim || :fim is null) and (b.fim_processo_seletivo > :inicio or b.fim_processo_seletivo is null)  GROUP BY a.processo_seletivo")
     List<ProcessoSeletivoTempoMedioDto> RetornarTempoMedioProcessoSeletivo(@Param("inicio") LocalDateTime inicio, @Param("fim") Optional<LocalDateTime> fim);
 

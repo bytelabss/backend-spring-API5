@@ -24,7 +24,16 @@ public interface FatoAvaliacoesRepository extends JpaRepository<FatoAvaliacoes, 
             "INNER JOIN dataviz_bytelabss.dim_vaga vg\n" +
             "    ON av.vaga = vg.id_vaga\n" + //
             "WHERE ct.processo_seletivo = :numeroProcessoSeletivo;")
-List<CandidatoPorProcessoSeletivoDto> RetornarCandidatoPorProcessoSeletivo(@Param("numeroProcessoSeletivo") int numeroProcessoSeletivo);
-
+    List<CandidatoPorProcessoSeletivoDto> findByNumeroProcessoSeletivo(@Param("numeroProcessoSeletivo") int numeroProcessoSeletivo);
+    
+@Query(nativeQuery = true, value = "SELECT DISTINCT av.candidato AS idCandidato, av.vaga, vg.titulo_vaga AS tituloVaga, " + 
+            "ct.processo_seletivo AS idProcessoSeletivo, ca.nome AS nomeCandidato, pr.nome AS nomeProcessoSeletivo " + 
+            "FROM dataviz_bytelabss.fato_avaliacoes av " + 
+            "INNER JOIN dataviz_bytelabss.fato_contratacoes ct ON av.vaga = ct.vaga " + 
+            "INNER JOIN dataviz_bytelabss.dim_candidato ca ON av.candidato = ca.id_candidato " + 
+            "INNER JOIN dataviz_bytelabss.dim_processo_seletivo pr ON ct.processo_seletivo = pr.id_processo_seletivo " + 
+            "INNER JOIN dataviz_bytelabss.dim_vaga vg ON av.vaga = vg.id_vaga " + 
+            "WHERE pr.nome LIKE CONCAT('%', :nomeProcessoSeletivo, '%')")
+List<CandidatoPorProcessoSeletivoDto> findByNomeProcessoSeletivo(@Param("nomeProcessoSeletivo") String nomeProcessoSeletivo);
 
 }

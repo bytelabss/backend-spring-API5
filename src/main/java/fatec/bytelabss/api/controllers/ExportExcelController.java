@@ -15,10 +15,9 @@ import fatec.bytelabss.api.services.excel.DimParticipanteRHExcelService;
 import fatec.bytelabss.api.services.excel.DimProcessoSeletivoExcelService;
 import fatec.bytelabss.api.services.excel.DimTempoExcelService;
 import fatec.bytelabss.api.services.excel.DimVagaExcelService;
-import jakarta.servlet.http.HttpServletResponse;
-import java.io.*;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipOutputStream;
+
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
 
 @CrossOrigin(origins="*")
 @RestController
@@ -43,53 +42,47 @@ public class ExportExcelController {
     @Autowired
     private DimVagaExcelService dimVagaExcelService;
 
-    @GetMapping("/relatorios")
-    public ResponseEntity<byte[]> exportAllToZip(HttpServletResponse response) throws IOException {
-        // ByteArrayOutputStream para armazenar o ZIP
-        ByteArrayOutputStream zipOutputStream = new ByteArrayOutputStream();
+    @GetMapping("/candidatos")
+    public ResponseEntity<byte[]> exportCandidatos() throws IOException {
+        return exportSingleFile("Candidatos.xlsx", dimCandidatoExcelService.exportarCandidatoParaExcel());
+    }
 
-        // Criar um ZipOutputStream
-        try (ZipOutputStream zipOut = new ZipOutputStream(zipOutputStream)) {
-            // Gerar cada arquivo Excel e adicioná-lo ao ZIP
-            addExcelToZip(zipOut, "Candidatos.xlsx", dimCandidatoExcelService.exportarCandidatoParaExcel());
-            addExcelToZip(zipOut, "Criterios.xlsx", dimCriterioExcelService.exportarCriterioParaExcel());
-            addExcelToZip(zipOut, "ParticipantesRH.xlsx", dimParticipanteRHExcelService.exportarParticipanteRHParaExcel());
-            addExcelToZip(zipOut, "ProcessosSeletivos.xlsx", dimProcessoSeletivoExcelService.exportarProcessoSeletivoParaExcel());
-            addExcelToZip(zipOut, "Tempo.xlsx", dimTempoExcelService.exportarTempoParaExcel());
-            addExcelToZip(zipOut, "Vagas.xlsx", dimVagaExcelService.exportarVagaParaExcel());
-        }
+    @GetMapping("/criterios")
+    public ResponseEntity<byte[]> exportCriterios() throws IOException {
+        return exportSingleFile("Criterios.xlsx", dimCriterioExcelService.exportarCriterioParaExcel());
+    }
 
-        // Definir os headers e preparar a resposta
+    @GetMapping("/participantesRH")
+    public ResponseEntity<byte[]> exportParticipantesRH() throws IOException {
+        return exportSingleFile("ParticipantesRH.xlsx", dimParticipanteRHExcelService.exportarParticipanteRHParaExcel());
+    }
+
+    @GetMapping("/processosSeletivos")
+    public ResponseEntity<byte[]> exportProcessosSeletivos() throws IOException {
+        return exportSingleFile("ProcessosSeletivos.xlsx", dimProcessoSeletivoExcelService.exportarProcessoSeletivoParaExcel());
+    }
+
+    @GetMapping("/tempo")
+    public ResponseEntity<byte[]> exportTempo() throws IOException {
+        return exportSingleFile("Tempo.xlsx", dimTempoExcelService.exportarTempoParaExcel());
+    }
+
+    @GetMapping("/vagas")
+    public ResponseEntity<byte[]> exportVagas() throws IOException {
+        return exportSingleFile("Vagas.xlsx", dimVagaExcelService.exportarVagaParaExcel());
+    }
+
+    private ResponseEntity<byte[]> exportSingleFile(String fileName, ByteArrayInputStream excelStream) throws IOException {
+        byte[] excelBytes = excelStream.readAllBytes();
+        excelStream.close();
+
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Disposition", "attachment; filename=relatorios.zip");
+        headers.add("Content-Disposition", "attachment; filename=" + fileName);
 
         return ResponseEntity
                 .ok()
                 .headers(headers)
                 .contentType(MediaType.APPLICATION_OCTET_STREAM)
-                .body(zipOutputStream.toByteArray());
-    }
-
-    // Método auxiliar para adicionar cada arquivo Excel no ZIP
-    private void addExcelToZip(ZipOutputStream zipOut, String fileName, ByteArrayInputStream excelStream) throws IOException {
-        // Criar uma entrada no ZIP para o arquivo Excel
-        ZipEntry zipEntry = new ZipEntry(fileName);
-        zipOut.putNextEntry(zipEntry);
-
-        // Escrever o conteúdo do arquivo Excel para o ZIP
-        byte[] buffer = new byte[1024];
-        int len;
-        while ((len = excelStream.read(buffer)) > 0) {
-            zipOut.write(buffer, 0, len);
-        }
-
-        zipOut.closeEntry();
-        excelStream.close();  // Fechar o stream do arquivo Excel
+                .body(excelBytes);
     }
 }
-
-
-
-
-
-

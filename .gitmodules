@@ -1,0 +1,3 @@
+[submodule "src/main/resources/db/migration"]
+	path = src/main/resources/db/migration
+	url = https://github.com/bytelabss/database-API5.git

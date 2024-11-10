@@ -20,6 +20,7 @@ import fatec.bytelabss.api.dtos.CandidatoProcessoDTO;
 import fatec.bytelabss.api.dtos.ProcessoSeletivoQuantidadeDto;
 import fatec.bytelabss.api.dtos.ProcessoSeletivoTempoMedioDto;
 import fatec.bytelabss.api.dtos.QuantidadeContratacoesRhDto;
+import fatec.bytelabss.api.dtos.VagaTempoMedioDto;
 import fatec.bytelabss.api.models.DimParticipanteRH;
 import fatec.bytelabss.api.models.DimProcessoSeletivo;
 import fatec.bytelabss.api.models.DimTempo;
@@ -130,6 +131,27 @@ public class FatoContratacoesService {
 		}
 
 		return listaEntidades;
+	}
+	
+	public boolean retornarSeExisteMediaMaiorLimite(Double minLimite, Double maxLimit) {
+		
+		List<VagaTempoMedioDto> resultadoList = repository.RetornarMediaVagaForaLimites(minLimite, maxLimit, LocalDateTime.now());
+		
+		return !resultadoList.isEmpty();
+	}
+	
+	public boolean retornarQuantidadeContratacoesMaiorLimite(Double minLimite, Double maxLimit) {
+		
+		List<QuantidadeContratacoesRhDto> resultadoList = repository.RetornarQuantidadeContratacoesForaLimites(minLimite, maxLimit, LocalDateTime.now().getYear(),LocalDateTime.now().getMonthValue());
+		
+		return !resultadoList.isEmpty();
+	}
+	
+	public boolean retornarMediaProcessoSeletivoForaLimite(Double minLimite, Double maxLimit) {
+		
+		List<ProcessoSeletivoTempoMedioDto> resultadoList = repository.RetornarMediaProcessoSeletivoForaLimite(minLimite, maxLimit, LocalDateTime.now());
+		
+		return !resultadoList.isEmpty();
 	}
 
 	public Map<String, Double> obterTempoMedioPorVaga(Integer mesInicial, Integer anoInicial, Integer mesFinal, Integer anoFinal) {
