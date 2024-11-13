@@ -1,13 +1,12 @@
-name: CI Pipeline
+name: CI Pipeline - Main
 
 on:
   push:
-    branches: 
-      - '**'               
+    branches:
+      - main
   pull_request:
     branches:
       - main
-      - dev
 
 jobs:
   build:
@@ -24,6 +23,14 @@ jobs:
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 
     steps:
+
+      - name: Bloquear commits diretos na branch main
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          echo "Commits diretos na branch 'main' não são permitidos. Desfaça o Commit atual com o comando git reset.
+          Faça as alterações novamente através de um Pull Request."
+          exit 1
+
       - name: Checkout do código
         uses: actions/checkout@v3
         with:
@@ -45,11 +52,8 @@ jobs:
       - name: Compilar com Maven
         run: mvn clean install --no-transfer-progress
 
-      # Executar testes unitários em todos os commits de todas as branches
       - name: Executar testes unitários
         run: mvn test --no-transfer-progress
 
-      # Executar testes de integração apenas em pull requests para 'dev' e 'main'
-      - name: Executar testes de integração (somente em PR para dev e main)
-        if: github.event_name == 'pull_request' && (github.base_ref == 'dev' || github.base_ref == 'main')
+      - name: Executar testes de integração
         run: mvn verify -P integration-tests -DskipUnitTests=false --no-transfer-progress

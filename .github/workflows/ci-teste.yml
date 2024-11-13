@@ -1,0 +1,52 @@
+name: CI Pipeline - Teste
+
+on:
+  push:
+    branches:
+      - "teste*"
+  pull_request:
+    branches:
+      - "teste*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_DATABASE: dataviz_bytelabss
+          MYSQL_ROOT_PASSWORD: root
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    steps:
+
+      - name: Checkout do código
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+
+      - name: Configurar JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven        
+
+      - name: Criar usuário e permissões no MySQL
+        run: |
+          mysql -h 172.18.0.1 -P 3306 -u root -proot -e "CREATE USER IF NOT EXISTS 'userapp'@'172.18.0.1' IDENTIFIED BY 'admin123';"
+          mysql -h 172.18.0.1 -P 3306 -u root -proot -e "GRANT SELECT, INSERT, CREATE, REFERENCES, UPDATE, DELETE, DROP ON dataviz_bytelabss.* TO 'userapp'@'172.18.0.1';"
+          mysql -h 172.18.0.1 -P 3306 -u root -proot -e "FLUSH PRIVILEGES;"
+
+      - name: Compilar com Maven
+        run: mvn clean install --no-transfer-progress
+
+      - name: Executar testes unitários
+        run: mvn test --no-transfer-progress
+
+      - name: Executar testes de integração
+        run: mvn verify -P integration-tests -DskipUnitTests=false --no-transfer-progress
