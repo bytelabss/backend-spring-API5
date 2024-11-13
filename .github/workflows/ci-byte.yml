@@ -1,12 +1,14 @@
-name: CI Pipeline - BYTE Branches
+name: CI Pipeline - BYTE Branches and CI Branches
 
 on:
   push:
     branches:
       - 'BYTE*' 
+      - 'ci*' 
   pull_request:
     branches:
-      - 'BYTE*'   
+      - 'BYTE*'
+      - 'ci*'    
 
 jobs:
   build:
