@@ -151,7 +151,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <jvmArguments>--add-opens java.base/sun.nio.ch=ALL-UNNAMED</jvmArguments>
+                    <jvmArguments>--add-opens java.base/sun.nio.ch=ALL-UNNAMED -Dspring.profiles.active=${spring.profiles.active}</jvmArguments>
                 </configuration>
             </plugin>
 
@@ -194,7 +194,7 @@
         <profile>
             <id>production</id>
             <properties>
-                <spring.profiles.active>test</spring.profiles.active>
+                <spring.profiles.active>production</spring.profiles.active>
                 <flyway.url>jdbc:mysql://localhost:3306/dataviz_bytelabss</flyway.url>
                 <flyway.user>userapp</flyway.user>
                 <flyway.password>admin123</flyway.password>
