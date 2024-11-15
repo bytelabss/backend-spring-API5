@@ -14,13 +14,22 @@ jobs:
     runs-on: ubuntu-latest
 
     services:
-      mysql:
+      mysql_prod:
         image: mysql:5.7
         env:
           MYSQL_DATABASE: dataviz_bytelabss
           MYSQL_ROOT_PASSWORD: root
         ports:
           - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
+      mysql_test:
+        image: mysql:5.7
+        env:
+          MYSQL_DATABASE: test_db
+          MYSQL_ROOT_PASSWORD: root
+        ports:
+          - 3307:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 
     steps:
@@ -38,10 +47,12 @@ jobs:
 
       - name: Criar usuário e permissões no MySQL
         run: |
-          mysql -h 172.18.0.1 -P 3306 -u root -proot -e "CREATE USER IF NOT EXISTS 'userapp'@'172.18.0.1' IDENTIFIED BY 'admin123';"
-          mysql -h 172.18.0.1 -P 3306 -u root -proot -e "GRANT SELECT, INSERT, CREATE, REFERENCES, UPDATE, DELETE, DROP ON dataviz_bytelabss.* TO 'userapp'@'172.18.0.1';"
-          mysql -h 172.18.0.1 -P 3306 -u root -proot -e "GRANT SELECT, INSERT, CREATE, REFERENCES, UPDATE, DELETE, DROP ON test_db.* TO 'userapp'@'172.18.0.1';"
-          mysql -h 172.18.0.1 -P 3306 -u root -proot -e "FLUSH PRIVILEGES;"
+          mysql_prod -h 172.18.0.1 -P 3306 -u root -proot -e "CREATE USER IF NOT EXISTS 'userapp'@'172.18.0.1' IDENTIFIED BY 'admin123';"
+          mysql_prod -h 172.18.0.1 -P 3306 -u root -proot -e "GRANT SELECT, INSERT, CREATE, REFERENCES, UPDATE, DELETE, DROP ON dataviz_bytelabss.* TO 'userapp'@'172.18.0.1';"
+          mysql_prod -h 172.18.0.1 -P 3306 -u root -proot -e "FLUSH PRIVILEGES;"
+          mysql_test -h 172.18.0.1 -P 3307 -u root -proot -e "CREATE USER IF NOT EXISTS 'userapp'@'172.18.0.1' IDENTIFIED BY 'admin123';"
+          mysql_test -h 172.18.0.1 -P 3307 -u root -proot -e "GRANT SELECT, INSERT, CREATE, REFERENCES, UPDATE, DELETE, DROP ON test_db.* TO 'userapp'@'172.18.0.1';"
+          mysql_test -h 172.18.0.1 -P 3307 -u root -proot -e "FLUSH PRIVILEGES;"
 
       - name: Compilar com Maven
         run: mvn clean install --no-transfer-progress
