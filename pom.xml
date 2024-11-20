@@ -210,7 +210,7 @@
             <id>test</id>
             <properties>
                 <spring.profiles.active>test</spring.profiles.active>
-                <flyway.url>jdbc:mysql://localhost:3306/test_db</flyway.url>
+                <flyway.url>jdbc:mysql://localhost:3307/test_db</flyway.url>
                 <flyway.user>userapp</flyway.user>
                 <flyway.password>admin123</flyway.password>
                 <flyway.locations>classpath:/db/migration/migrations,classpath:/db/migration/migrations/commons</flyway.locations>
@@ -220,7 +220,7 @@
             <id>integration-tests</id>
             <properties>
                 <!-- Propriedades do Flyway para o banco de teste -->
-                <flyway.url>jdbc:mysql://localhost:3306/test_db</flyway.url>
+                <flyway.url>jdbc:mysql://localhost:3307/test_db</flyway.url>
                 <flyway.user>userapp</flyway.user>
                 <flyway.password>admin123</flyway.password>
                 <flyway.locations>classpath:/db/migration/migrations,classpath:/db/migration/migrations/commons</flyway.locations>
