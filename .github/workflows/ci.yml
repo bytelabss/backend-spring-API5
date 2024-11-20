@@ -74,6 +74,3 @@ jobs:
         if: github.event_name == 'pull_request' && (github.base_ref == 'dev' || github.base_ref == 'main')
         run: mvn verify -P integration-tests -DskipUnitTests=false --no-transfer-progress
       
-      - name: Executar migrações Flyway
-        run: mvn flyway:migrate -Dflyway.debug=true
-      
