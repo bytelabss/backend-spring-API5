@@ -31,3 +31,5 @@ build/
 
 # Output files
 relatorios/
+
+.env
