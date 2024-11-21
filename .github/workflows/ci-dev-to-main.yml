@@ -1,9 +1,6 @@
 name: CI Pipeline - Main
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
@@ -13,14 +10,18 @@ jobs:
     runs-on: ubuntu-latest
 
     services:
-      mysql:
+      mysql_prod:
         image: mysql:5.7
         env:
           MYSQL_DATABASE: dataviz_bytelabss
           MYSQL_ROOT_PASSWORD: root
         ports:
           - 3306:3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+        options: >-
+          --health-cmd="mysqladmin ping -h localhost --silent"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
 
     steps:
 

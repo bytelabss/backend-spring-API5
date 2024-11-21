@@ -1,28 +1,35 @@
-name: CI Pipeline - Teste
+name: CI Pipeline - Dev
 
 on:
-  push:
-    branches:
-      - "teste*"
   pull_request:
     branches:
-      - "teste*"
+      - dev
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     services:
-      mysql:
+      mysql_prod: #simulação de BD da main (produção)
         image: mysql:5.7
         env:
           MYSQL_DATABASE: dataviz_bytelabss
           MYSQL_ROOT_PASSWORD: root
         ports:
           - 3306:3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-
+        options: >-
+          --health-cmd="mysqladmin ping -h localhost --silent"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+    
     steps:
+
+      - name: Bloquear commits diretos na branch dev
+        if: github.event_name == 'push' && github.ref == 'refs/heads/dev'
+        run: |
+          echo "Commits diretos na branch 'dev' não são permitidos. Faça as alterações através de um Pull Request."
+          exit 1
 
       - name: Checkout do código
         uses: actions/checkout@v3
