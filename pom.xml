@@ -133,6 +133,11 @@
             <artifactId>layout</artifactId>
             <version>7.2.5</version>
         </dependency>
+        <dependency>
+            <groupId>me.paulschwarz</groupId>
+            <artifactId>spring-dotenv</artifactId>
+            <version>4.0.0</version>
+          </dependency>
     </dependencies>
 
     <build>
@@ -178,7 +183,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.13-SNAPSHOT</version>
+                <version>0.8.12</version>
             </plugin>
 
             <!-- Flyway Maven Plugin for Database Migration -->
