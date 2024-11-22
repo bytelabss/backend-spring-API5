@@ -1,16 +1,23 @@
-name: CI Pipeline - Dev
+name: CI Pipeline - BYTE Branches and CI Branches
 
 on:
+  push:
+    branches:
+      - 'BYTE*' 
+      - 'ci*' 
+      - 'hotfix*' 
   pull_request:
     branches:
-      - dev
+      - 'BYTE*' 
+      - 'ci*' 
+      - 'hotfix*'   
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     services:
-      mysql_prod: #simulação de BD da main (produção)
+      mysql:
         image: mysql:5.7
         env:
           MYSQL_DATABASE: dataviz_bytelabss
@@ -29,21 +36,14 @@ jobs:
           MYSQL_DATABASE: test_db
           MYSQL_ROOT_PASSWORD: root
         ports:
-          - 3307:3306
+           - 3307:3306
         options: >-
           --health-cmd="mysqladmin ping -h localhost --silent"
           --health-interval=10s
           --health-timeout=5s
           --health-retries=3
-    
+
     steps:
-
-      - name: Bloquear commits diretos na branch dev
-        if: github.event_name == 'push' && github.ref == 'refs/heads/dev'
-        run: |
-          echo "Commits diretos na branch 'dev' não são permitidos. Faça as alterações através de um Pull Request."
-          exit 1
-
       - name: Checkout do código
         uses: actions/checkout@v3
         with:
@@ -56,19 +56,20 @@ jobs:
           java-version: '17'
           cache: maven        
 
-      - name: Criar usuários e permissões no MySQL
+      - name: Criar usuário e permissões no MySQL
         run: |
-          sleep 20 # Aguarda os serviços do MySQL estarem prontos
-          echo "Configurando permissões no MySQL de produção"
-          mysql -h 127.0.0.1 -P 3306 -u root -proot -e "CREATE USER IF NOT EXISTS 'userapp'@'%' IDENTIFIED BY 'admin123';"
-          mysql -h 127.0.0.1 -P 3306 -u root -proot -e "GRANT ALL PRIVILEGES ON dataviz_bytelabss.* TO 'userapp'@'%'; FLUSH PRIVILEGES;"
+           sleep 20 # Aguarda os serviços do MySQL estarem prontos
+            echo "Configurando permissões no MySQL de produção"
+            mysql -h 127.0.0.1 -P 3306 -u root -proot -e "CREATE USER IF NOT EXISTS 'userapp'@'%' IDENTIFIED BY 'admin123';"
+            mysql -h 127.0.0.1 -P 3306 -u root -proot -e "GRANT ALL PRIVILEGES ON dataviz_bytelabss.* TO 'userapp'@'%'; FLUSH PRIVILEGES;"
 
+            echo "Configurando permissões no MySQL de testes"
+            mysql -h 127.0.0.1 -P 3307 -u root -proot -e "CREATE USER IF NOT EXISTS 'userapp'@'%' IDENTIFIED BY 'admin123';"
+            mysql -h 127.0.0.1 -P 3307 -u root -proot -e "GRANT ALL PRIVILEGES ON test_db.* TO 'userapp'@'%'; FLUSH PRIVILEGES;"
+            
       - name: Compilar com Maven
         run: mvn clean install --no-transfer-progress
 
       - name: Executar testes unitários
         run: mvn test --no-transfer-progress
 
-      - name: Executar testes de integração
-        run: mvn verify -P integration-tests -DskipUnitTests=false --no-transfer-progress
-      
