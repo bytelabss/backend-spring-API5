@@ -38,7 +38,7 @@ jobs:
           MYSQL_DATABASE: test_db
           MYSQL_ROOT_PASSWORD: root
         ports:
-           - 3307:3307
+           - 3307:3306
         options: >-
           --health-cmd="mysqladmin ping -h localhost --silent"
           --health-interval=10s
