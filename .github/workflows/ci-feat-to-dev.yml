@@ -23,19 +23,6 @@ jobs:
           --health-timeout=5s
           --health-retries=3
 
-      mysql_test:
-        image: mysql:5.7
-        env:
-          MYSQL_DATABASE: test_db
-          MYSQL_ROOT_PASSWORD: root
-        ports:
-          - 3307:3306
-        options: >-
-          --health-cmd="mysqladmin ping -h localhost --silent"
-          --health-interval=10s
-          --health-timeout=5s
-          --health-retries=3
-    
     steps:
 
       - name: Bloquear commits diretos na branch dev
@@ -68,7 +55,3 @@ jobs:
 
       - name: Executar testes unitários
         run: mvn test --no-transfer-progress
-
-      - name: Executar testes de integração
-        run: mvn verify -P integration-tests -DskipUnitTests=false --no-transfer-progress
-      

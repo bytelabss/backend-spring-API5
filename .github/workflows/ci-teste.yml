@@ -2,8 +2,8 @@ name: CI Pipeline - Teste
 
 on:
   push:
-    tags:
-        'teste'
+    branches:
+        'teste*'
 
 jobs:
   build:

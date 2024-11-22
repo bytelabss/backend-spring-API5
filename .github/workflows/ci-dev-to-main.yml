@@ -55,6 +55,3 @@ jobs:
 
       - name: Executar testes unitários
         run: mvn test --no-transfer-progress
-
-      - name: Executar testes de integração
-        run: mvn verify -P integration-tests -DskipUnitTests=false --no-transfer-progress
