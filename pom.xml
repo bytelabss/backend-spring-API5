@@ -45,6 +45,25 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-api</artifactId>
+			<version>0.11.5</version>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-impl</artifactId>
+			<version>0.11.5</version>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-jackson</artifactId>
+			<version>0.11.5</version>
+		</dependency>
         <dependency>
             <groupId>org.antlr</groupId>
             <artifactId>antlr4-runtime</artifactId>
@@ -114,6 +133,11 @@
             <artifactId>layout</artifactId>
             <version>7.2.5</version>
         </dependency>
+        <dependency>
+            <groupId>me.paulschwarz</groupId>
+            <artifactId>spring-dotenv</artifactId>
+            <version>4.0.0</version>
+          </dependency>
     </dependencies>
 
     <build>
@@ -151,7 +175,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <jvmArguments>--add-opens java.base/sun.nio.ch=ALL-UNNAMED</jvmArguments>
+                    <jvmArguments>--add-opens java.base/sun.nio.ch=ALL-UNNAMED -Dspring.profiles.active=${spring.profiles.active}</jvmArguments>
                 </configuration>
             </plugin>
 
@@ -159,7 +183,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.13-SNAPSHOT</version>
+                <version>0.8.12</version>
             </plugin>
 
             <!-- Flyway Maven Plugin for Database Migration -->
@@ -168,9 +192,9 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>10.20.1</version>
                 <configuration>
-                    <url>jdbc:mysql://localhost:3306/dataviz_bytelabss</url>
-                    <user>userapp</user>
-                    <password>admin123</password>
+                    <url>${flyway.url}</url>
+                    <user>${flyway.user}</user>
+                    <password>${flyway.password}</password>
                     <locations>
                         <location>classpath:/db/migration/migrations</location>
                     </locations>
@@ -191,21 +215,74 @@
         </plugins>
     </build>
     <profiles>
-    <profile>
-        <id>integration-tests</id>
-        <build>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <configuration>
-                        <includes>
-                            <include>**/*IntegrationTest.java</include>
-                        </includes>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </build>
-    </profile>
-</profiles>
+        <profile>
+            <id>production</id>
+            <properties>
+                <spring.profiles.active>production</spring.profiles.active>
+                <flyway.url>jdbc:mysql://localhost:3306/dataviz_bytelabss</flyway.url>
+                <flyway.user>userapp</flyway.user>
+                <flyway.password>admin123</flyway.password>
+                <flyway.locations>classpath:/db/migration/migrations/commons</flyway.locations>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+
+        <!-- Perfil de teste -->
+        <profile>
+            <id>test</id>
+            <properties>
+                <spring.profiles.active>test</spring.profiles.active>
+                <flyway.url>jdbc:mysql://localhost:3307/test_db</flyway.url>
+                <flyway.user>userapp</flyway.user>
+                <flyway.password>admin123</flyway.password>
+                <flyway.locations>classpath:/db/migration/migrations,classpath:/db/migration/migrations/commons</flyway.locations>
+            </properties>
+        </profile>
+        <profile>
+            <id>integration-tests</id>
+            <properties>
+                <!-- Propriedades do Flyway para o banco de teste -->
+                <flyway.url>jdbc:mysql://localhost:3307/test_db</flyway.url>
+                <flyway.user>userapp</flyway.user>
+                <flyway.password>admin123</flyway.password>
+                <flyway.locations>classpath:/db/migration/migrations,classpath:/db/migration/migrations/commons</flyway.locations>
+            </properties>
+            <build>
+                <plugins>
+                    <!-- Configuração do Surefire para testes de integração -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <includes>
+                                <include>**/*IntegrationTest.java</include>
+                            </includes>
+                        </configuration>
+                    </plugin>
+
+                    <!-- Flyway para preparar o banco antes dos testes -->
+                    <plugin>
+                        <groupId>org.flywaydb</groupId>
+                        <artifactId>flyway-maven-plugin</artifactId>
+                        <configuration>
+                            <url>${flyway.url}</url>
+                            <user>${flyway.user}</user>
+                            <password>${flyway.password}</password>
+                            <locations>${flyway.locations}</locations>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>pre-integration-test</phase>
+                                <goals>
+                                    <goal>migrate</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
