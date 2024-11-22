@@ -1,13 +1,9 @@
-name: CI Pipeline
+name: CI Pipeline - Teste
 
 on:
   push:
-    branches: 
-      - '**'               
-  pull_request:
     branches:
-      - main
-      - dev
+        'teste*'
 
 jobs:
   build:
@@ -39,8 +35,9 @@ jobs:
           --health-interval=10s
           --health-timeout=5s
           --health-retries=3
-
+    
     steps:
+
       - name: Checkout do código
         uses: actions/checkout@v3
         with:
@@ -59,18 +56,16 @@ jobs:
           echo "Configurando permissões no MySQL de produção"
           mysql -h 127.0.0.1 -P 3306 -u root -proot -e "CREATE USER IF NOT EXISTS 'userapp'@'%' IDENTIFIED BY 'admin123';"
           mysql -h 127.0.0.1 -P 3306 -u root -proot -e "GRANT ALL PRIVILEGES ON dataviz_bytelabss.* TO 'userapp'@'%'; FLUSH PRIVILEGES;"
-
+          
           echo "Configurando permissões no MySQL de testes"
           mysql -h 127.0.0.1 -P 3307 -u root -proot -e "CREATE USER IF NOT EXISTS 'userapp'@'%' IDENTIFIED BY 'admin123';"
           mysql -h 127.0.0.1 -P 3307 -u root -proot -e "GRANT ALL PRIVILEGES ON test_db.* TO 'userapp'@'%'; FLUSH PRIVILEGES;"
-
       - name: Compilar com Maven
         run: mvn clean install --no-transfer-progress
 
       - name: Executar testes unitários
         run: mvn test --no-transfer-progress
 
-      - name: Executar testes de integração (somente em PR para dev e main)
-        if: github.event_name == 'pull_request' && (github.base_ref == 'dev' || github.base_ref == 'main')
+      - name: Executar testes de integração
         run: mvn verify -P integration-tests -DskipUnitTests=false --no-transfer-progress
       
