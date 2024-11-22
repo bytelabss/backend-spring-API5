@@ -19,13 +19,26 @@ jobs:
     runs-on: ubuntu-latest
 
     services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_DATABASE: dataviz_bytelabss
+          MYSQL_ROOT_PASSWORD: root
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h localhost --silent"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+
       mysql_test:
         image: mysql:5.7
         env:
           MYSQL_DATABASE: test_db
           MYSQL_ROOT_PASSWORD: root
         ports:
-          - 3306:3306
+           - 3307:3307
         options: >-
           --health-cmd="mysqladmin ping -h localhost --silent"
           --health-interval=10s
@@ -47,11 +60,14 @@ jobs:
 
       - name: Criar usuário e permissões no MySQL
         run: |
-          sleep 20 # Aguarda os serviços do MySQL estarem prontos
-          echo "Configurando permissões no MySQL de testes"
-          mysql -h 127.0.0.1 -P 3306 -u root -proot -e "CREATE USER IF NOT EXISTS 'userapp'@'%' IDENTIFIED BY 'admin123';"
-          mysql -h 127.0.0.1 -P 3306 -u root -proot -e "GRANT ALL PRIVILEGES ON test_db.* TO 'userapp'@'%'; FLUSH PRIVILEGES;"
+           sleep 20 # Aguarda os serviços do MySQL estarem prontos
+            echo "Configurando permissões no MySQL de produção"
+            mysql -h 127.0.0.1 -P 3306 -u root -proot -e "CREATE USER IF NOT EXISTS 'userapp'@'%' IDENTIFIED BY 'admin123';"
+            mysql -h 127.0.0.1 -P 3306 -u root -proot -e "GRANT ALL PRIVILEGES ON dataviz_bytelabss.* TO 'userapp'@'%'; FLUSH PRIVILEGES;"
 
+            echo "Configurando permissões no MySQL de testes"
+            mysql -h 127.0.0.1 -P 3307 -u root -proot -e "CREATE USER IF NOT EXISTS 'userapp'@'%' IDENTIFIED BY 'admin123';"
+            mysql -h 127.0.0.1 -P 3307 -u root -proot -e "GRANT ALL PRIVILEGES ON test_db.* TO 'userapp'@'%'; FLUSH PRIVILEGES;"
       - name: Compilar com Maven
         run: mvn clean install --no-transfer-progress
 
