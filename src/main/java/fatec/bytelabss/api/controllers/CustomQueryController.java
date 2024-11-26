@@ -1,5 +1,6 @@
 package fatec.bytelabss.api.controllers;
 
+import fatec.bytelabss.api.dtos.CustomQueryDto;
 import fatec.bytelabss.api.models.CustomQuery;
 import fatec.bytelabss.api.services.CustomQueryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,12 @@ public class CustomQueryController {
     @GetMapping
     public List<CustomQuery> getAllQueries() {
         List<CustomQuery> queries = customQueryService.getAllQueries();
+        return queries;
+    }
+    
+    @GetMapping("user/{userId}")
+    public List<CustomQueryDto> getAllQueriesByUserId(@PathVariable Long userId) {
+        List<CustomQueryDto> queries = customQueryService.getAllQueriesByUserId(userId);
         return queries;
     }
 

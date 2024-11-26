@@ -1,7 +1,9 @@
 package fatec.bytelabss.api.services;
 
+import fatec.bytelabss.api.dtos.CustomQueryDto;
 import fatec.bytelabss.api.models.CustomQuery;
 import fatec.bytelabss.api.models.CustomQuerySQL;
+import fatec.bytelabss.api.models.CustomQuerySQLConverter;
 import fatec.bytelabss.api.repositories.CustomQueryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +17,10 @@ import jakarta.persistence.criteria.Root;
 import jakarta.persistence.criteria.Selection;
 import jakarta.persistence.criteria.Expression;
 
+import java.math.BigDecimal;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -36,6 +42,30 @@ public class CustomQueryService {
 
     public List<CustomQuery> getAllQueries() {
         return repository.findAll();
+    }
+    
+    public List<CustomQueryDto> getAllQueriesByUserId(Long userId) {
+    	List<Object[]> queries = repository.getAllQueriesByUserId(userId);
+    	List<CustomQueryDto> queriesDto = new ArrayList<CustomQueryDto>();
+    	
+    	CustomQuerySQLConverter converter = new CustomQuerySQLConverter();
+    	
+    	for (Object[] resultado : queries) {
+    		var dto = new CustomQueryDto();
+    		dto.setId((Long) resultado[0]);
+    		dto.setQuery(converter.convertToEntityAttribute((String) resultado[1]) );
+    		dto.setDescription((String) resultado[2]);
+    		
+    		 if (resultado[3] != null) {
+    			 Timestamp timestamp = (Timestamp) resultado[3];
+    	    	LocalDateTime createdAt = timestamp.toLocalDateTime();
+    	    	dto.setCreatedAt(createdAt);
+    		 }
+    		
+    		queriesDto.add(dto);
+		}
+    	
+        return queriesDto;
     }
 
     public CustomQuery getQueryById(Long id) {
