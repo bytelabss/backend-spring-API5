@@ -6,7 +6,7 @@
 
 CREATE USER IF NOT EXISTS 'userapp'@'172.18.0.1' IDENTIFIED BY 'admin123';
 
-GRANT SELECT, INSERT, CREATE, UPDATE, DELETE ON dataviz_bytelabss.* TO 'userapp'@'172.18.0.1';
+GRANT SELECT, INSERT, CREATE, UPDATE, DELETE, ALTER ON dataviz_bytelabss.* TO 'userapp'@'172.18.0.1';
 
 USE dataviz_bytelabss;
 
