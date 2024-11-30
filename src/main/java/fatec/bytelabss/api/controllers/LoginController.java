@@ -15,6 +15,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import fatec.bytelabss.api.authentication.JwtService;
 import fatec.bytelabss.api.dtos.CredentialsDto;
 import fatec.bytelabss.api.dtos.TokenDto;
+import fatec.bytelabss.api.services.UserService;
 
 @RestController
 @CrossOrigin
@@ -26,6 +27,9 @@ public class LoginController {
 
     @Autowired
     private JwtService jwtService;
+    
+    @Autowired
+    private UserService userService;
 
     @PostMapping
     public TokenDto login(@RequestBody CredentialsDto credentials) throws JsonProcessingException {
@@ -33,9 +37,12 @@ public class LoginController {
         auth = authManager.authenticate(auth);
 
         String token = jwtService.generateToken(auth);
+        
+        var usuario = userService.findByName(credentials.getName());
 
         TokenDto response = new TokenDto();
         response.setName(credentials.getName());
+        response.setId(usuario.getId());
         response.setAuthorizations(auth.getAuthorities().stream()
             .map(authority -> authority.getAuthority())
             .toList());

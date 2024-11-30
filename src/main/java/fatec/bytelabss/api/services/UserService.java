@@ -62,6 +62,12 @@ public class UserService {
                 .orElseThrow(() -> new IllegalArgumentException("User with ID " + id + " not found."));
         return convertToDTO(user);
     }
+    
+    public UserDto findByName(String nome) {
+        User user = repo.findByName(nome)
+                .orElseThrow(() -> new IllegalArgumentException("User with name " + nome + " not found."));
+        return convertToDTO(user);
+    }
 
     @Transactional
     public UserDto updateUser(Long id, UserDto userDTO) {
