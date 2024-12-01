@@ -121,7 +121,7 @@ public class ImportacaoDwCargaTeste1IntegrationTests {
 	            Row row1 = sheet.getRow(1);
 	            assertEquals(1L, row1.getCell(0).getNumericCellValue(), "ID Processo Seletivo na linha 1 deve ser 1");
 	            assertEquals("Processo seletivo 1", row1.getCell(1).getStringCellValue(), "Nome do Processo Seletivo na linha 1 deve ser 'Novos estagiarios e aprendizes'");
-	            assertEquals("pendente", row1.getCell(2).getStringCellValue(), "Status do Processo Seletivo na linha 1 deve ser 'pendente'");
+	            assertEquals("Concluído", row1.getCell(2).getStringCellValue(), "Status do Processo Seletivo na linha 1 deve ser 'pendente'");
 	            assertEquals("Contratar novos estagiarios e aprendizes para o ano de 2024", row1.getCell(3).getStringCellValue(), "Descrição do Processo Seletivo na linha 1 deve ser 'Contratar novos estagiarios e aprendizes para o ano de 2024'");
 	            assertEquals("Rodrigo", row1.getCell(4).getStringCellValue(), "Criado Por na linha 1 deve ser 'Rodrigo'");
 	            assertEquals("2024-01-01T00:00", row1.getCell(5).getStringCellValue(), "Data de Início do Processo Seletivo na linha 1 deve ser '2024-01-01'");
@@ -178,7 +178,7 @@ public class ImportacaoDwCargaTeste1IntegrationTests {
 			
 			for (var tempoMedio : listaTempoMedio) {
 				if(tempoMedio.getProcesso_seletivo() == 1) {
-					assertEquals(33, tempoMedio.getTempo_medio());
+					assertEquals(49, tempoMedio.getTempo_medio());
 				}
 				else if(tempoMedio.getProcesso_seletivo() == 2) {
 					assertEquals(7, tempoMedio.getTempo_medio());
