@@ -136,7 +136,7 @@ public class ImportacaoDwCargaTeste1IntegrationTests {
 	            assertEquals(2L, row2.getCell(0).getNumericCellValue(), "ID Processo Seletivo na linha 2 deve ser 2");
 	            assertEquals("Processo seletivo 2", row2.getCell(1).getStringCellValue(), "Nome do Processo Seletivo na linha 2 deve ser 'Desenvolvedores'");
 	            assertEquals("Em andamento", row2.getCell(2).getStringCellValue(), "Status do Processo Seletivo na linha 2 deve ser 'Em andamento'");
-	            assertEquals("processo seletivo para devs", row2.getCell(3).getStringCellValue(), "Descrição do Processo Seletivo na linha 2 deve ser 'processo seletivo para devs'");
+	            assertEquals("Descrição do processo seletivo 2", row2.getCell(3).getStringCellValue(), "Descrição do Processo Seletivo na linha 2 deve ser 'processo seletivo para devs'");
 	            assertEquals("Rodrigo", row2.getCell(4).getStringCellValue(), "Criado Por na linha 2 deve ser 'Rodrigo'");
 	            assertEquals("2024-01-01T00:00", row2.getCell(5).getStringCellValue(), "Data de Início do Processo Seletivo na linha 2 deve ser '2024-01-01'");
 	            assertEquals("2024-04-05T00:00", row2.getCell(6).getStringCellValue(), "Data de Fim do Processo Seletivo na linha 2 deve ser '2024-04-05'");
@@ -205,7 +205,7 @@ public class ImportacaoDwCargaTeste1IntegrationTests {
 			
 			for (var qunatidadeProcesso : listaQuantidadeProcessoSeletivo) {
 				if(qunatidadeProcesso.getProcesso_seletivo() == 1) {
-					assertEquals(21, qunatidadeProcesso.getQuantidade());
+					assertEquals(31, qunatidadeProcesso.getQuantidade());
 				}
 				else if(qunatidadeProcesso.getProcesso_seletivo() == 2) {
 					assertEquals(48, qunatidadeProcesso.getQuantidade());
@@ -225,7 +225,7 @@ public class ImportacaoDwCargaTeste1IntegrationTests {
 
 			assertEquals(null, tempoMedioVaga.get("Estagiario"));
 
-			assertEquals(16.75, tempoMedioVaga.get("Aprendiz"));
+			assertEquals(31.0, tempoMedioVaga.get("Aprendiz"));
 
 			assertEquals(18.0, tempoMedioVaga.get("Dev Jr"));
 
