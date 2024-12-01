@@ -36,6 +36,9 @@ public class FatoContratacoesService {
 
 	public List<ProcessoSeletivoTempoMedioDto> RetornarTempoMedioProcessoSeletivo(LocalDateTime inicio, Optional<LocalDateTime> fim) {
 
+		if(inicio.isAfter(fim.get())) {
+			throw new IllegalArgumentException("A data de início não pode ser posterior à data de fim.");
+		}
 		return repository.RetornarTempoMedioProcessoSeletivo(inicio,fim);
 	}
 

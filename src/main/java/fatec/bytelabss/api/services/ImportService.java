@@ -41,14 +41,14 @@ public class ImportService {
 	private SparkSession spark = SparkSessionSingleton.getInstance();
 
 
-	public void Salvar(){
+	public void Salvar(String arquivo){
 
 		Dataset<Row> dadosPlanilha = spark
 				.read()
 				.format("csv")
 				.option("header", true)
 				.option("delimiter", ";")
-				.load("Example.csv");
+				.load(arquivo);
 
 
 		var dadosPlanilhaTratados = dadosPlanilha
