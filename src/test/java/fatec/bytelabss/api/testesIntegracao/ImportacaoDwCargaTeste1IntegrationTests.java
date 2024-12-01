@@ -61,11 +61,6 @@ public class ImportacaoDwCargaTeste1IntegrationTests {
 	 private FatoContratacoesService fatoContratacoesService;
 
 
-    @BeforeEach
-    public void setUp() {
-    	importService.Salvar("Teste1.csv");
-    }
-    
     @AfterAll
     public static void cleanUp(@Autowired JdbcTemplate jdbcTemplate) {
         // Limpa os dados após a execução de todos os testes
