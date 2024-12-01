@@ -50,9 +50,6 @@ jobs:
           mysql -h 127.0.0.1 -P 3306 -u root -proot -e "CREATE USER IF NOT EXISTS 'userapp'@'%' IDENTIFIED BY 'admin123';"
           mysql -h 127.0.0.1 -P 3306 -u root -proot -e "GRANT ALL PRIVILEGES ON dataviz_bytelabss.* TO 'userapp'@'%'; FLUSH PRIVILEGES;"
 
-      - name: Repair tabelas flyway
-        run: mvn flyway:repair
-
       - name: Compilar com Maven
         run: mvn clean install --no-transfer-progress
 
