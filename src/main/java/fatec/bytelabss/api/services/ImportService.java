@@ -41,16 +41,19 @@ public class ImportService {
 	private SparkSession spark = SparkSessionSingleton.getInstance();
 
 
-	public void Salvar(){
-
-		Dataset<Row> dadosPlanilha = spark
+	public Dataset<Row> RetornarDadosPlanilha(String arquivo){
+		return  spark
 				.read()
 				.format("csv")
 				.option("header", true)
 				.option("delimiter", ";")
-				.load("Example.csv");
+				.load(arquivo);
+	}
+	
+	public Dataset<Row> Salvar(String arquivo){
 
-
+		var dadosPlanilha = RetornarDadosPlanilha(arquivo);
+		
 		var dadosPlanilhaTratados = dadosPlanilha
 		.withColumn("idTempo", functions.row_number().over(Window.orderBy("idProcessoSeletivo")))
         .withColumn("mes", functions.month( functions.to_date(functions.col("datacontratacao"), "dd/MM/yyyy")))
@@ -103,7 +106,7 @@ public class ImportService {
 		
 		serviceAvaliacoes.SalvarAvaliacoes(temposDs);
 		
-		
+		return temposDs;
 
 	}
 }

@@ -23,11 +23,11 @@ public class DimParticipanteRHService {
 				.collectAsList();
 	}
 
-	public void SalvarParticipantesRH(Dataset<Row> lista) {
+	public List<DimParticipanteRH>  SalvarParticipantesRH(Dataset<Row> lista) {
 
 		var entidades = ConverterParaEntidade(lista);
 
-		repository.saveAll(entidades);
+		return repository.saveAll(entidades); 
 	}
 }
 

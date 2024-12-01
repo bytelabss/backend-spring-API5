@@ -25,11 +25,13 @@ public class DimVagaService {
 				.collectAsList();
 	}
 
-	public void SalvarVagas(Dataset<Row> lista) {
+	public Dataset<Row> SalvarVagas(Dataset<Row> lista) {
 
 		var entidades = ConverterParaEntidade(lista);
 
 		repository.saveAll(entidades);
+		
+		return lista;
 	}
 	
 	public List<DimVagaDto> RetornarVagasMaisRecentes() {

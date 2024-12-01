@@ -35,7 +35,9 @@ public class FatoContratacoesService {
 	private FatoContratacoesRepository repository;
 
 	public List<ProcessoSeletivoTempoMedioDto> RetornarTempoMedioProcessoSeletivo(LocalDateTime inicio, Optional<LocalDateTime> fim) {
-
+		if(inicio.isAfter(fim.get())) {
+			throw new IllegalArgumentException("A data de início não pode ser posterior à data de fim.");
+		}
 		return repository.RetornarTempoMedioProcessoSeletivo(inicio,fim);
 	}
 
@@ -84,7 +86,7 @@ public class FatoContratacoesService {
 				.collectAsList();
 	}
 
-	public void SalvarContratacoes(Dataset<Row> dadosPlanilha) {
+	public List<FatoContratacoes> SalvarContratacoes(Dataset<Row> dadosPlanilha) {
 
 		var dadosTratados = RetornarLinhasTratadas(dadosPlanilha);
 
@@ -92,7 +94,7 @@ public class FatoContratacoesService {
 
 		var entidades = ConverterParaEntidade(dataContracts);
 
-		repository.saveAll(entidades);
+		 return repository.saveAll(entidades);
 
 	}
 
