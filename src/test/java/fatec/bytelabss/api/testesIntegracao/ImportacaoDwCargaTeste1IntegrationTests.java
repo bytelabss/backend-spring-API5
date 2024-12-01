@@ -62,17 +62,7 @@ public class ImportacaoDwCargaTeste1IntegrationTests {
 
 
     @BeforeEach
-    public void setUp(@Autowired JdbcTemplate jdbcTemplate) {
-    	// Limpa os dados após a execução de todos os testes
-        jdbcTemplate.execute("DELETE FROM fato_contratacoes");
-        jdbcTemplate.execute("DELETE FROM fato_avaliacoes");
-        jdbcTemplate.execute("DELETE FROM dim_tempo");
-        jdbcTemplate.execute("DELETE FROM dim_candidato");
-        jdbcTemplate.execute("DELETE FROM dim_vaga");
-        jdbcTemplate.execute("DELETE FROM dim_processo_seletivo");
-        jdbcTemplate.execute("DELETE FROM dim_participante_rh");
-        jdbcTemplate.execute("DELETE FROM dim_criterio");
-        jdbcTemplate.execute("DELETE FROM dim_candidato");
+    public void setUp() {
     	importService.Salvar("Teste1.csv");
     }
     
