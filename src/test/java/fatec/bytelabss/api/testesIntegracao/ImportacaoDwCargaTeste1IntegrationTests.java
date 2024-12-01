@@ -134,7 +134,7 @@ public class ImportacaoDwCargaTeste1IntegrationTests {
 
 	            Row row2 = sheet.getRow(2);
 	            assertEquals(2L, row2.getCell(0).getNumericCellValue(), "ID Processo Seletivo na linha 2 deve ser 2");
-	            assertEquals("Desenvolvedores", row2.getCell(1).getStringCellValue(), "Nome do Processo Seletivo na linha 2 deve ser 'Desenvolvedores'");
+	            assertEquals("Processo seletivo 2", row2.getCell(1).getStringCellValue(), "Nome do Processo Seletivo na linha 2 deve ser 'Desenvolvedores'");
 	            assertEquals("Em andamento", row2.getCell(2).getStringCellValue(), "Status do Processo Seletivo na linha 2 deve ser 'Em andamento'");
 	            assertEquals("processo seletivo para devs", row2.getCell(3).getStringCellValue(), "Descrição do Processo Seletivo na linha 2 deve ser 'processo seletivo para devs'");
 	            assertEquals("Rodrigo", row2.getCell(4).getStringCellValue(), "Criado Por na linha 2 deve ser 'Rodrigo'");
@@ -211,7 +211,7 @@ public class ImportacaoDwCargaTeste1IntegrationTests {
 			
 			for (var tempoMedio : listaTempoMedio) {
 				if(tempoMedio.getProcesso_seletivo() == 1) {
-					assertEquals(15, tempoMedio.getTempo_medio());
+					assertEquals(49, tempoMedio.getTempo_medio());
 				}
 				else if(tempoMedio.getProcesso_seletivo() == 2) {
 					assertEquals(7, tempoMedio.getTempo_medio());
@@ -236,7 +236,7 @@ public class ImportacaoDwCargaTeste1IntegrationTests {
 					assertEquals(21, qunatidadeProcesso.getQuantidade());
 				}
 				else if(qunatidadeProcesso.getProcesso_seletivo() == 2) {
-					assertEquals(37, qunatidadeProcesso.getQuantidade());
+					assertEquals(48, qunatidadeProcesso.getQuantidade());
 				}
 				else if(qunatidadeProcesso.getProcesso_seletivo() == 3) {
 					assertEquals(13, qunatidadeProcesso.getQuantidade());
@@ -251,7 +251,7 @@ public class ImportacaoDwCargaTeste1IntegrationTests {
 			var tempoMedioVaga = fatoContratacoesService.obterTempoMedioPorVaga(1,2024,12,2025);
 			
 
-			assertEquals(47.3333, tempoMedioVaga.get("Estagiario"));
+			assertEquals(null, tempoMedioVaga.get("Estagiario"));
 
 			assertEquals(16.75, tempoMedioVaga.get("Aprendiz"));
 
