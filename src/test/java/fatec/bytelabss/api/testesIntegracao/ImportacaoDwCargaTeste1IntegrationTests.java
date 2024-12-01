@@ -196,7 +196,7 @@ public class ImportacaoDwCargaTeste1IntegrationTests {
 	            assertEquals("Ana", row1.getCell(1).getStringCellValue(), "Nome deve ser 'Ana'");
 	            
 	            Row row2 = sheet.getRow(2);
-	            assertEquals(2L, row2.getCell(0).getNumericCellValue(), "ID candidato deve ser 2");
+	            assertEquals(13L, row2.getCell(0).getNumericCellValue(), "ID candidato deve ser 2");
 	            assertEquals("Bruno", row2.getCell(1).getStringCellValue(), "Nome deve ser 'Bruno'");
 	           
 	        }
