@@ -51,6 +51,7 @@ jobs:
           mysql -h 127.0.0.1 -P 3306 -u root -proot -e "GRANT ALL PRIVILEGES ON dataviz_bytelabss.* TO 'userapp'@'%'; FLUSH PRIVILEGES;"
 
       - name: Compilar com Maven
+        run: mvn flyway:repair
         run: mvn clean install --no-transfer-progress
 
       - name: Executar testes unitários
