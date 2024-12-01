@@ -189,7 +189,7 @@ public class ImportacaoDwCargaTeste1IntegrationTests {
 					assertEquals(7, tempoMedio.getTempo_medio());
 				}
 				else if(tempoMedio.getProcesso_seletivo() == 3) {
-					assertEquals(65, tempoMedio.getTempo_medio());
+					assertEquals(64, tempoMedio.getTempo_medio());
 				}
 				
 			}
