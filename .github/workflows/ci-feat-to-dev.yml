@@ -49,9 +49,11 @@ jobs:
           echo "Configurando permissões no MySQL de produção"
           mysql -h 127.0.0.1 -P 3306 -u root -proot -e "CREATE USER IF NOT EXISTS 'userapp'@'%' IDENTIFIED BY 'admin123';"
           mysql -h 127.0.0.1 -P 3306 -u root -proot -e "GRANT ALL PRIVILEGES ON dataviz_bytelabss.* TO 'userapp'@'%'; FLUSH PRIVILEGES;"
+          mysql -h 127.0.0.1 -P 3306 -u root -proot -e "CREATE DATABASE IF NOT EXISTS test_db;"
+          mysql -h 127.0.0.1 -P 3306 -u root -proot -e "GRANT ALL PRIVILEGES ON test_db.* TO 'userapp'@'%'; FLUSH PRIVILEGES;"
 
       - name: Compilar com Maven
-        run: mvn clean install --no-transfer-progress
+        run: mvn clean compile --no-transfer-progress
 
       - name: Executar testes unitários
         run: mvn test --no-transfer-progress
