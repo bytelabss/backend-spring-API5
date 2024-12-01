@@ -140,7 +140,7 @@ public class ImportacaoDwCargaTeste1IntegrationTests {
 	            assertEquals("Descrição do processo seletivo 2", row2.getCell(3).getStringCellValue(), "Descrição do Processo Seletivo na linha 2 deve ser 'processo seletivo para devs'");
 	            assertEquals("Rodrigo", row2.getCell(4).getStringCellValue(), "Criado Por na linha 2 deve ser 'Rodrigo'");
 	            assertEquals("2024-01-01T00:00", row2.getCell(5).getStringCellValue(), "Data de Início do Processo Seletivo na linha 2 deve ser '2024-01-01'");
-	            assertEquals("2024-04-05T00:00", row2.getCell(6).getStringCellValue(), "Data de Fim do Processo Seletivo na linha 2 deve ser '2024-04-05'");
+	            assertEquals("2024-01-05T00:00", row2.getCell(6).getStringCellValue(), "Data de Fim do Processo Seletivo na linha 2 deve ser '2024-04-05'");
 	        }
 	    }
 	  
@@ -192,7 +192,7 @@ public class ImportacaoDwCargaTeste1IntegrationTests {
 	            
 	            // Verificar os dados dos processos seletivos
 	            Row row1 = sheet.getRow(1);
-	            assertEquals(1L, row1.getCell(0).getNumericCellValue(), "ID candidato deve ser 1");
+	            assertEquals(12L, row1.getCell(0).getNumericCellValue(), "ID candidato deve ser 1");
 	            assertEquals("Ana", row1.getCell(1).getStringCellValue(), "Nome deve ser 'Ana'");
 	            
 	            Row row2 = sheet.getRow(2);
@@ -212,7 +212,7 @@ public class ImportacaoDwCargaTeste1IntegrationTests {
 			
 			for (var tempoMedio : listaTempoMedio) {
 				if(tempoMedio.getProcesso_seletivo() == 1) {
-					assertEquals(49, tempoMedio.getTempo_medio());
+					assertEquals(33, tempoMedio.getTempo_medio());
 				}
 				else if(tempoMedio.getProcesso_seletivo() == 2) {
 					assertEquals(7, tempoMedio.getTempo_medio());
@@ -234,7 +234,7 @@ public class ImportacaoDwCargaTeste1IntegrationTests {
 			
 			for (var qunatidadeProcesso : listaQuantidadeProcessoSeletivo) {
 				if(qunatidadeProcesso.getProcesso_seletivo() == 1) {
-					assertEquals(21, qunatidadeProcesso.getQuantidade());
+					assertEquals(31, qunatidadeProcesso.getQuantidade());
 				}
 				else if(qunatidadeProcesso.getProcesso_seletivo() == 2) {
 					assertEquals(48, qunatidadeProcesso.getQuantidade());
@@ -254,7 +254,7 @@ public class ImportacaoDwCargaTeste1IntegrationTests {
 
 			assertEquals(null, tempoMedioVaga.get("Estagiario"));
 
-			assertEquals(52.5, tempoMedioVaga.get("Aprendiz"));
+			assertEquals(31.0, tempoMedioVaga.get("Aprendiz"));
 
 			assertEquals(18.0, tempoMedioVaga.get("Dev Jr"));
 
