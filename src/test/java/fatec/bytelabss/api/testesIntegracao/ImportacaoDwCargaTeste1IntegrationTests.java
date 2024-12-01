@@ -43,7 +43,7 @@ import fatec.bytelabss.api.services.excel.DimParticipanteRHExcelService;
 import fatec.bytelabss.api.services.excel.DimProcessoSeletivoExcelService;
 
 @SpringBootTest
-//@ActiveProfiles("test")
+@ActiveProfiles("test")
 public class ImportacaoDwCargaTeste1IntegrationTests {
 	 
 	 @Autowired
