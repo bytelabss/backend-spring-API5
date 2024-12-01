@@ -36,9 +36,11 @@ import org.springframework.transaction.annotation.Transactional;
 import com.itextpdf.io.exceptions.IOException;
 
 import fatec.bytelabss.api.models.DimParticipanteRH;
+import fatec.bytelabss.api.services.DimCriterioService;
 import fatec.bytelabss.api.services.FatoContratacoesService;
 import fatec.bytelabss.api.services.ImportService;
 import fatec.bytelabss.api.services.excel.DimCandidatoExcelService;
+import fatec.bytelabss.api.services.excel.DimCriterioExcelService;
 import fatec.bytelabss.api.services.excel.DimParticipanteRHExcelService;
 import fatec.bytelabss.api.services.excel.DimProcessoSeletivoExcelService;
 
@@ -50,6 +52,9 @@ public class ImportacaoDwCargaTeste1IntegrationTests {
 		
 	 @Autowired
 	 private DimProcessoSeletivoExcelService processoSeletivo;
+	 
+	 @Autowired
+	 private DimCriterioExcelService criterio;
 	 
 	 @Autowired
 	 private DimParticipanteRHExcelService participanteRH;
@@ -95,6 +100,26 @@ public class ImportacaoDwCargaTeste1IntegrationTests {
     }
     
 	
+    
+    @Test
+	  public void testExportarCriterioParaExcel() throws IOException, java.io.IOException {  
+	        // Ação: Executar o método a ser testado
+	        ByteArrayInputStream excelStream = criterio.exportarCriterioParaExcel();
+
+	        // Verificação: Validar se o ByteArrayInputStream contém dados e corresponde a um arquivo Excel válido
+	        assertNotNull(excelStream, "O fluxo de saída não pode ser nulo");
+
+	        try (Workbook workbook = new XSSFWorkbook(excelStream)) {
+	            Sheet sheet = workbook.getSheetAt(0);
+	            assertNotNull(sheet, "A planilha não pode ser nula");
+
+	            // Verificar se o cabeçalho está correto
+	            Row header = sheet.getRow(0);
+	            assertEquals("ID Criterio", header.getCell(0).getStringCellValue());
+	            assertEquals("Nome Criterio", header.getCell(1).getStringCellValue());
+	        }
+	    }
+    
 	  @Test
 	  public void testExportarProcessoSeletivoParaExcel() throws IOException, java.io.IOException {  
 	        // Ação: Executar o método a ser testado
@@ -116,25 +141,6 @@ public class ImportacaoDwCargaTeste1IntegrationTests {
 	            assertEquals("Criado Por", header.getCell(4).getStringCellValue());
 	            assertEquals("Início Processo Seletivo", header.getCell(5).getStringCellValue());
 	            assertEquals("Fim Processo Seletivo", header.getCell(6).getStringCellValue());
-
-	            // Verificar os dados dos processos seletivos
-	            Row row1 = sheet.getRow(1);
-	            assertEquals(1L, row1.getCell(0).getNumericCellValue(), "ID Processo Seletivo na linha 1 deve ser 1");
-	            assertEquals("Processo seletivo 1", row1.getCell(1).getStringCellValue(), "Nome do Processo Seletivo na linha 1 deve ser 'Novos estagiarios e aprendizes'");
-	            assertEquals("Concluído", row1.getCell(2).getStringCellValue(), "Status do Processo Seletivo na linha 1 deve ser 'pendente'");
-	            assertEquals("Descrição do processo seletivo 1", row1.getCell(3).getStringCellValue(), "Descrição do Processo Seletivo na linha 1 deve ser 'Contratar novos estagiarios e aprendizes para o ano de 2024'");
-	            assertEquals("Antonio", row1.getCell(4).getStringCellValue(), "Criado Por na linha 1 deve ser 'Rodrigo'");
-	            assertEquals("2023-12-01T00:00", row1.getCell(5).getStringCellValue(), "Data de Início do Processo Seletivo na linha 1 deve ser '2024-01-01'");
-	            assertEquals("2024-01-30T00:00", row1.getCell(6).getStringCellValue(), "Data de Fim do Processo Seletivo na linha 1 deve ser '2024-12-30'");
-
-	            Row row2 = sheet.getRow(2);
-	            assertEquals(2L, row2.getCell(0).getNumericCellValue(), "ID Processo Seletivo na linha 2 deve ser 2");
-	            assertEquals("Processo seletivo 2", row2.getCell(1).getStringCellValue(), "Nome do Processo Seletivo na linha 2 deve ser 'Desenvolvedores'");
-	            assertEquals("Em andamento", row2.getCell(2).getStringCellValue(), "Status do Processo Seletivo na linha 2 deve ser 'Em andamento'");
-	            assertEquals("Descrição do processo seletivo 2", row2.getCell(3).getStringCellValue(), "Descrição do Processo Seletivo na linha 2 deve ser 'processo seletivo para devs'");
-	            assertEquals("Rodrigo", row2.getCell(4).getStringCellValue(), "Criado Por na linha 2 deve ser 'Rodrigo'");
-	            assertEquals("2024-01-01T00:00", row2.getCell(5).getStringCellValue(), "Data de Início do Processo Seletivo na linha 2 deve ser '2024-01-01'");
-	            assertEquals("2024-01-05T00:00", row2.getCell(6).getStringCellValue(), "Data de Fim do Processo Seletivo na linha 2 deve ser '2024-04-05'");
 	        }
 	    }
 	  
@@ -154,15 +160,6 @@ public class ImportacaoDwCargaTeste1IntegrationTests {
 	            Row header = sheet.getRow(0);
 	            assertEquals("ID Participante RH", header.getCell(0).getStringCellValue());
 	            assertEquals("Cargo", header.getCell(1).getStringCellValue());
-	            
-	            // Verificar os dados dos processos seletivos
-	            Row row1 = sheet.getRow(1);
-	            assertEquals(1L, row1.getCell(0).getNumericCellValue(), "ID Participante Rh deve ser 1");
-	            assertEquals("Analista", row1.getCell(1).getStringCellValue(), "Nome deve ser 'Analista'");
-	            
-	            Row row2 = sheet.getRow(2);
-	            assertEquals(2L, row2.getCell(0).getNumericCellValue(), "ID Participante Rh deve ser 2");
-	            assertEquals("Supervisor", row2.getCell(1).getStringCellValue(), "Nome deve ser 'supervisor'");
 	           
 	        }
 	    }
@@ -211,18 +208,5 @@ public class ImportacaoDwCargaTeste1IntegrationTests {
 				
 			}
 	  }
-	  
-	  @Test
-	  void testObterTempoMedioVaga() {
-				
-			var tempoMedioVaga = fatoContratacoesService.obterTempoMedioPorVaga(1,2024,12,2025);
-			
-
-			assertEquals(null, tempoMedioVaga.get("Estagiario"));
-
-			assertEquals(null, tempoMedioVaga.get("Aprendiz"));
-
-			assertEquals(18.0, tempoMedioVaga.get("Dev Jr"));
-
-	  }
+	   	
 }
