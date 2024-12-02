@@ -32,4 +32,7 @@ public class CustomQuery {
 
     @Column(name = "created_at")
     private java.time.LocalDateTime createdAt;
+
+    @Column(name = "visualization_model")
+    private String visualizationModel;
 }

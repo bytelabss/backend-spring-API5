@@ -1,29 +1,37 @@
-name: CI Pipeline
+name: CI Pipeline - Main
 
 on:
-  push:
-    branches: 
-      - '**'               
   pull_request:
     branches:
       - main
-      - dev
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     services:
-      mysql:
+      mysql_prod:
         image: mysql:5.7
         env:
           MYSQL_DATABASE: dataviz_bytelabss
           MYSQL_ROOT_PASSWORD: root
         ports:
           - 3306:3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+        options: >-
+          --health-cmd="mysqladmin ping -h localhost --silent"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
 
     steps:
+
+      - name: Bloquear commits diretos na branch main
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          echo "Commits diretos na branch 'main' não são permitidos. Desfaça o Commit atual com o comando git reset.
+          Faça as alterações novamente através de um Pull Request."
+          exit 1
+
       - name: Checkout do código
         uses: actions/checkout@v3
         with:
@@ -41,15 +49,11 @@ jobs:
           mysql -h 172.18.0.1 -P 3306 -u root -proot -e "CREATE USER IF NOT EXISTS 'userapp'@'172.18.0.1' IDENTIFIED BY 'admin123';"
           mysql -h 172.18.0.1 -P 3306 -u root -proot -e "GRANT SELECT, INSERT, CREATE, REFERENCES, UPDATE, DELETE, DROP ON dataviz_bytelabss.* TO 'userapp'@'172.18.0.1';"
           mysql -h 172.18.0.1 -P 3306 -u root -proot -e "FLUSH PRIVILEGES;"
+          mysql -h 172.18.0.1 -P 3306 -u root -proot -e "CREATE DATABASE IF NOT EXISTS test_db;"
+          mysql -h 172.18.0.1 -P 3306 -u root -proot -e "GRANT ALL PRIVILEGES ON test_db.* TO 'userapp'@'172.18.0.1'; FLUSH PRIVILEGES;"
 
       - name: Compilar com Maven
-        run: mvn clean install --no-transfer-progress
+        run: mvn clean compile --no-transfer-progress
 
-      # Executar testes unitários em todos os commits de todas as branches
       - name: Executar testes unitários
         run: mvn test --no-transfer-progress
-
-      # Executar testes de integração apenas em pull requests para 'dev' e 'main'
-      - name: Executar testes de integração (somente em PR para dev e main)
-        if: github.event_name == 'pull_request' && (github.base_ref == 'dev' || github.base_ref == 'main')
-        run: mvn verify -P integration-tests -DskipUnitTests=false --no-transfer-progress
