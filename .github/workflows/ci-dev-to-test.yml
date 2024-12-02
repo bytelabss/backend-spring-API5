@@ -51,7 +51,7 @@ jobs:
           mysql -h 172.18.0.1 -P 3306 -u root -proot -e "FLUSH PRIVILEGES;"
 
       - name: Compilar com Maven
-        run: mvn clean install --no-transfer-progress
+        run: mvn clean compile --no-transfer-progress
 
       - name: Executar testes unitários
         run: mvn test --no-transfer-progress
