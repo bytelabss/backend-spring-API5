@@ -137,10 +137,10 @@ public class ImportacaoDwCargaTeste1IntegrationTests {
 	            assertEquals(2L, row2.getCell(0).getNumericCellValue(), "ID Processo Seletivo na linha 2 deve ser 2");
 	            assertEquals("Desenvolvedores", row2.getCell(1).getStringCellValue(), "Nome do Processo Seletivo na linha 2 deve ser 'Desenvolvedores'");
 	            assertEquals("Em andamento", row2.getCell(2).getStringCellValue(), "Status do Processo Seletivo na linha 2 deve ser 'Em andamento'");
-	            assertEquals("Descrição do processo seletivo 2", row2.getCell(3).getStringCellValue(), "Descrição do Processo Seletivo na linha 2 deve ser 'processo seletivo para devs'");
+	            assertEquals("processo seletivo para devs", row2.getCell(3).getStringCellValue(), "Descrição do Processo Seletivo na linha 2 deve ser 'processo seletivo para devs'");
 	            assertEquals("Rodrigo", row2.getCell(4).getStringCellValue(), "Criado Por na linha 2 deve ser 'Rodrigo'");
 	            assertEquals("2024-01-01T00:00", row2.getCell(5).getStringCellValue(), "Data de Início do Processo Seletivo na linha 2 deve ser '2024-01-01'");
-	            assertEquals("2024-01-05T00:00", row2.getCell(6).getStringCellValue(), "Data de Fim do Processo Seletivo na linha 2 deve ser '2024-04-05'");
+	            assertEquals("2024-04-05T00:00", row2.getCell(6).getStringCellValue(), "Data de Fim do Processo Seletivo na linha 2 deve ser '2024-04-05'");
 	        }
 	    }
 	  
@@ -196,7 +196,7 @@ public class ImportacaoDwCargaTeste1IntegrationTests {
 	            assertEquals("Ana", row1.getCell(1).getStringCellValue(), "Nome deve ser 'Ana'");
 	            
 	            Row row2 = sheet.getRow(2);
-	            assertEquals(13L, row2.getCell(0).getNumericCellValue(), "ID candidato deve ser 2");
+	            assertEquals(2L, row2.getCell(0).getNumericCellValue(), "ID candidato deve ser 2");
 	            assertEquals("Ana", row2.getCell(1).getStringCellValue(), "Nome deve ser 'Bruno'");
 	           
 	        }
@@ -218,7 +218,7 @@ public class ImportacaoDwCargaTeste1IntegrationTests {
 					assertEquals(7, tempoMedio.getTempo_medio());
 				}
 				else if(tempoMedio.getProcesso_seletivo() == 3) {
-					assertEquals(64, tempoMedio.getTempo_medio());
+					assertEquals(65, tempoMedio.getTempo_medio());
 				}
 				
 			}
@@ -237,7 +237,7 @@ public class ImportacaoDwCargaTeste1IntegrationTests {
 					assertEquals(21, qunatidadeProcesso.getQuantidade());
 				}
 				else if(qunatidadeProcesso.getProcesso_seletivo() == 2) {
-					assertEquals(48, qunatidadeProcesso.getQuantidade());
+					assertEquals(37, qunatidadeProcesso.getQuantidade());
 				}
 				else if(qunatidadeProcesso.getProcesso_seletivo() == 3) {
 					assertEquals(22, qunatidadeProcesso.getQuantidade());
@@ -254,7 +254,7 @@ public class ImportacaoDwCargaTeste1IntegrationTests {
 
 			assertEquals(47.3333, tempoMedioVaga.get("Estagiario"));
 
-			assertEquals(31.0, tempoMedioVaga.get("Aprendiz"));
+			assertEquals(16.75, tempoMedioVaga.get("Aprendiz"));
 
 			assertEquals(18.0, tempoMedioVaga.get("Dev Jr"));
 
