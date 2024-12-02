@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/authorizations")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins="*")
 public class AuthorizationController {
 
     @Autowired
