@@ -55,6 +55,7 @@ public class CustomQueryService {
     		dto.setId((Long) resultado[0]);
     		dto.setQuery(converter.convertToEntityAttribute((String) resultado[1]) );
     		dto.setDescription((String) resultado[2]);
+    		dto.setUserName((String) resultado[4]);
     		
     		 if (resultado[3] != null) {
     			 Timestamp timestamp = (Timestamp) resultado[3];

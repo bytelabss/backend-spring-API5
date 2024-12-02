@@ -14,6 +14,8 @@ import lombok.NoArgsConstructor;
 public class CustomQueryDto {
 	
 	private Long id;
+	
+	private String UserName;
 
 	private CustomQuerySQL query;
 

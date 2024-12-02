@@ -15,8 +15,9 @@ import fatec.bytelabss.api.models.CustomQuery;
 @Repository
 public interface CustomQueryRepository extends JpaRepository<CustomQuery, Long> {
 	
-	@Query(nativeQuery = true, value =  "select a.id, a.query, a.description,a.created_at from custom_queries a " 
+	@Query(nativeQuery = true, value =  "select distinct a.id, a.query, a.description,a.created_at, c.name from custom_queries a " 
 			+ "      inner join usuarios_custom_query b on a.id = b.custom_query "
+			+ "      inner join usuarios c on c.id = b.usuario "
 			+ "      where b.usuario = :userId ")
 	List<Object[]> getAllQueriesByUserId(@Param("userId") Long userId);
 }
