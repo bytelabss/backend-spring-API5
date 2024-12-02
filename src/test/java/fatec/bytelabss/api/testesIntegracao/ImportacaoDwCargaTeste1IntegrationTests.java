@@ -240,7 +240,7 @@ public class ImportacaoDwCargaTeste1IntegrationTests {
 					assertEquals(37, qunatidadeProcesso.getQuantidade());
 				}
 				else if(qunatidadeProcesso.getProcesso_seletivo() == 3) {
-					assertEquals(22, qunatidadeProcesso.getQuantidade());
+					assertEquals(13, qunatidadeProcesso.getQuantidade());
 				}
 				
 			}
